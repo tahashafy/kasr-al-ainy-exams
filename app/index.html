@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kasr Al-Ainy Exams</title>
+  <meta name="description" content="Interactive practice examination platform for Kasr Al-Ainy students — Faculty of Medicine, Cairo University." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    // Apply persisted theme before paint to avoid a flash.
+    try {
+      var s = JSON.parse(localStorage.getItem("m101_settings_v1") || "{}");
+      if (s.theme === "dark") document.documentElement.setAttribute("data-theme", "dark");
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content" data-i18n="chrome.skipLink">Skip to content</a>
+  <header id="app-header">
+    <div class="header-inner">
+      <a class="brand" href="#/" data-nav-link>
+        <span class="brand-mark" aria-hidden="true">KA</span>
+        <span class="brand-text">
+          Kasr Al-Ainy Exams
+          <small data-i18n="brand.subtitle">Faculty of Medicine · Cairo University</small>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#/" data-nav-link data-i18n="nav.home">Home</a>
+        <a href="#/exams" data-nav-link data-i18n="nav.modules">Modules</a>
+        <a href="#/mistakes" data-nav-link data-i18n="nav.mistakes">Review Mistakes</a>
+        <a href="#/bookmarks" data-nav-link data-i18n="nav.bookmarks">Bookmarks</a>
+        <a href="#/history" data-nav-link data-i18n="nav.history">History</a>
+        <a href="#/about" data-nav-link data-i18n="nav.about">About</a>
+      </nav>
+      <button class="theme-toggle" id="lang-toggle" type="button">EN / ع</button>
+      <button class="theme-toggle" id="access-code-btn" type="button" style="display:none;" data-i18n="chrome.myCode">🔑 My Code</button>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode" data-i18n="chrome.themeToggle" data-i18n-attr="aria-label:chrome.themeAriaLabel">🌓 Theme</button>
+    </div>
+  </header>
+  <main id="main-content"><div class="container"><p style="padding:40px 0;color:var(--text-muted)" data-i18n="chrome.loading">Loading…</p></div></main>
+  <footer class="app-footer">
+    <span data-i18n="footer.notice">Practice platform for educational use only · Scores shown here are not official university grades.</span>
+  </footer>
+  <script>
+    // Browsers refuse to load ES modules (and this app's fetch() calls for
+    // its question data) over the file:// protocol, so double-clicking this
+    // file silently hangs on "Loading…" forever — the module script below
+    // never even runs. Detect that case with a plain classic script (which
+    // *does* run under file://) and explain it instead of hanging.
+    if (location.protocol === "file:") {
+      document.getElementById("main-content").innerHTML =
+        '<div class="container-narrow"><div class="card">' +
+        '<h1>Almost there — this needs to be served, not opened directly</h1>' +
+        '<p>You opened this file straight from disk (<code>file://…</code>). Browsers block this app\'s scripts and data from loading that way, which is why it was stuck on "Loading…".</p>' +
+        '<p><strong>Fix (one-time):</strong> open a terminal in the <code>app</code> folder and run:</p>' +
+        '<pre style="background:var(--surface-muted);padding:14px;border-radius:8px;overflow-x:auto;">node server.js</pre>' +
+        '<p>Then open <a href="http://localhost:3000/">http://localhost:3000/</a> in your browser. Requires <a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js</a> to be installed — nothing else needs installing.</p>' +
+        '</div></div>';
+    } else {
+      var s = document.createElement("script");
+      s.type = "module";
+      s.src = "js/app.js";
+      document.body.appendChild(s);
+    }
+  </script>
+</body>
+</html>

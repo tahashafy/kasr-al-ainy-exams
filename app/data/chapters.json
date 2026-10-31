@@ -1,0 +1,207 @@
+{
+ "module": "101",
+ "moduleTitle": "Normal Structure of the Human Body",
+ "moduleCode": "ISK 101",
+ "textbookEdition": "ISK 101 — Normal Structure of the Human Body, Academic Year 2026-2027 (Faculty of Medicine, Cairo University)",
+ "textbookSourceFile": "101_ISK_Published V2.pdf",
+ "categories": [
+  {
+   "id": "histology",
+   "name": "Histology",
+   "chapters": [
+    {
+     "id": "hist-1",
+     "number": "I",
+     "title": "Microscopes & Basic Tissue Types",
+     "startPage": 1
+    },
+    {
+     "id": "hist-2",
+     "number": "II",
+     "title": "Cytology",
+     "startPage": 5
+    },
+    {
+     "id": "hist-3",
+     "number": "III",
+     "title": "Blood",
+     "startPage": 29
+    },
+    {
+     "id": "hist-4",
+     "number": "IV",
+     "title": "Connective Tissue",
+     "startPage": 48
+    },
+    {
+     "id": "hist-5",
+     "number": "V",
+     "title": "Epithelial Tissue",
+     "startPage": 62
+    }
+   ]
+  },
+  {
+   "id": "embryology",
+   "name": "Embryology",
+   "chapters": [
+    {
+     "id": "emb-1",
+     "number": "1",
+     "title": "First Week of Development",
+     "startPage": 76
+    },
+    {
+     "id": "emb-2",
+     "number": "2",
+     "title": "Second Week of Development",
+     "startPage": 78
+    },
+    {
+     "id": "emb-3",
+     "number": "3",
+     "title": "Third Week of Development",
+     "startPage": 85
+    },
+    {
+     "id": "emb-4",
+     "number": "4",
+     "title": "Embryonic Period",
+     "startPage": 91
+    },
+    {
+     "id": "emb-5",
+     "number": "5",
+     "title": "Fetal Membranes",
+     "startPage": 98
+    },
+    {
+     "id": "emb-6",
+     "number": "6",
+     "title": "Fetal Period",
+     "startPage": 111
+    }
+   ]
+  },
+  {
+   "id": "basics",
+   "name": "Basics",
+   "chapters": [
+    {
+     "id": "bas-1",
+     "number": "1",
+     "title": "Introduction",
+     "startPage": 113
+    },
+    {
+     "id": "bas-2",
+     "number": "2",
+     "title": "Fascia",
+     "startPage": 115
+    },
+    {
+     "id": "bas-3",
+     "number": "3",
+     "title": "Skeletal System",
+     "startPage": 117
+    },
+    {
+     "id": "bas-4",
+     "number": "4",
+     "title": "Articular System",
+     "startPage": 122
+    },
+    {
+     "id": "bas-5",
+     "number": "5",
+     "title": "Muscular System",
+     "startPage": 129
+    },
+    {
+     "id": "bas-6",
+     "number": "6",
+     "title": "Nervous System",
+     "startPage": 133
+    },
+    {
+     "id": "bas-7",
+     "number": "7",
+     "title": "Cardiovascular System",
+     "startPage": 135
+    },
+    {
+     "id": "bas-8",
+     "number": "8",
+     "title": "Lymphatic System",
+     "startPage": 140
+    }
+   ]
+  },
+  {
+   "id": "upper-limb",
+   "name": "Upper Limb Anatomy",
+   "chapters": [
+    {
+     "id": "ul-1",
+     "number": "1",
+     "title": "Pectoral Region",
+     "startPage": 144
+    },
+    {
+     "id": "ul-2",
+     "number": "2",
+     "title": "Muscles of the Back",
+     "startPage": 154
+    },
+    {
+     "id": "ul-3",
+     "number": "3",
+     "title": "Shoulder Region",
+     "startPage": 160
+    },
+    {
+     "id": "ul-4",
+     "number": "4",
+     "title": "Axilla",
+     "startPage": 168
+    },
+    {
+     "id": "ul-5",
+     "number": "5",
+     "title": "Arm",
+     "startPage": 182
+    },
+    {
+     "id": "ul-6",
+     "number": "6",
+     "title": "Forearm",
+     "startPage": 193
+    },
+    {
+     "id": "ul-7",
+     "number": "7",
+     "title": "Hand",
+     "startPage": 225
+    },
+    {
+     "id": "ul-8",
+     "number": "8",
+     "title": "Veins of the Upper Limb",
+     "startPage": 243
+    },
+    {
+     "id": "ul-9",
+     "number": "9",
+     "title": "Nerve Supply of the Upper Limb & Nerve Injuries",
+     "startPage": 247
+    },
+    {
+     "id": "ul-10",
+     "number": "10",
+     "title": "Joints of the Upper Limb",
+     "startPage": 259
+    }
+   ]
+  }
+ ]
+}

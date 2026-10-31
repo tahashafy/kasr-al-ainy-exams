@@ -1,0 +1,5292 @@
+{
+  "194": [
+    {
+      "number": 1,
+      "stem": "Iron hematoxylin stain is used to demonstrate:",
+      "options": {
+        "a": "Mitochondria & cell membrane",
+        "b": "Mitochondria & centrioles",
+        "c": "Proteasomes & peroxisomes",
+        "d": "Proteasomes & lysosomes"
+      }
+    },
+    {
+      "number": 2,
+      "stem": "Microfilaments form the following structure:",
+      "options": {
+        "a": "Core of cilia",
+        "b": "Core of flagella",
+        "c": "Mitotic spindle in cell division",
+        "d": "Core of microvilli"
+      }
+    },
+    {
+      "number": 3,
+      "stem": "A tumor is decided to be of epithelial origin when it contains mainly:",
+      "options": {
+        "a": "Lamin",
+        "b": "Tubulin",
+        "c": "Cytokeratin",
+        "d": "Desmin"
+      }
+    },
+    {
+      "number": 4,
+      "stem": "Electron microscopic feature of cells responsible for steroid hormone secretion is:",
+      "options": {
+        "a": "Numerous proteasomes",
+        "b": "Numerous ribosomes",
+        "c": "Well-developed sER",
+        "d": "Well-developed rER"
+      }
+    },
+    {
+      "number": 5,
+      "stem": "Chronic respiratory tract infection may be caused by abnormality in:",
+      "options": {
+        "a": "Cilia",
+        "b": "Microvilli",
+        "c": "Neurofilaments",
+        "d": "Nuclear lamina"
+      }
+    },
+    {
+      "number": 6,
+      "stem": "Regarding multivesicular bodies, they are:",
+      "options": {
+        "a": "Type of primary lysosomes",
+        "b": "Also known as residual body",
+        "c": "Secondary lysosome with fluid content",
+        "d": "Only found in cardiac and nerve cells"
+      }
+    },
+    {
+      "number": 7,
+      "stem": "Electron microscopic feature of protein-forming cells is:",
+      "options": {
+        "a": "Numerous lysosomes",
+        "b": "Numerous peroxisomes",
+        "c": "Well-developed sER",
+        "d": "Well-developed rER"
+      }
+    },
+    {
+      "number": 8,
+      "stem": "Regarding the cell membrane:",
+      "options": {
+        "a": "Glycocalyx represents the main component",
+        "b": "Cholesterol molecules are present between heads of phospholipid molecules",
+        "c": "Phospholipid molecules have polar heads and nonpolar tails",
+        "d": "Intrinsic proteins are loosely attached to lipid bilayer"
+      }
+    },
+    {
+      "number": 9,
+      "stem": "The cytoplasmic side of the coated vesicle is surrounded by:",
+      "options": {
+        "a": "Lamin",
+        "b": "Tubulin",
+        "c": "Actin",
+        "d": "Clathrin"
+      }
+    },
+    {
+      "number": 10,
+      "stem": "As regards Golgi apparatus:",
+      "options": {
+        "a": "Detected by Sudan III stain",
+        "b": "Apical in the secretory cells",
+        "c": "Formed of actin filaments",
+        "d": "Detoxifies drugs and alcohol"
+      }
+    },
+    {
+      "number": 11,
+      "stem": "Glycogen granules are stained with:",
+      "options": {
+        "a": "Silver stain",
+        "b": "Sudan III",
+        "c": "Best’s carmine",
+        "d": "Janus green"
+      }
+    },
+    {
+      "number": 12,
+      "stem": "Choose the correct statement concerning the nucleolus:",
+      "options": {
+        "a": "Pars amorpha contains mature rRNA",
+        "b": "Pars amorpha contains immature rRNA",
+        "c": "Pars granulosa contains mature rRNA",
+        "d": "Pars granulosa contains immature rRNA"
+      }
+    },
+    {
+      "number": 13,
+      "stem": "The following type of connective tissue (C.T.) is widely distributed in body:",
+      "options": {
+        "a": "Irregular white fibrous C.T.",
+        "b": "Loose areolar C.T.",
+        "c": "Yellow elastic C.T.",
+        "d": "Regular white fibrous C.T."
+      }
+    },
+    {
+      "number": 14,
+      "stem": "Type III collagen fibers are secreted by:",
+      "options": {
+        "a": "Pericytes & mast cells",
+        "b": "Reticular cells & mast cells",
+        "c": "Fibroblasts & reticular cells",
+        "d": "Plasma cells & fibroblasts"
+      }
+    },
+    {
+      "number": 15,
+      "stem": "Elastic fibers are characterized by being:",
+      "options": {
+        "a": "Arranged into bundles",
+        "b": "Stained brown with orcein",
+        "c": "Found in the stroma of organs",
+        "d": "Strong and resist stretching"
+      }
+    },
+    {
+      "number": 16,
+      "stem": "Regarding fibroblast, the following is true:",
+      "options": {
+        "a": "Deeply acidophilic cytoplasm",
+        "b": "Forms C.T. fibers & matrix",
+        "c": "Rich in sER",
+        "d": "Has dark nucleus"
+      }
+    },
+    {
+      "number": 17,
+      "stem": "The cytoplasm of macrophage is rich in the following organelles:",
+      "options": {
+        "a": "Golgi apparatus & sER",
+        "b": "Free ribosome & lysosome",
+        "c": "Golgi apparatus & lysosome",
+        "d": "Mitochondria & sER"
+      }
+    },
+    {
+      "number": 18,
+      "stem": "The plasma cell is responsible for the following function:",
+      "options": {
+        "a": "Antibody production",
+        "b": "Secretion of heparin",
+        "c": "Phagocytosis",
+        "d": "Heat generation"
+      }
+    },
+    {
+      "number": 19,
+      "stem": "Regular white fibrous connective tissue is found in:",
+      "options": {
+        "a": "Capsule of organs",
+        "b": "Cornea of the eye",
+        "c": "Vitreous humor of the eye",
+        "d": "Large arteries"
+      }
+    },
+    {
+      "number": 20,
+      "stem": "Epithelium is characterized by:",
+      "options": {
+        "a": "Cells are widely separated",
+        "b": "Never regenerate",
+        "c": "Cells rest on a basement membrane",
+        "d": "Blood vessels penetrate between cells"
+      }
+    },
+    {
+      "number": 21,
+      "stem": "The type of epithelium providing thin membrane and smooth surface is:",
+      "options": {
+        "a": "Simple squamous epithelium",
+        "b": "Simple cubical epithelium",
+        "c": "Simple columnar epithelium",
+        "d": "Stratified squamous epithelium"
+      }
+    },
+    {
+      "number": 22,
+      "stem": "Transitional epithelium is characterized by:",
+      "options": {
+        "a": "Keratinized or non-keratinized types",
+        "b": "Cells rest on clear wavy basement membrane",
+        "c": "Formed of 5–30 layers of cells",
+        "d": "Superficial cells are covered by plaques"
+      }
+    },
+    {
+      "number": 23,
+      "stem": "Apocrine secretion refers to:",
+      "options": {
+        "a": "The most common mode of secretion",
+        "b": "No changes occur in secretory cell",
+        "c": "Secretion comes out with apex of the cell",
+        "d": "The whole cell is lost with secretion"
+      }
+    },
+    {
+      "number": 24,
+      "stem": "Two adjacent cell membranes fuse at certain points and encircle the cell in:",
+      "options": {
+        "a": "Zonula adherens",
+        "b": "Zonula occludens",
+        "c": "Desmosomes",
+        "d": "Gap junction"
+      }
+    },
+    {
+      "number": 25,
+      "stem": "The type of epithelium with contractile function is:",
+      "options": {
+        "a": "Surface epithelium",
+        "b": "Neuro-epithelium",
+        "c": "Myo-epithelium",
+        "d": "Urothelium"
+      }
+    },
+    {
+      "number": 26,
+      "stem": "Regarding neuron, transport of neurotransmitters is related to:",
+      "options": {
+        "a": "Nissl bodies",
+        "b": "Neurofilaments",
+        "c": "Centrioles",
+        "d": "Microtubules"
+      }
+    },
+    {
+      "number": 27,
+      "stem": "Concerning dendrite, the following is correct:",
+      "options": {
+        "a": "Is single",
+        "b": "Has a constant diameter",
+        "c": "Contains Nissl bodies",
+        "d": "Is long and thin"
+      }
+    },
+    {
+      "number": 28,
+      "stem": "Multipolar nerve cells are present in:",
+      "options": {
+        "a": "Purkinje cells in cerebellar cortex",
+        "b": "Spinal ganglia",
+        "c": "Vestibular ganglia in ear",
+        "d": "Retina of the eye"
+      }
+    },
+    {
+      "number": 29,
+      "stem": "Kinetochores:",
+      "options": {
+        "a": "Are regions of repeated sequence at ends of chromosomes",
+        "b": "Are segments of DNA molecules",
+        "c": "Attach to spindle fibers during cell division",
+        "d": "Protect end of chromosome from destruction"
+      }
+    },
+    {
+      "number": 30,
+      "stem": "Necrosis:",
+      "options": {
+        "a": "Can be physiological or pathological",
+        "b": "Cells break into large vesicles",
+        "c": "Cells and organelles swell and burst",
+        "d": "Is active programmed process"
+      }
+    },
+    {
+      "number": 31,
+      "stem": "Potentially renewable cells:",
+      "options": {
+        "a": "Continuously replaced from stem cells",
+        "b": "Are end cells",
+        "c": "Have a transient exit from cell cycle in G2 phase",
+        "d": "Return to continue cell cycle on need for replacement"
+      }
+    },
+    {
+      "number": 32,
+      "stem": "During which stage of first meiotic division does crossing-over occur?",
+      "options": {
+        "a": "Prophase",
+        "b": "Metaphase",
+        "c": "Anaphase",
+        "d": "Telophase"
+      }
+    },
+    {
+      "number": 33,
+      "stem": "Sex chromatin (Barr body):",
+      "options": {
+        "a": "Inactive X chromosome in Turner syndrome",
+        "b": "Active X chromosome in Turner syndrome",
+        "c": "Inactive extra X chromosome in Klinefelter syndrome",
+        "d": "Active extra X chromosome in Klinefelter syndrome"
+      }
+    },
+    {
+      "number": 34,
+      "stem": "Numerical aberrations of chromosomes occur due to:",
+      "options": {
+        "a": "Non-disjunction in euploidy",
+        "b": "Gametes are not haploid in aneuploidy",
+        "c": "One chromatid fails to duplicate during S-stage in aneuploidy",
+        "d": "Chromosome fails to align during metaphase in euploidy"
+      }
+    },
+    {
+      "number": 35,
+      "stem": "The following artery supplies the inner part of the shaft of long bone:",
+      "options": {
+        "a": "Epiphyseal artery",
+        "b": "Periosteal arteries",
+        "c": "Diaphyseal artery",
+        "d": "Metaphyseal artery"
+      }
+    },
+    {
+      "number": 36,
+      "stem": "One of the following is not a part of deep fascia:",
+      "options": {
+        "a": "Retinacula",
+        "b": "Tendon",
+        "c": "Intermuscular septa",
+        "d": "Interosseous membranes"
+      }
+    },
+    {
+      "number": 37,
+      "stem": "Regarding the classification of the muscles according to the action, one of the following is not true:",
+      "options": {
+        "a": "Prime mover",
+        "b": "Antagonist",
+        "c": "Fixator",
+        "d": "Symphysis"
+      }
+    },
+    {
+      "number": 38,
+      "stem": "Regarding the anatomical planes, choose the correct answer:",
+      "options": {
+        "a": "Sagittal plane divides the body into two equal halves upper and lower",
+        "b": "Coronal plane divides the body into two equal halves anterior and posterior",
+        "c": "Sagittal plane divides the body into two equal halves right and left",
+        "d": "Transverse plane divides the body into two equal halves upper and lower"
+      }
+    },
+    {
+      "number": 39,
+      "stem": "Folding of embryonic disc occurs due to:",
+      "options": {
+        "a": "Formation of chorionic cavity",
+        "b": "Expansion of amniotic cavity",
+        "c": "Formation of primitive streak",
+        "d": "Formation of gut"
+      }
+    },
+    {
+      "number": 40,
+      "stem": "Premature separation of placenta occurs due to:",
+      "options": {
+        "a": "Short umbilical cord",
+        "b": "Long umbilical cord",
+        "c": "Accessory placenta",
+        "d": "Placenta accreta"
+      }
+    },
+    {
+      "number": 41,
+      "stem": "Cells of ______ have no cell wall:",
+      "options": {
+        "a": "Amnioblasts",
+        "b": "Hypoblast",
+        "c": "Cytotrophoblast",
+        "d": "Syncytiotrophoblast"
+      }
+    },
+    {
+      "number": 42,
+      "stem": "Regarding implantation, choose the correct statement:",
+      "options": {
+        "a": "Blastocyst starts implantation at the beginning of 3rd week",
+        "b": "Blastocyst starts implantation by its embryonic pole",
+        "c": "Normal site is in the lower segment of uterine wall",
+        "d": "Morula is the embryonic stage that starts implantation"
+      }
+    },
+    {
+      "number": 43,
+      "stem": "The process of fusion between sperm and ovum is called:",
+      "options": {
+        "a": "Cleavage",
+        "b": "Gastrulation",
+        "c": "Capacitation",
+        "d": "Fertilization"
+      }
+    },
+    {
+      "number": 44,
+      "stem": "Neurenteric canal is the temporary communication between:",
+      "options": {
+        "a": "Amniotic sac and chorionic cavity",
+        "b": "Yolk sac and chorionic cavity",
+        "c": "Amniotic cavity and yolk sac",
+        "d": "Notochordal canal & amniotic cavity"
+      }
+    },
+    {
+      "number": 45,
+      "stem": "One of the following are paired structures in the embryo:",
+      "options": {
+        "a": "Somites",
+        "b": "Buccopharyngeal membrane",
+        "c": "Pericardial bulge",
+        "d": "Allantois"
+      }
+    },
+    {
+      "number": 46,
+      "stem": "One of the following is true about notochord:",
+      "options": {
+        "a": "It extends between primitive pit and cloacal membrane",
+        "b": "It persists as nucleus pulposus in the intervertebral discs",
+        "c": "It is formed from cells migrating from primitive streak",
+        "d": "It is dorsal to neural tube"
+      }
+    },
+    {
+      "number": 47,
+      "stem": "Neural tube is formed from the following cells:",
+      "options": {
+        "a": "Endoderm",
+        "b": "Lateral plate mesoderm",
+        "c": "Ectoderm",
+        "d": "Extraembryonic mesoderm"
+      }
+    },
+    {
+      "number": 48,
+      "stem": "Regarding full term placenta, one of the following is not true:",
+      "options": {
+        "a": "Its weight is 500–600 gm",
+        "b": "Its thickness is one cm",
+        "c": "Its diameter ranges between 25–30 cm",
+        "d": "Umbilical cord is attached to its maternal surface"
+      }
+    }
+  ],
+  "195": [
+    {
+      "number": 1,
+      "stem": "Storage, packaging and chemical modification of proteins occur in:",
+      "options": {
+        "a": "Free ribosomes.",
+        "b": "Attached ribosomes.",
+        "c": "Golgi apparatus.",
+        "d": "Cytoskeleton."
+      }
+    },
+    {
+      "number": 2,
+      "stem": "Smooth endoplasmic reticulum is involved in:",
+      "options": {
+        "a": "Detoxification of drugs.",
+        "b": "Protein synthesis.",
+        "c": "Energy production.",
+        "d": "Cell recognition."
+      }
+    },
+    {
+      "number": 3,
+      "stem": "The two ribosomal subunits join each other in the:",
+      "options": {
+        "a": "Cytoplasm during cell division.",
+        "b": "Cytoplasm during protein synthesis",
+        "c": "Nucleus during cell division.",
+        "d": "Nucleus during protein synthesis."
+      }
+    },
+    {
+      "number": 4,
+      "stem": "Cell membrane can be stained by:",
+      "options": {
+        "a": "AG.",
+        "b": "Tryban blue.",
+        "c": "Iron haematoxylin.",
+        "d": "Sudan III."
+      }
+    },
+    {
+      "number": 5,
+      "stem": "One of the following is a membranous cytoplasmic organelle:",
+      "options": {
+        "a": "Lysosomes.",
+        "b": "Centrioles.",
+        "c": "Cilia.",
+        "d": "Ribosomes."
+      }
+    },
+    {
+      "number": 6,
+      "stem": "Cytokeratin, neurofilaments and lamins are types of:",
+      "options": {
+        "a": "Microtubules.",
+        "b": "Microfilaments.",
+        "c": "Protofilaments.",
+        "d": "Intermediate filaments."
+      }
+    },
+    {
+      "number": 7,
+      "stem": "Cytoplasmic basophilia reflects the abundance of:",
+      "options": {
+        "a": "Mitochondria.",
+        "b": "rER.",
+        "c": "sER.",
+        "d": "Golgi apparatus."
+      }
+    },
+    {
+      "number": 8,
+      "stem": "PAS is used to demonstrate:",
+      "options": {
+        "a": "Glycogen granules & cell membrane.",
+        "b": "Cell membrane & Golgi apparatus",
+        "c": "Glycogen granules & Golgi apparatus",
+        "d": "Centrioles & mitochondria"
+      }
+    },
+    {
+      "number": 9,
+      "stem": "Regarding Golgi apparatus, which statement is correct:",
+      "options": {
+        "a": "Formed of parallel flattened cisternae.",
+        "b": "Have Cis and Trans faces.",
+        "c": "Involved in glycogen breakdown.",
+        "d": "Involved in cell respiration."
+      }
+    },
+    {
+      "number": 10,
+      "stem": "Peroxisomal enzymes are synthesized by:",
+      "options": {
+        "a": "sER.",
+        "b": "rER.",
+        "c": "Free polysomes.",
+        "d": "Nucleus."
+      }
+    },
+    {
+      "number": 11,
+      "stem": "Heterolysosomes are formed of primary lysosomes plus vesicles containing:",
+      "options": {
+        "a": "Old organelles.",
+        "b": "Bacteria.",
+        "c": "Fluid droplets.",
+        "d": "Undigested materials."
+      }
+    },
+    {
+      "number": 12,
+      "stem": "The axoneme of a cilium is composed of:",
+      "options": {
+        "a": "27 microtubules covered by cell membrane.",
+        "b": "27 microtubules not covered by cell membrane.",
+        "c": "20 microtubules not covered by cell membrane.",
+        "d": "20 microtubules covered by cell membrane."
+      }
+    },
+    {
+      "number": 13,
+      "stem": "Regarding peripheral chromatin, it is:",
+      "options": {
+        "a": "A part of euchromatin.",
+        "b": "Formed of the nucleoproteins.",
+        "c": "Surrounding the nucleolus.",
+        "d": "Scattered in the nuclear sap."
+      }
+    },
+    {
+      "number": 14,
+      "stem": "Nuclear Lamins are:",
+      "options": {
+        "a": "Mature rRNA.",
+        "b": "Newly formed rRNA.",
+        "c": "Attached to outer nuclear membrane",
+        "d": "Attached to inner nuclear membrane"
+      }
+    },
+    {
+      "number": 15,
+      "stem": "In the nucleolus, the newly formed rRNA is found in:",
+      "options": {
+        "a": "Pars amorpha.",
+        "b": "Pars fibrosa.",
+        "c": "Nucleolar organiser.",
+        "d": "Pars granulosa."
+      }
+    },
+    {
+      "number": 16,
+      "stem": "The statement best matches the euchromatin is:",
+      "options": {
+        "a": "It is coiled chromatin.",
+        "b": "Dark basophilic nucleus by L.M.",
+        "c": "It contains active genes.",
+        "d": "It forms chromatin islands."
+      }
+    },
+    {
+      "number": 17,
+      "stem": "Macrophages can be stained with:",
+      "options": {
+        "a": "Trypan blue.",
+        "b": "Toluidine blue.",
+        "c": "Silver.",
+        "d": "Orcein"
+      }
+    },
+    {
+      "number": 18,
+      "stem": "Fibroblasts have:",
+      "options": {
+        "a": "Many sER.",
+        "b": "Many free ribosomes.",
+        "c": "Many lysosomes.",
+        "d": "Many rER."
+      }
+    },
+    {
+      "number": 19,
+      "stem": "Mast cells can be metachromatically stained with:",
+      "options": {
+        "a": "Indian ink.",
+        "b": "Sudan III.",
+        "c": "Toluidine blue.",
+        "d": "Trypan blue."
+      }
+    },
+    {
+      "number": 20,
+      "stem": "Unilocular adipocytes:",
+      "options": {
+        "a": "Have spherical mitochondria.",
+        "b": "Generate heat by thermogenin.",
+        "c": "Have rounded central nucleus.",
+        "d": "Secrete leptin hormone."
+      }
+    },
+    {
+      "number": 21,
+      "stem": "Plasma cells:",
+      "options": {
+        "a": "Originate from B-lymphocytes.",
+        "b": "Have acidophilic cytoplasm.",
+        "c": "Have few rER.",
+        "d": "Contain many secretory granules."
+      }
+    },
+    {
+      "number": 22,
+      "stem": "Mallory trichrome stain can be used for demonstration of:",
+      "options": {
+        "a": "Collagen fibers.",
+        "b": "Reticular fibers.",
+        "c": "Macrophages.",
+        "d": "actin microfibers."
+      }
+    },
+    {
+      "number": 23,
+      "stem": "Regarding loose areolar connective tissue, it is:",
+      "options": {
+        "a": "Giving the skin its shape.",
+        "b": "Forming stroma of glands.",
+        "c": "The commonest type of CT proper.",
+        "d": "Abundant in brain."
+      }
+    },
+    {
+      "number": 24,
+      "stem": "The reticular connective tissue can be demonstrated with:",
+      "options": {
+        "a": "Toluidine blue.",
+        "b": "silver.",
+        "c": "H&E.",
+        "d": "Sudan III."
+      }
+    },
+    {
+      "number": 25,
+      "stem": "Histiocytes originate from:",
+      "options": {
+        "a": "Pericyte.",
+        "b": "B-lymphocyte.",
+        "c": "Adipocyte.",
+        "d": "Monocyte."
+      }
+    },
+    {
+      "number": 26,
+      "stem": "Irregular type of white fibrous connective tissue is present in:",
+      "options": {
+        "a": "Tendon.",
+        "b": "Ligaments.",
+        "c": "Cornea.",
+        "d": "Umbilical cord."
+      }
+    },
+    {
+      "number": 27,
+      "stem": "The epithelial tissue is characterized by:",
+      "options": {
+        "a": "Formed of widely separated cells.",
+        "b": "Avascular.",
+        "c": "Great amount of intercellular matrix.",
+        "d": "Arise only from mesoderm."
+      }
+    },
+    {
+      "number": 28,
+      "stem": "Respiratory epithelium refers to:",
+      "options": {
+        "a": "Simple cubical epithelium.",
+        "b": "Stratified cubical epithelium.",
+        "c": "Simple columnar non ciliated epithelium with goblet cells.",
+        "d": "Pseudostratified columnar ciliated epithelium with goblet cells."
+      }
+    },
+    {
+      "number": 29,
+      "stem": "Simple branched gland explains that the:",
+      "options": {
+        "a": "Duct is branched and secretory part is not branched.",
+        "b": "Duct is not branched but secretory part is branched.",
+        "c": "Duct and secretory part are not branched.",
+        "d": "Duct and secretory part are branched."
+      }
+    },
+    {
+      "number": 30,
+      "stem": "Regarding merocrine secretion:",
+      "options": {
+        "a": "The whole cell come out with secretion.",
+        "b": "The least common mode of secretion.",
+        "c": "The apical part of the cell come out with the secretion.",
+        "d": "No change occurs in the secretory cell."
+      }
+    },
+    {
+      "number": 31,
+      "stem": "In basement membrane, a major component of basal lamina is:",
+      "options": {
+        "a": "Collagen type IV.",
+        "b": "Collagen type III.",
+        "c": "Collagen type I.",
+        "d": "Collagen type VII."
+      }
+    },
+    {
+      "number": 32,
+      "stem": "Junctional complex is demonstrated in the cells of:",
+      "options": {
+        "a": "Superficial layer of transitional epithelium.",
+        "b": "Basal layer of urothelium.",
+        "c": "Intermediate layers of transitional epithelium.",
+        "d": "Basal layer of stratified cubical epithelium."
+      }
+    },
+    {
+      "number": 33,
+      "stem": "The communicating type of junction is:",
+      "options": {
+        "a": "Tight junction.",
+        "b": "Adherent junction.",
+        "c": "Gap junction.",
+        "d": "Desmosomes."
+      }
+    },
+    {
+      "number": 34,
+      "stem": "The intercellular space in macula adherens measures:",
+      "options": {
+        "a": "Zero.",
+        "b": "3 nm.",
+        "c": "15-20 nm.",
+        "d": "30 nm."
+      }
+    },
+    {
+      "number": 35,
+      "stem": "Regarding RBCs adaptation to perform their function, They are:",
+      "options": {
+        "a": "Containing carbonic anhydrase enzyme.",
+        "b": "Rich in mitochondria.",
+        "c": "Having a central granular part.",
+        "d": "Rich in Ca++ and serotonin."
+      }
+    },
+    {
+      "number": 36,
+      "stem": "Formation of an abnormal rigid type of Hb (HBS) results in:",
+      "options": {
+        "a": "Aplastic anemia.",
+        "b": "Sickle cell anemia.",
+        "c": "Spherocytosis.",
+        "d": "Favism."
+      }
+    },
+    {
+      "number": 37,
+      "stem": "Lambda granules of blood platelets contain:",
+      "options": {
+        "a": "Lysosomes.",
+        "b": "ATP and ADP.",
+        "c": "Growth factors.",
+        "d": "clotting factors."
+      }
+    },
+    {
+      "number": 38,
+      "stem": "The blood count of a patient suffering from acute tonsillitis shows increase in the percentage of:",
+      "options": {
+        "a": "Lymphocytes.",
+        "b": "Basophils.",
+        "c": "Eosinophils.",
+        "d": "Neutrophils."
+      }
+    },
+    {
+      "number": 39,
+      "stem": "Cytoplasm with frosted glass appearance is a feature of:",
+      "options": {
+        "a": "Eosinophils.",
+        "b": "Neutrophils.",
+        "c": "Monocytes.",
+        "d": "Basophils."
+      }
+    },
+    {
+      "number": 40,
+      "stem": "Eosinophils are characterized by:",
+      "options": {
+        "a": "Have horse-shoe shaped nucleus.",
+        "b": "Secrete histamine.",
+        "c": "Increase in liver cirrhosis.",
+        "d": "Have non- specific granules only."
+      }
+    },
+    {
+      "number": 41,
+      "stem": "Regarding basophils, they:",
+      "options": {
+        "a": "Constitute 3-8% of circulating leucocytes.",
+        "b": "Increase in acute pyogenic infection.",
+        "c": "Have kidney shaped nuclei.",
+        "d": "Are rich in metachromatically stained granules."
+      }
+    },
+    {
+      "number": 42,
+      "stem": "The surface marker/ receptor that identifies NK cell is:",
+      "options": {
+        "a": "CD16.",
+        "b": "CD4.",
+        "c": "Ig M.",
+        "d": "Ig D."
+      }
+    },
+    {
+      "number": 43,
+      "stem": "Megakaryocyte is characterized by:",
+      "options": {
+        "a": "Found in peripheral blood.",
+        "b": "Acidophilic cytoplasm.",
+        "c": "Form RBCs.",
+        "d": "Nucleus is single and multilobed."
+      }
+    },
+    {
+      "number": 44,
+      "stem": "Which leucocyte is responsible for Cell mediated immunity?",
+      "options": {
+        "a": "B- lymphocyte.",
+        "b": "T- lymphocytes.",
+        "c": "Basophils.",
+        "d": "Monocyte."
+      }
+    },
+    {
+      "number": 45,
+      "stem": "Which of the following contains a joint cavity?",
+      "options": {
+        "a": "Knee joint.",
+        "b": "Intervertebral disc.",
+        "c": "Suture.",
+        "d": "Inferior tibiofibular."
+      }
+    },
+    {
+      "number": 46,
+      "stem": "The muscle, which initiate a certain movement, is called:",
+      "options": {
+        "a": "Synergist.",
+        "b": "Prime mover (agonist).",
+        "c": "Antagonist.",
+        "d": "fixator."
+      }
+    },
+    {
+      "number": 47,
+      "stem": "The lining of the fibrous capsule of the synovial joint is the:",
+      "options": {
+        "a": "Synovial membrane.",
+        "b": "Extracapsular ligaments.",
+        "c": "Bursa.",
+        "d": "Meniscus."
+      }
+    },
+    {
+      "number": 48,
+      "stem": "Concerning the superficial fascia, select the correct statement:",
+      "options": {
+        "a": "It contains fat.",
+        "b": "It forms retinacula.",
+        "c": "It forms intermuscular septa.",
+        "d": "It forms sheath for blood vessels."
+      }
+    },
+    {
+      "number": 49,
+      "stem": "An epiphyseal plate of cartilage is what type of joint:",
+      "options": {
+        "a": "Suture.",
+        "b": "Secondary cartilaginous.",
+        "c": "Primary cartilaginous.",
+        "d": "Syndesmosis."
+      }
+    },
+    {
+      "number": 50,
+      "stem": "The function of articular cartilage of the synovial joints is:",
+      "options": {
+        "a": "Nutrition to epiphysis.",
+        "b": "Growth of long bone in width.",
+        "c": "Growth of long bone in length.",
+        "d": "Shock absorbent."
+      }
+    },
+    {
+      "number": 51,
+      "stem": "Concerning the folding of the embryonic disc, select the correct answer:",
+      "options": {
+        "a": "It is caused by expansion of the yolk sac cavity.",
+        "b": "It is of two types only head and tail folds.",
+        "c": "It is limited by notochord.",
+        "d": "It begins early at the second week."
+      }
+    },
+    {
+      "number": 52,
+      "stem": "Regarding the somites, one of the followings is not true:",
+      "options": {
+        "a": "Differentiate into myotomes which give rise to skeletal muscle in trunk & limbs.",
+        "b": "Differentiate into sclerotomes which give rise to vertebrae.",
+        "c": "Arise from segmentation of the paraxial mesoderm.",
+        "d": "Differentiate to give rise the spinal cord."
+      }
+    },
+    {
+      "number": 53,
+      "stem": "All of the followings are abnormal site of implantation except:",
+      "options": {
+        "a": "Internal os of the uterus.",
+        "b": "Mesentery of small intestine.",
+        "c": "Lungs.",
+        "d": "Uterine tube."
+      }
+    },
+    {
+      "number": 54,
+      "stem": "Morulla is:",
+      "options": {
+        "a": "2 cell's stage.",
+        "b": "4 cell's stage.",
+        "c": "8 cell's stage.",
+        "d": "16 cell's stage."
+      }
+    },
+    {
+      "number": 55,
+      "stem": "Concerning the umbilical cord at birth, select the incorrect statement:",
+      "options": {
+        "a": "About 50-60 cm in length.",
+        "b": "Contains 2 veins and one artery.",
+        "c": "Is attached to the fetal surface of the placenta.",
+        "d": "Short cord may lead to premature separation of the placenta."
+      }
+    },
+    {
+      "number": 56,
+      "stem": "Fertilization occurs in:",
+      "options": {
+        "a": "Lateral 1/3 of the Fallopian tube.",
+        "b": "Medial 1/3 of the Fallopian tube.",
+        "c": "Fundus of the uterus.",
+        "d": "Cervix."
+      }
+    },
+    {
+      "number": 57,
+      "stem": "The normal site of implantation is in ______ of the uterus.",
+      "options": {
+        "a": "Anterior wall of the fundus.",
+        "b": "Posterior wall of the fundus.",
+        "c": "Anterior wall of the body.",
+        "d": "Posterior wall of the cervix."
+      }
+    },
+    {
+      "number": 58,
+      "stem": "During second week of pregnancy, one of the following statements is wrong:",
+      "options": {
+        "a": "The blastocyst completes its implantation.",
+        "b": "The trophoblast differentiates into 2 layers.",
+        "c": "The inner cell mass becomes a trilaminar disc.",
+        "d": "The amniotic cavity is formed."
+      }
+    },
+    {
+      "number": 59,
+      "stem": "Concerning the placenta, one of the following is incorrect:",
+      "options": {
+        "a": "Its fetal part develops from chorion frondosum.",
+        "b": "Its maternal part develops from decidua capsularis.",
+        "c": "There is a barrier between fetal and maternal blood.",
+        "d": "Has many hormonal functions."
+      }
+    },
+    {
+      "number": 60,
+      "stem": "One of the followings is not a part of intraembryonic mesoderm:",
+      "options": {
+        "a": "Intermediate mesoderm.",
+        "b": "Paraxial mesoderm.",
+        "c": "Lateral plate mesoderm.",
+        "d": "Amnioblasts."
+      }
+    },
+    {
+      "number": 61,
+      "stem": "The floor of the amniotic cavity is formed by:",
+      "options": {
+        "a": "Ectoderm.",
+        "b": "Mesoderm.",
+        "c": "Trophoblast.",
+        "d": "Amniotic fluid."
+      }
+    },
+    {
+      "number": 62,
+      "stem": "Chorionic villi are considered as secondary chorionic villi when they:",
+      "options": {
+        "a": "Contact the decidua basalis.",
+        "b": "Are covered by syncytiotrophoblast.",
+        "c": "Develop a mesenchymal core.",
+        "d": "Give rise to branch villi."
+      }
+    },
+    {
+      "number": 63,
+      "stem": "The Superficial radial nerve, select the true statement:",
+      "options": {
+        "a": "Pierces the medial intermuscular septum of the arm.",
+        "b": "Supplies the extensor carpi ulnaris muscle.",
+        "c": "Lies on the lateral side of the radial artery in the forearm.",
+        "d": "Lies medially in the cubital fossa."
+      }
+    },
+    {
+      "number": 64,
+      "stem": "Regarding the brachialis muscle, select the correct statement:",
+      "options": {
+        "a": "Is innervated by the median nerve.",
+        "b": "Arises from the upper third of the humerus.",
+        "c": "Is main flexor of the elbow joint.",
+        "d": "Attaches to the pronator tuberosity of the radius."
+      }
+    },
+    {
+      "number": 65,
+      "stem": "Name the nerve that innervates the flexor policis longus:",
+      "options": {
+        "a": "Anterior Interosseous nerve.",
+        "b": "Musculocutaneous nerve.",
+        "c": "Ulnar nerve.",
+        "d": "Radial nerve."
+      }
+    },
+    {
+      "number": 66,
+      "stem": "Which of the following is true in respect to the supinator muscle?",
+      "options": {
+        "a": "It is innervated by the ulnar nerve.",
+        "b": "It supinates the forearm by rotating the ulna.",
+        "c": "It forms the floor of the cubital fossa along with the brachioradialis.",
+        "d": "It arises from annular and lateral collateral ligament."
+      }
+    },
+    {
+      "number": 67,
+      "stem": "Concerning the brachial artery, select the correct statement:",
+      "options": {
+        "a": "Commences at the upper border of teres major.",
+        "b": "Is in direct contact with the humerus.",
+        "c": "Has median nerve lying medial to it in the cubital fossa.",
+        "d": "Is accompanied throughout its course by the basilic vein."
+      }
+    },
+    {
+      "number": 68,
+      "stem": "All of the following are branches of radial artery in the hand except:",
+      "options": {
+        "a": "Princips pollicis artery.",
+        "b": "Palmar digital branch to medial side of little finger.",
+        "c": "Radialis indicis artery.",
+        "d": "1st dorsal metacarpal artery."
+      }
+    },
+    {
+      "number": 69,
+      "stem": "The palmaris longus tendon is a useful guide to which nerve at the wrist?",
+      "options": {
+        "a": "Median nerve.",
+        "b": "Anterior interosseous nerve.",
+        "c": "Posterior interosseous nerve.",
+        "d": "Ulnar nerve."
+      }
+    },
+    {
+      "number": 70,
+      "stem": "Regarding the relations of the median nerve at the wrist, select the correct statement:",
+      "options": {
+        "a": "Lies superficial to the flexor retinaculum.",
+        "b": "Ten inches above the wrist, it becomes subcutaneous.",
+        "c": "It split the lateral part of the retinaculum to enter the hand.",
+        "d": "It passes in the carpal tunnel."
+      }
+    },
+    {
+      "number": 71,
+      "stem": "Ulnar nerve enter the hand between the two heads of the following muscles:",
+      "options": {
+        "a": "Flexor carpi ulnaris.",
+        "b": "Flexor carpi radialis.",
+        "c": "Pronator teres.",
+        "d": "Flexor digitorum superficialis."
+      }
+    },
+    {
+      "number": 72,
+      "stem": "Injury to the axillary nerve causes:",
+      "options": {
+        "a": "Wrist drop.",
+        "b": "Finger drop.",
+        "c": "Flat shoulder.",
+        "d": "Ape hand."
+      }
+    },
+    {
+      "number": 73,
+      "stem": "The musculocutaneous nerve passes through which muscle?",
+      "options": {
+        "a": "Coracobrachialis.",
+        "b": "Short head of biceps.",
+        "c": "Brachialis.",
+        "d": "Long head of biceps."
+      }
+    },
+    {
+      "number": 74,
+      "stem": "All the followings are among the structures deep to the radial artery in forearm except:",
+      "options": {
+        "a": "Pronator teres.",
+        "b": "Lower end of ulna.",
+        "c": "Biceps.",
+        "d": "Pronator quadratus."
+      }
+    },
+    {
+      "number": 75,
+      "stem": "One of the following arteries is not sharing in the formation of anterior carpal arch:",
+      "options": {
+        "a": "Anterior carpal artery.",
+        "b": "Descending anastomotic branch.",
+        "c": "Recurrent branch of deep palmar arch.",
+        "d": "Radial collateral."
+      }
+    },
+    {
+      "number": 76,
+      "stem": "A man was injured at the wrist and several weeks after the injury there is loss of thumb adduction. Which nerve is most likely injured?",
+      "options": {
+        "a": "Superficial branch of ulnar nerve.",
+        "b": "Deep branch of ulnar nerve.",
+        "c": "Median nerve.",
+        "d": "Radial nerve."
+      }
+    },
+    {
+      "number": 77,
+      "stem": "Concerning the biceps muscle, select the true statement:",
+      "options": {
+        "a": "Long head arises from infraglenoid tubercle.",
+        "b": "Is supplied by a branch of the medial cord of the brachial plexus.",
+        "c": "Is a pronator of the forearm",
+        "d": "Short head arises from coracoid process, lateral to coracobrachialis."
+      }
+    },
+    {
+      "number": 78,
+      "stem": "One of the followings is a branch of superficial palmar arch:",
+      "options": {
+        "a": "Descending anastomotic branch.",
+        "b": "Common palmar digital artery.",
+        "c": "2nd Dorsal metacarpal artery.",
+        "d": "Radialis indicis artery."
+      }
+    },
+    {
+      "number": 79,
+      "stem": "Which muscle initiates abduction of the shoulder?",
+      "options": {
+        "a": "Infraspinatus.",
+        "b": "Latissimus dorsi.",
+        "c": "Supraspinatus.",
+        "d": "Deltoid."
+      }
+    },
+    {
+      "number": 80,
+      "stem": "A 21 year old man is stabbed in the cubital fossa. At operation the surgeon dissects down onto the brachial artery. A nerve is identified medially, which nerve is it likely to be?",
+      "options": {
+        "a": "Radial.",
+        "b": "Anterior interosseous.",
+        "c": "Ulnar.",
+        "d": "Median."
+      }
+    },
+    {
+      "number": 81,
+      "stem": "A 53 year old lady when recovered following a surgical removing of the breast. On examination she has winging of the scapula. Which nerve is possibly injured?",
+      "options": {
+        "a": "Nerve to latissimus dorsi.",
+        "b": "Nerve to pectoralis major.",
+        "c": "Nerve to serratus anterior.",
+        "d": "Nerve to pectoralis minor."
+      }
+    },
+    {
+      "number": 82,
+      "stem": "One of the following nerves arises from posterior cord of brachial plexus:",
+      "options": {
+        "a": "Axillary nerve.",
+        "b": "Musculocutaneous nerve.",
+        "c": "Long thoracic nerve.",
+        "d": "Dorsal scapular nerve."
+      }
+    },
+    {
+      "number": 83,
+      "stem": "A patient with loss of sensation on the lateral 2/3 of the dorsum of the hand. This may be due to injury of the following nerve:",
+      "options": {
+        "a": "Median nerve.",
+        "b": "Superficial radial nerve.",
+        "c": "Ulnar nerve.",
+        "d": "Musculocutaneous nerve."
+      }
+    },
+    {
+      "number": 84,
+      "stem": "Which of the following is true regarding the quadrangular space?",
+      "options": {
+        "a": "Bounded superiorly by the teres major.",
+        "b": "Bounded inferiorly by the subscapularis and teres minor.",
+        "c": "Bounded medially by the humerus and laterally by the long head of the triceps.",
+        "d": "Contains the posterior circumflex humeral artery and the axillary nerve."
+      }
+    },
+    {
+      "number": 85,
+      "stem": "Which rotator cuff muscle does NOT rotate the humerus?",
+      "options": {
+        "a": "Supraspinatus.",
+        "b": "Infraspinatus.",
+        "c": "Teres minor.",
+        "d": "Subscapularis."
+      }
+    },
+    {
+      "number": 86,
+      "stem": "Which of the following nerves supply NO branches to the arm?",
+      "options": {
+        "a": "Musculocutaneous and median.",
+        "b": "Radial and ulnar.",
+        "c": "Median and ulnar.",
+        "d": "Median and radial."
+      }
+    },
+    {
+      "number": 87,
+      "stem": "The entire following arteries share in anastomosis around scapula except:",
+      "options": {
+        "a": "Deep branch of transverse cervical artery.",
+        "b": "Subscapular artery.",
+        "c": "Suprascapular artery.",
+        "d": "Lateral thoracic artery."
+      }
+    },
+    {
+      "number": 88,
+      "stem": "Which of the following is NOT a branch of the radial nerve?",
+      "options": {
+        "a": "posterior cutaneous nerve of the arm.",
+        "b": "posterior cutaneous nerve of the forearm.",
+        "c": "lower lateral cutaneous nerve of the arm.",
+        "d": "upper lateral cutaneous nerve of the arm."
+      }
+    },
+    {
+      "number": 89,
+      "stem": "What muscles are necessary to raise the arm above the shoulder?",
+      "options": {
+        "a": "First the supraspinatus, next the deltoid, and then the serratus anterior.",
+        "b": "First the deltoid, next the supraspinatus, and then the serratus anterior.",
+        "c": "First the supraspinatus, next the serratus anterior, and then the deltoid.",
+        "d": "First the serratus anterior, next the deltoid, and then the supraspinatus."
+      }
+    },
+    {
+      "number": 90,
+      "stem": "Which of the following is NOT contained in the axilla?",
+      "options": {
+        "a": "Axillary blood vessels.",
+        "b": "Lymph nodes.",
+        "c": "Trunks and divisions of brachial plexus.",
+        "d": "Axillary nerve."
+      }
+    },
+    {
+      "number": 91,
+      "stem": "Which of the following is true in respect to the elbow joint?",
+      "options": {
+        "a": "It is a plane type of synovial joint.",
+        "b": "It is strengthened by the radial and ulnar collateral ligaments.",
+        "c": "It is supplied by the cephalic and basilic arteries.",
+        "d": "It is innervated by the median and axillary nerves."
+      }
+    },
+    {
+      "number": 92,
+      "stem": "Regarding the hand, select the true statement:",
+      "options": {
+        "a": "Deep branch of ulnar nerve lies within the concavity of deep palmar arch.",
+        "b": "Deep palmar arch is level with the distal border of outstretched thumb web.",
+        "c": "Superficial branch of the ulnar nerve supplies the hypothenar muscles.",
+        "d": "flexor digitorum superficialis tendon inserts into the base of distal phalanx."
+      }
+    },
+    {
+      "number": 93,
+      "stem": "In the 4th compartment deep to extensor retinaculum one of the following structures is not passing:",
+      "options": {
+        "a": "Extensor digitorum.",
+        "b": "Anterior interosseous nerve.",
+        "c": "Anterior interosseous artery.",
+        "d": "Posterior interosseous nerve."
+      }
+    },
+    {
+      "number": 94,
+      "stem": "The deep branch of the ulnar does NOT innervate which of the following?",
+      "options": {
+        "a": "Abductor digiti minimi.",
+        "b": "Flexor digiti minimi brevis.",
+        "c": "Lumbricals 1 and 2.",
+        "d": "Dorsal interossei 3 and 4."
+      }
+    },
+    {
+      "number": 95,
+      "stem": "Which of the following is true in respect to the anatomical snuff box?",
+      "options": {
+        "a": "It is bounded anteriorly by the tendons of the extensor pollicis longus.",
+        "b": "It is bounded posteriorly by the tendons of the abductor pollicis longus and extensor pollicis brevis.",
+        "c": "The radial artery lies on the floor of the snuff box.",
+        "d": "The snuff box is visible when the thumb is fully flexed."
+      }
+    },
+    {
+      "number": 96,
+      "stem": "Which of the following flexes the arm at the glenohumeral joint?",
+      "options": {
+        "a": "Pectoralis major.",
+        "b": "Latissimus dorsi.",
+        "c": "Subscapularis.",
+        "d": "Infraspinatus."
+      }
+    },
+    {
+      "number": 97,
+      "stem": "Which of the following does NOT take an origin from the lateral epicondyle of the humerus?",
+      "options": {
+        "a": "Extensor carpi radialis brevis.",
+        "b": "Extensor carpi ulnaris.",
+        "c": "Abductor pollicis longus.",
+        "d": "Extensor digiti minimi."
+      }
+    },
+    {
+      "number": 98,
+      "stem": "Which of the following does NOT abduct the hand at the wrist joint?",
+      "options": {
+        "a": "Palmaris longus.",
+        "b": "Flexor carpi radialis.",
+        "c": "Extensor carpi radialis brevis.",
+        "d": "Abductor pollicis longus."
+      }
+    },
+    {
+      "number": 99,
+      "stem": "The extensor expansion of the fingers is formed by the tendon of the:",
+      "options": {
+        "a": "Extensor carpi radialis longus.",
+        "b": "Extensor digitorum.",
+        "c": "Extensor pollicis longus.",
+        "d": "Extensor pollicis brevis."
+      }
+    },
+    {
+      "number": 100,
+      "stem": "One of the following is not a ligament of the wrist joint:",
+      "options": {
+        "a": "Medial collateral ligament.",
+        "b": "lateral collateral ligament.",
+        "c": "Palmar radiocarpal ligament.",
+        "d": "annular ligament."
+      }
+    },
+    {
+      "number": 101,
+      "stem": "In Erb's paralysis, the deformity is called:",
+      "options": {
+        "a": "Claw hand.",
+        "b": "Ape hand.",
+        "c": "Policeman's tip position.",
+        "d": "Wrist drop."
+      }
+    },
+    {
+      "number": 102,
+      "stem": "In the cubital fossa, select the true statement:",
+      "options": {
+        "a": "The floor is formed only by the supinator.",
+        "b": "The medial boundary is formed by pronator teres.",
+        "c": "The ulnar nerve lies lateral to the brachial artery.",
+        "d": "The radial nerve lies medial to the biceps tendon."
+      }
+    },
+    {
+      "number": 103,
+      "stem": "The deltopectoral groove contains:",
+      "options": {
+        "a": "Deltoid branch of lateral thoracic artery.",
+        "b": "Cephalic vein.",
+        "c": "Apical group of axillary lymph nodes.",
+        "d": "Superior thoracic artery."
+      }
+    },
+    {
+      "number": 104,
+      "stem": "The bicipital groove of the humerus lodges (contains) the:",
+      "options": {
+        "a": "Long head of the biceps.",
+        "b": "Long head of the triceps.",
+        "c": "Axillary artery.",
+        "d": "Coracobrachialis."
+      }
+    },
+    {
+      "number": 105,
+      "stem": "The anterior wall of the axilla is formed by all of the following except:",
+      "options": {
+        "a": "Pectoralis major.",
+        "b": "Teres major.",
+        "c": "Pectoralis minor.",
+        "d": "Clavipectoral fascia."
+      }
+    },
+    {
+      "number": 106,
+      "stem": "The suprascapular nerve is a branch from the:",
+      "options": {
+        "a": "Roots of the brachial plexus,",
+        "b": "Middle trunk.",
+        "c": "Posterior cord.",
+        "d": "Upper trunk."
+      }
+    },
+    {
+      "number": 107,
+      "stem": "The root value of the long thoracic nerve is:",
+      "options": {
+        "a": "C5.",
+        "b": "C7.",
+        "c": "C5, 6 & 7.",
+        "d": "C5, 6, 7 & 8."
+      }
+    },
+    {
+      "number": 108,
+      "stem": "The trapezius muscle is supplied by the:",
+      "options": {
+        "a": "Cranial accessory nerve.",
+        "b": "Spinal accessory nerve.",
+        "c": "Dorsal scapular nerve.",
+        "d": "Thoracodorsal nerve."
+      }
+    },
+    {
+      "number": 109,
+      "stem": "Muscles that rotate the scapula downward are attached to:",
+      "options": {
+        "a": "Dorsal aspect of medial border of the scapula.",
+        "b": "Ventral aspect of medial border of the scapula.",
+        "c": "Upper lip of the crest of spine.",
+        "d": "Lower lip of the crest of spine."
+      }
+    },
+    {
+      "number": 110,
+      "stem": "Anastomosis around the scapula connects the subclavian artery with the:",
+      "options": {
+        "a": "First part of axillary artery.",
+        "b": "Third part of axillary artery.",
+        "c": "Second part of axillary artery.",
+        "d": "Brachial artery."
+      }
+    },
+    {
+      "number": 111,
+      "stem": "The brachioradialis muscle, select the true statement:",
+      "options": {
+        "a": "Is an extensor of the elbow joint.",
+        "b": "Present on the medial side of the forearm.",
+        "c": "Is supplied by posterior interosseous nerve.",
+        "d": "Put the forearm in mid-pron position."
+      }
+    },
+    {
+      "number": 112,
+      "stem": "Triangle of auscultation is associated with all of the following except:",
+      "options": {
+        "a": "Latissimus dorsi.",
+        "b": "Trapezius.",
+        "c": "Teres major.",
+        "d": "Medial border of the scapula."
+      }
+    },
+    {
+      "number": 113,
+      "stem": "Pronation and supination of the forearm occurs at:",
+      "options": {
+        "a": "Elbow joint.",
+        "b": "Superior and inferior radio-ulnar joints.",
+        "c": "Shoulder joint.",
+        "d": "Radio-carpal joint."
+      }
+    },
+    {
+      "number": 114,
+      "stem": "A patient complaining of inability to flex the distal interphalangeal joints. Which of the following muscles appear to be paralyzed?",
+      "options": {
+        "a": "Palmar interossei.",
+        "b": "Flexor digitorum superficialis.",
+        "c": "Flexor digitorum profundus.",
+        "d": "Lumbricals."
+      }
+    },
+    {
+      "number": 115,
+      "stem": "A 14-year-old boy falls on his outstretched hand and has a fracture of the scaphoid bone. The fracture is most likely accompanied by a rupture of which of the following arteries?",
+      "options": {
+        "a": "Ulnar artery.",
+        "b": "Deep palmar arterial arch.",
+        "c": "Radial artery.",
+        "d": "Princeps pollicis artery."
+      }
+    },
+    {
+      "number": 116,
+      "stem": "One of the following actions is done by the latissimus dorsi muscle:",
+      "options": {
+        "a": "Flexes the arm.",
+        "b": "Abducts the arm.",
+        "c": "Laterally rotates the arm.",
+        "d": "Extend the arm."
+      }
+    },
+    {
+      "number": 117,
+      "stem": "One of the following nerves is not directly related to bone:",
+      "options": {
+        "a": "Radial.",
+        "b": "Median.",
+        "c": "Ulnar.",
+        "d": "Axillary."
+      }
+    },
+    {
+      "number": 118,
+      "stem": "Nerve that give sensory supply to medial 1/3 of the dorsum of hand is:",
+      "options": {
+        "a": "Median nerve.",
+        "b": "Ulnar nerve.",
+        "c": "Radial nerve.",
+        "d": "Musculocutaneous nerve."
+      }
+    },
+    {
+      "number": 119,
+      "stem": "Which of the following muscles does NOT extend the wrist?",
+      "options": {
+        "a": "Brachioradialis",
+        "b": "Extensor carpi radialis longus.",
+        "c": "Extensor carpi ulnaris.",
+        "d": "Extensor digitorum."
+      }
+    },
+    {
+      "number": 120,
+      "stem": "A man is unable to hold typing paper between his index and middle fingers. Which of the following nerves was likely injured?",
+      "options": {
+        "a": "Radial nerve.",
+        "b": "Median nerve.",
+        "c": "Musculocutaneous nerve.",
+        "d": "Ulnar nerve."
+      }
+    }
+  ],
+  "196": [
+    {
+      "number": 1,
+      "stem": "The following cell stained metachromatically with toluidine blue is:",
+      "options": {
+        "a": "Plasma cell.",
+        "b": "Macrophage.",
+        "c": "Mast cell.",
+        "d": "Pericyte."
+      }
+    },
+    {
+      "number": 2,
+      "stem": "Cell membrane can be stained by the following histochemical stain:",
+      "options": {
+        "a": "Sudan III.",
+        "b": "Trypan blue.",
+        "c": "Brilliant cresyl blue.",
+        "d": "Periodic acid Schiff reaction (PAS)."
+      }
+    },
+    {
+      "number": 3,
+      "stem": "Ribophorins are:",
+      "options": {
+        "a": "Inactive chromatin.",
+        "b": "Active chromatin.",
+        "c": "Receptors for ribosomal attachment on rER.",
+        "d": "Polyribosomes linked by mRNA."
+      }
+    },
+    {
+      "number": 4,
+      "stem": "Fat cells can be stained with:",
+      "options": {
+        "a": "Orcein.",
+        "b": "PAS.",
+        "c": "Sudan III.",
+        "d": "Iron hematoxylin."
+      }
+    },
+    {
+      "number": 5,
+      "stem": "Protein on cytoplasmic side is involved in receptor mediated endocytosis:",
+      "options": {
+        "a": "Tubulin.",
+        "b": "Clathrin.",
+        "c": "Lamin.",
+        "d": "Spectrin."
+      }
+    },
+    {
+      "number": 6,
+      "stem": "The true statement about mitochondria is:",
+      "options": {
+        "a": "Self-replicating organelle.",
+        "b": "Outer membrane forms cristae.",
+        "c": "Non membranous organelle.",
+        "d": "Inner membrane is smooth."
+      }
+    },
+    {
+      "number": 7,
+      "stem": "Enzymes of peroxisomes arise from:",
+      "options": {
+        "a": "sER.",
+        "b": "Free ribosomes.",
+        "c": "rER.",
+        "d": "Both b&c"
+      }
+    },
+    {
+      "number": 8,
+      "stem": "Intermediate filaments:",
+      "options": {
+        "a": "Form lamins.",
+        "b": "Form core of Microvilli.",
+        "c": "Form mitotic spindle during cell division.",
+        "d": "Are formed of actin filaments."
+      }
+    },
+    {
+      "number": 9,
+      "stem": "Pars fibrosa is:",
+      "options": {
+        "a": "Attached to outer nuclear membrane.",
+        "b": "Mature rRNA.",
+        "c": "Attached to inner nuclear membrane.",
+        "d": "Is newly formed rRNA."
+      }
+    },
+    {
+      "number": 10,
+      "stem": "Actin filaments share in the formation of:",
+      "options": {
+        "a": "Cilia.",
+        "b": "Flagella.",
+        "c": "Stereocilia.",
+        "d": "Centrioles."
+      }
+    },
+    {
+      "number": 11,
+      "stem": "Lysosomes are:",
+      "options": {
+        "a": "Formed by rER & Golgi apparatus.",
+        "b": "Non-membranous organelles.",
+        "c": "Demonstrated by H&E.",
+        "d": "Are few in phagocytic cells."
+      }
+    },
+    {
+      "number": 12,
+      "stem": "Detoxification of drug needs mainly numerous:",
+      "options": {
+        "a": "sER.",
+        "b": "Ribosomes.",
+        "c": "rER.",
+        "d": "Both b & c."
+      }
+    },
+    {
+      "number": 13,
+      "stem": "Euchromatin is:",
+      "options": {
+        "a": "Inactive chromatin.",
+        "b": "Deeply acidophilic.",
+        "c": "Electron lucent by EM.",
+        "d": "Predominant in nuclei of small lymphocytes."
+      }
+    },
+    {
+      "number": 14,
+      "stem": "Best’s carmine is used to demonstrate:",
+      "options": {
+        "a": "Mitochondria.",
+        "b": "Golgi complex.",
+        "c": "Fat.",
+        "d": "Glycogen."
+      }
+    },
+    {
+      "number": 15,
+      "stem": "Multivesicular bodies:",
+      "options": {
+        "a": "Are formed by fusion of primary lysosome with old organelles.",
+        "b": "Are a type of primary lysosomes.",
+        "c": "Appear homogenous by EM.",
+        "d": "Are formed by fusion of primary lysosome with pinocytic vesicle."
+      }
+    },
+    {
+      "number": 16,
+      "stem": "The shaft of cilium contains ______ microtubules:",
+      "options": {
+        "a": "27",
+        "b": "20",
+        "c": "18",
+        "d": "9"
+      }
+    },
+    {
+      "number": 17,
+      "stem": "The centrioles can be stained with:",
+      "options": {
+        "a": "Silver (Ag).",
+        "b": "PAS.",
+        "c": "Iron hematoxylin.",
+        "d": "Indian ink."
+      }
+    },
+    {
+      "number": 18,
+      "stem": "The C.T. cell that gives rise to fibroblast is:",
+      "options": {
+        "a": "Pericyte.",
+        "b": "Mast cell.",
+        "c": "Fat cell.",
+        "d": "Reticular cell."
+      }
+    },
+    {
+      "number": 19,
+      "stem": "Thermogenesis is a function of:",
+      "options": {
+        "a": "Fibrocyte.",
+        "b": "Histiocyte.",
+        "c": "Multilocular fat cell.",
+        "d": "Plasma cell."
+      }
+    },
+    {
+      "number": 20,
+      "stem": "One of the following C.T. cells is an antigen presenting cell:",
+      "options": {
+        "a": "Fibroblast.",
+        "b": "Reticular cell.",
+        "c": "Adipose cell.",
+        "d": "Fibrocyte."
+      }
+    },
+    {
+      "number": 21,
+      "stem": "The plasma cell is characterized by:",
+      "options": {
+        "a": "Surface IgE receptors.",
+        "b": "Eccentric clock face nucleus.",
+        "c": "Deep acidophilic cytoplasm.",
+        "d": "Rich in sER & lysosomes."
+      }
+    },
+    {
+      "number": 22,
+      "stem": "Vital stain is used to demonstrate:",
+      "options": {
+        "a": "Pericyte.",
+        "b": "Fibroblast.",
+        "c": "Multilocular fat cell.",
+        "d": "Histiocyte."
+      }
+    },
+    {
+      "number": 23,
+      "stem": "The C.T. fibers stained brown with orcein are ______ fibers:",
+      "options": {
+        "a": "Reticular.",
+        "b": "Elastic.",
+        "c": "Collagen.",
+        "d": "b&c"
+      }
+    },
+    {
+      "number": 24,
+      "stem": "The mucoid C.T. is characterized by:",
+      "options": {
+        "a": "Jelly-like excess ground substance.",
+        "b": "Fat cells predominate.",
+        "c": "High vascularity.",
+        "d": "Predominating collagen fibers."
+      }
+    },
+    {
+      "number": 25,
+      "stem": "The type of C.T. in tendons is ______ C.T.:",
+      "options": {
+        "a": "White fibrous.",
+        "b": "Elastic.",
+        "c": "Mucoid.",
+        "d": "Adipose."
+      }
+    },
+    {
+      "number": 26,
+      "stem": "The most common type of C.T. in the adult body is ______ C.T.:",
+      "options": {
+        "a": "Brown adipose.",
+        "b": "Reticular.",
+        "c": "Mucoid.",
+        "d": "Loose areolar."
+      }
+    },
+    {
+      "number": 27,
+      "stem": "Regarding the endothelium, it is:",
+      "options": {
+        "a": "Lining the blood vessels and heart.",
+        "b": "Formed of columnar cells,",
+        "c": "Covered by cilia.",
+        "d": "A type of stratified epithelium."
+      }
+    },
+    {
+      "number": 28,
+      "stem": "Follicles of thyroid gland are lined by ______ epithelium.",
+      "options": {
+        "a": "Simple columnar ciliated.",
+        "b": "Simple squamous.",
+        "c": "Simple cubical.",
+        "d": "Simple columnar non-ciliated."
+      }
+    },
+    {
+      "number": 29,
+      "stem": "Concerning pseudostratified columnar epithelium:",
+      "options": {
+        "a": "A type of stratified epithelium.",
+        "b": "All cells reach the surface.",
+        "c": "Cells are widely separated.",
+        "d": "All cells rest on basement membrane."
+      }
+    },
+    {
+      "number": 30,
+      "stem": "Simple columnar ciliated epithelium is lining:",
+      "options": {
+        "a": "Trachea.",
+        "b": "Fallopian tube.",
+        "c": "Vas deferens.",
+        "d": "Vagina."
+      }
+    },
+    {
+      "number": 31,
+      "stem": "Transitional epithelium is characterized by:",
+      "options": {
+        "a": "Formed of 5-30 layers.",
+        "b": "Basement membrane is clear and wavy.",
+        "c": "Intermediate cells are joined by only desmosomes.",
+        "d": "Superficial layer of cells covered by rigid plaques."
+      }
+    },
+    {
+      "number": 32,
+      "stem": "Regarding holocrine mode of glandular secretion:",
+      "options": {
+        "a": "It is exocytosis.",
+        "b": "Apex of the cell comes out with secretion.",
+        "c": "The whole cell is lost with secretion.",
+        "d": "No change in secretory cells."
+      }
+    },
+    {
+      "number": 33,
+      "stem": "Concerning Zonula occludens (occluding junction):",
+      "options": {
+        "a": "It is a type of apical epithelial specializations.",
+        "b": "Two adjacent cell membranes fuse at certain points.",
+        "c": "The adjacent cell membranes are widely separated.",
+        "d": "It occurs as scattered spots."
+      }
+    },
+    {
+      "number": 34,
+      "stem": "Which is true for basement membrane?",
+      "options": {
+        "a": "It represents half a desmosome.",
+        "b": "The basal lamina contains type III collagen.",
+        "c": "The reticular lamina is the epithelial component.",
+        "d": "Anchoring fibrils are collagen VII."
+      }
+    },
+    {
+      "number": 35,
+      "stem": "Large cell with single multilobed dark nucleus & basophilic cytoplasm is:",
+      "options": {
+        "a": "Lymphocyte.",
+        "b": "Megakaryocyte.",
+        "c": "Monocyte.",
+        "d": "Eosinophil."
+      }
+    },
+    {
+      "number": 36,
+      "stem": "By E.M. RBCs are characterized by:",
+      "options": {
+        "a": "Nucleated biconcave discs.",
+        "b": "Rich in ribosomes.",
+        "c": "Having many mitochondria.",
+        "d": "Electron-dense homogenous hemoglobin."
+      }
+    },
+    {
+      "number": 37,
+      "stem": "Horse shoe nucleus is a feature of:",
+      "options": {
+        "a": "Monocyte.",
+        "b": "Neutrophil.",
+        "c": "Eosinophil.",
+        "d": "Basophil."
+      }
+    },
+    {
+      "number": 38,
+      "stem": "Which of the following is a non-granular leucocyte:",
+      "options": {
+        "a": "Lymphocyte.",
+        "b": "Basophil.",
+        "c": "Neutrophil.",
+        "d": "Eosinophil."
+      }
+    },
+    {
+      "number": 39,
+      "stem": "Neutrophils are characterized by:",
+      "options": {
+        "a": "Secrete bactericidal phagocytin.",
+        "b": "Have non segmented nuclei.",
+        "c": "Decrease in number during treatment with cortisone.",
+        "d": "They have azurophil granules only."
+      }
+    },
+    {
+      "number": 40,
+      "stem": "The white blood cells with histamine & heparin containing granules are:",
+      "options": {
+        "a": "Neutrophils.",
+        "b": "Lymphocytes.",
+        "c": "Eosinophils.",
+        "d": "Basophils."
+      }
+    },
+    {
+      "number": 41,
+      "stem": "Granulomere of blood platelets contains:",
+      "options": {
+        "a": "Lambda granules.",
+        "b": "Microtubules.",
+        "c": "Actin microfilaments.",
+        "d": "Membranous channels."
+      }
+    },
+    {
+      "number": 42,
+      "stem": "Regarding T-lymphocytes, the CD8 T-cells are ______ T-cells:",
+      "options": {
+        "a": "Helper.",
+        "b": "Memory.",
+        "c": "Cytotoxic.",
+        "d": "Regulatory."
+      }
+    },
+    {
+      "number": 43,
+      "stem": "The ______ can be stained by brilliant cresyl blue stain:",
+      "options": {
+        "a": "Monocyte.",
+        "b": "Neutrophil.",
+        "c": "Reticulocytes.",
+        "d": "Basophil."
+      }
+    },
+    {
+      "number": 44,
+      "stem": "The normal shape of RBCs is kept by:",
+      "options": {
+        "a": "Glycocalyx.",
+        "b": "Actin and spectrin.",
+        "c": "Lipoproteins of plasmalemma.",
+        "d": "Haemoglobin S."
+      }
+    },
+    {
+      "number": 45,
+      "stem": "One of the following joints is gomphosis:",
+      "options": {
+        "a": "Tooth in a mandible.",
+        "b": "Joint between skull bones.",
+        "c": "Sternoclavicular joint.",
+        "d": "Superior radio-ulnar joint."
+      }
+    },
+    {
+      "number": 46,
+      "stem": "One of the following is not a function of pneumatic bone:",
+      "options": {
+        "a": "Warming of inspired air.",
+        "b": "Withstand forces and stresses.",
+        "c": "Resonance of voice.",
+        "d": "Lighting the weight of skull."
+      }
+    },
+    {
+      "number": 47,
+      "stem": "Regarding characters of the synovial joint, one is wrong:",
+      "options": {
+        "a": "It has a joint cavity.",
+        "b": "It has a fibrous capsule.",
+        "c": "The articular surfaces of the bones are covered by yellow elastic cartilage.",
+        "d": "It has supportive ligaments."
+      }
+    },
+    {
+      "number": 48,
+      "stem": "An example of synovial biaxial ellipsoid joint is:",
+      "options": {
+        "a": "Elbow.",
+        "b": "Wrist.",
+        "c": "Superior radio-ulnar joint.",
+        "d": "Inferior tibio-fibular joint."
+      }
+    },
+    {
+      "number": 49,
+      "stem": "The muscle, which initiate a certain movement, is called:",
+      "options": {
+        "a": "Synergist.",
+        "b": "Prime mover (agonist).",
+        "c": "Antagonist.",
+        "d": "fixator."
+      }
+    },
+    {
+      "number": 50,
+      "stem": "Concerning the superficial fascia, select the correct statement:",
+      "options": {
+        "a": "It contains fat.",
+        "b": "It forms retinacula.",
+        "c": "It forms intermuscular septa.",
+        "d": "It forms sheath around blood vessels."
+      }
+    },
+    {
+      "number": 51,
+      "stem": "Fertilization occurs in the following site of the Fallopian tube:",
+      "options": {
+        "a": "Intramural part.",
+        "b": "Isthmus.",
+        "c": "Lateral 1/3.",
+        "d": "Infundibulum."
+      }
+    },
+    {
+      "number": 52,
+      "stem": "The common site of implantation in the uterus is at:",
+      "options": {
+        "a": "Anterior wall of the fundus.",
+        "b": "Posterior wall of the fundus.",
+        "c": "Anterior wall Of the cervix.",
+        "d": "Posterior wall of the lower part of body."
+      }
+    },
+    {
+      "number": 53,
+      "stem": "One of the following statements is wrong, during the second week of pregnancy:",
+      "options": {
+        "a": "Blastocyst completes its implantation.",
+        "b": "Trophoblast differentiates into 2 layers.",
+        "c": "Inner cell mass becomes a trilaminar disc.",
+        "d": "Amniotic cavity is formed."
+      }
+    },
+    {
+      "number": 54,
+      "stem": "Concerning the folding of the embryonic disc, select the correct answer:",
+      "options": {
+        "a": "It is caused by expansion of the yolk sac cavity.",
+        "b": "It is of two types only head and tail folds.",
+        "c": "It begins early at the second week.",
+        "d": "It is limited by notochord."
+      }
+    },
+    {
+      "number": 55,
+      "stem": "Concerning the blastocyst, select the false answer:",
+      "options": {
+        "a": "Its cavity is called the blastocele.",
+        "b": "Its wall is formed by outer cell mass.",
+        "c": "Its inner cell mass is located at its ab-embryonic pole.",
+        "d": "Normally implants in the posterior wall of the fundus of the uterus."
+      }
+    },
+    {
+      "number": 56,
+      "stem": "Regarding the umbilical cord at birth, select the incorrect statement:",
+      "options": {
+        "a": "About 50-60 cm in length.",
+        "b": "Contains 2 veins and 2 arteries.",
+        "c": "Is attached to the fetal surface of the placenta.",
+        "d": "Short cord may lead to premature separation of the placenta."
+      }
+    },
+    {
+      "number": 57,
+      "stem": "One of the followings is not true, regarding the placenta:",
+      "options": {
+        "a": "Its fetal part develops from chorion frondosum.",
+        "b": "Its maternal part develops from decidua capsularis.",
+        "c": "There is a barrier between fetal and maternal blood.",
+        "d": "Has many hormonal functions."
+      }
+    },
+    {
+      "number": 58,
+      "stem": "Chorionic villi are considered as secondary chorionic villi when they:",
+      "options": {
+        "a": "Contact the decidua basalis",
+        "b": "Are covered by syncytiotrophoblast",
+        "c": "Develop a mesenchymal core",
+        "d": "Give rise to branch villi"
+      }
+    },
+    {
+      "number": 59,
+      "stem": "One of the followings is not among the anomalies of placenta:",
+      "options": {
+        "a": "Velamentous placenta.",
+        "b": "Placenta accrete.",
+        "c": "Bipartate placenta.",
+        "d": "Polyhydramnios."
+      }
+    },
+    {
+      "number": 60,
+      "stem": "The deltopectoral groove contains:",
+      "options": {
+        "a": "Deltoid branch of the lateral thoracic artery.",
+        "b": "Cephalic vein.",
+        "c": "Apical group of axillary lymph nodes.",
+        "d": "Subscapular artery."
+      }
+    },
+    {
+      "number": 61,
+      "stem": "The female breast, select the true statement:",
+      "options": {
+        "a": "Has a nipple that is usually located opposite the 6th intercostals space.",
+        "b": "Has Cooper's ligament that suspends the breast.",
+        "c": "Has a bed formed only by the serratus anterior muscle.",
+        "d": "Its lymphatics drain mainly in the parasternal lymph nodes."
+      }
+    },
+    {
+      "number": 62,
+      "stem": "In Erb's paralysis, the deformity is called:",
+      "options": {
+        "a": "Claw hand.",
+        "b": "Ape hand.",
+        "c": "Wrist drop.",
+        "d": "Policeman's tip position."
+      }
+    },
+    {
+      "number": 63,
+      "stem": "The thoracoacromial artery is a branch of the:",
+      "options": {
+        "a": "Subclavian artery.",
+        "b": "First part of the axillary artery.",
+        "c": "Second part of the axillary artery.",
+        "d": "Third part of the axillary artery."
+      }
+    },
+    {
+      "number": 64,
+      "stem": "The suprascapular nerve is a branch from the:",
+      "options": {
+        "a": "Roots of the brachial plexus.",
+        "b": "Upper trunk.",
+        "c": "Middle trunk.",
+        "d": "Posterior cord."
+      }
+    },
+    {
+      "number": 65,
+      "stem": "Muscles that rotate the scapula downward are attached to:",
+      "options": {
+        "a": "Dorsal aspect of the medial border of the scapula.",
+        "b": "Ventral aspect of the medial border of the scapula.",
+        "c": "Tip of the coracoid process of the scapula.",
+        "d": "Supraglenoid tubercle of the scapula."
+      }
+    },
+    {
+      "number": 66,
+      "stem": "Structure crossing superficial to the flexor retinaculum:",
+      "options": {
+        "a": "Median nerve.",
+        "b": "Ulnar nerve.",
+        "c": "Flexor digitorum superficialis.",
+        "d": "Flexor pollicis longus."
+      }
+    },
+    {
+      "number": 67,
+      "stem": "Branches of the radial artery at the wrist include:",
+      "options": {
+        "a": "1st dorsal metacarpal artery.",
+        "b": "Anterior interosseous artery.",
+        "c": "3rd common palmar digital artery.",
+        "d": "2nd proper digital artery."
+      }
+    },
+    {
+      "number": 68,
+      "stem": "One of the following muscles is not innervated by median nerve or its branches:",
+      "options": {
+        "a": "Pronator teres.",
+        "b": "Flexor pollicis longus.",
+        "c": "Opponens pollicis.",
+        "d": "Adductor pollicis."
+      }
+    },
+    {
+      "number": 69,
+      "stem": "The Muscle takes origin from the radius is:",
+      "options": {
+        "a": "Biceps.",
+        "b": "Supinator.",
+        "c": "Pronator quadratus.",
+        "d": "Flexor pollicis longus."
+      }
+    },
+    {
+      "number": 70,
+      "stem": "As a result of injury of the ulnar nerve at the wrist:",
+      "options": {
+        "a": "Marked wasting (atrophy) of thenar eminence.",
+        "b": "Thumb cannot be adducted.",
+        "c": "Thumb cannot be abducted.",
+        "d": "Loss of sensation over the thumb."
+      }
+    },
+    {
+      "number": 71,
+      "stem": "The quadrangular space is bounded by all of the following except:",
+      "options": {
+        "a": "Teres minor.",
+        "b": "Teres major.",
+        "c": "Long head of biceps.",
+        "d": "Surgical neck of the humerus."
+      }
+    },
+    {
+      "number": 72,
+      "stem": "Regarding the biceps brachii, one is false:",
+      "options": {
+        "a": "Has long head attached to the supraglenoid tubercle.",
+        "b": "Has short head attached to the tip of the coracoid process.",
+        "c": "It flexes the elbow joint.",
+        "d": "It is powerful pronator of extended elbow."
+      }
+    },
+    {
+      "number": 73,
+      "stem": "The brachial artery, select the true answer:",
+      "options": {
+        "a": "In the cubital fossa, it lies medial to the biceps tendon.",
+        "b": "Bifurcates opposite the neck of the humerus.",
+        "c": "Is deep throughout its entire course.",
+        "d": "The median nerve crosses in front of the artery from the medial to the lateral side."
+      }
+    },
+    {
+      "number": 74,
+      "stem": "The lateral cutaneous nerve of the forearm is derived from the:",
+      "options": {
+        "a": "Radial nerve.",
+        "b": "Axillary nerve.",
+        "c": "Musculocutaneous nerve.",
+        "d": "Median nerve"
+      }
+    },
+    {
+      "number": 75,
+      "stem": "One of the followings is not a content of the cubital fossa:",
+      "options": {
+        "a": "Brachial artery.",
+        "b": "Radial artery.",
+        "c": "Ulnar nerve.",
+        "d": "Median nerve."
+      }
+    },
+    {
+      "number": 76,
+      "stem": "The lesser tuberosity of the humerus gives attachment to the following muscle:",
+      "options": {
+        "a": "Supraspinatus.",
+        "b": "Infraspinatus.",
+        "c": "Teres major.",
+        "d": "Subscapularis."
+      }
+    },
+    {
+      "number": 77,
+      "stem": "Regarding the ulnar nerve, select the false answer:",
+      "options": {
+        "a": "Has no branches in the arm.",
+        "b": "Carries fibers from C6, C7 and C8.",
+        "c": "It enters the hand superficial to the flexor retinaculum.",
+        "d": "Injury of the nerve causes partial claw hand."
+      }
+    },
+    {
+      "number": 78,
+      "stem": "Concerning the median nerve, one of the following is not correct:",
+      "options": {
+        "a": "Arises from both the medial and lateral cords of the brachial plexus.",
+        "b": "It crosses the brachial artery at the insertion of the coracobrachialis.",
+        "c": "In the cubital fossa, it lies lateral to the brachial artery.",
+        "d": "It enters the hand in the carpal tunnel."
+      }
+    },
+    {
+      "number": 79,
+      "stem": "Anastomosis around the scapula connects the subclavian artery with the:",
+      "options": {
+        "a": "First part of the axillary artery.",
+        "b": "Second part of the axillary artery.",
+        "c": "Brachial artery.",
+        "d": "Third part of the axillary artery."
+      }
+    },
+    {
+      "number": 80,
+      "stem": "Partial claw hand deformity results from injury of which one of the following nerves?",
+      "options": {
+        "a": "Axillary nerve.",
+        "b": "Median nerve.",
+        "c": "Ulnar nerve.",
+        "d": "Radial nerve."
+      }
+    },
+    {
+      "number": 81,
+      "stem": "Which one of the following muscles can extend the arm?",
+      "options": {
+        "a": "Latissimus dorsi.",
+        "b": "Clavicular fibers of pectoralis major.",
+        "c": "Anterior fibers of deltoid.",
+        "d": "Coracobrachialis."
+      }
+    },
+    {
+      "number": 82,
+      "stem": "Regarding the cutaneous supply of the upper limb, select the incorrect statement:",
+      "options": {
+        "a": "The skin of the medial side of the forearm is supplied by a branch from the medial cord of the brachial plexus",
+        "b": "The skin of the lateral side of the arm is supplied by branches from the lateral cord of the brachial plexus.",
+        "c": "The skin of the dorsum of hand is supplied by branches of radial, median and ulnar nerves.",
+        "d": "The skin of the dorsal surface of medial 1½ fingers is supplied by branches of ulnar nerve."
+      }
+    },
+    {
+      "number": 83,
+      "stem": "One of the following muscles cannot Perform flexion of the wrist:",
+      "options": {
+        "a": "Pronator quadratus.",
+        "b": "Flexor pollicis longus.",
+        "c": "Flexor digitorum profundus.",
+        "d": "Flexor carpi ulnaris."
+      }
+    },
+    {
+      "number": 84,
+      "stem": "Concerning the relations of the ulnar artery at the wrist, one is true:",
+      "options": {
+        "a": "Lies medial to the pisiform bone.",
+        "b": "Lies medial to the ulnar nerve.",
+        "c": "Lies anterior to the flexor retinaculum.",
+        "d": "It gives posterior interosseous recurrent artery."
+      }
+    },
+    {
+      "number": 85,
+      "stem": "The clavipectoral fascia is pierced by, mark the appropriate:",
+      "options": {
+        "a": "Lateral pectoral nerve.",
+        "b": "Medial pectoral nerve.",
+        "c": "Upper subscapular nerve.",
+        "d": "Lateral thoracic artery."
+      }
+    },
+    {
+      "number": 86,
+      "stem": "Regarding shoulder joint, select the false statement:",
+      "options": {
+        "a": "Its capsule is posteriorly connected to the subscapular bursa.",
+        "b": "Supraspinatus and deltoid muscles produce abduction of the joint.",
+        "c": "Tendon of long head of biceps is intracapsular extrasynovial.",
+        "d": "It is most commonly dislocated inferiorly."
+      }
+    },
+    {
+      "number": 87,
+      "stem": "The following muscle is NOT supplied by the deep branch of the ulnar nerve:",
+      "options": {
+        "a": "Abductor digiti minimi.",
+        "b": "Flexor digiti minimi.",
+        "c": "Flexor carpi ulnaris.",
+        "d": "Adductor pollicis."
+      }
+    },
+    {
+      "number": 88,
+      "stem": "The flexor digitorum profundus, mark the wrong statement:",
+      "options": {
+        "a": "Receives double nerve supply.",
+        "b": "Inserted into the front of distal phalanx.",
+        "c": "Flexes the medial four fingers.",
+        "d": "Arises from radius, ulna and interosseous membrane."
+      }
+    },
+    {
+      "number": 89,
+      "stem": "The posterior aspect of the interosseous membrane gives attachment to, mark the suitable answer:",
+      "options": {
+        "a": "Flexor pollicis longus and flexor digitorum profundus.",
+        "b": "Extensor indicis.",
+        "c": "Pronator quadratus.",
+        "d": "Pronator teres"
+      }
+    },
+    {
+      "number": 90,
+      "stem": "The palmar thenar space contains, mark the wrong answer:",
+      "options": {
+        "a": "Flexor pollicis longus tendon.",
+        "b": "Flexor tendons of the index.",
+        "c": "The 1st lumbrical muscle.",
+        "d": "Flexor carpi radialis tendon."
+      }
+    },
+    {
+      "number": 91,
+      "stem": "The serratus anterior muscle, mark the wrong answer:",
+      "options": {
+        "a": "Arises by eight digitations from the upper eight ribs.",
+        "b": "Is innervated by long thoracic nerve.",
+        "c": "Is a powerful retractor of shoulder.",
+        "d": "Fixes the scapula to the chest wall during mobility of the upper limb."
+      }
+    },
+    {
+      "number": 92,
+      "stem": "Wrist drop deformity results from injury of which one of the following nerves?",
+      "options": {
+        "a": "Median nerve.",
+        "b": "Radial nerve.",
+        "c": "Axillary nerve.",
+        "d": "Musculocutaneous nerve."
+      }
+    },
+    {
+      "number": 93,
+      "stem": "The nerve commonly injured after fracture of the surgical neck of the humerus is:",
+      "options": {
+        "a": "Axillary nerve.",
+        "b": "Ulnar nerve.",
+        "c": "Radial nerve.",
+        "d": "Musculocutaneous nerve."
+      }
+    },
+    {
+      "number": 94,
+      "stem": "Regarding the extensor retinaculum, the following statements are true except:",
+      "options": {
+        "a": "It is attached laterally to the anterior border of the lower end of the radius.",
+        "b": "In the fourth compartment the tendon of extensor indicis muscle pass.",
+        "c": "It is crossed by the cephalic and basilic veins.",
+        "d": "The third compartment deep to the retinaculum contains the tendon of the extensor pollicis brevis."
+      }
+    },
+    {
+      "number": 95,
+      "stem": "Which one of the following nerves arises from the roots of the brachial Plexus?",
+      "options": {
+        "a": "Medial pectoral nerve.",
+        "b": "Dorsal scapular nerve.",
+        "c": "Thoracodorsal nerve.",
+        "d": "Suprascapular nerve"
+      }
+    },
+    {
+      "number": 96,
+      "stem": "Regarding injury of radial nerve in the spiral groove, the following statements are correct, except:",
+      "options": {
+        "a": "It is usually caused by fracture of the shaft Of the humerus.",
+        "b": "It results in paralysis of extensor carpi radialis longus.",
+        "c": "It results in Ape-like hand deformity.",
+        "d": "It produces impaired sensation of the lateral 2/3 of the dorsum of hand."
+      }
+    },
+    {
+      "number": 97,
+      "stem": "Concerning the axilla, the following statements are correct except:",
+      "options": {
+        "a": "Its posterior wall is formed of subscapularis, teres major and latissimus dorsi.",
+        "b": "It contains the roots of the brachial plexus.",
+        "c": "It is connected with the neck through the cervicoaxillary canal.",
+        "d": "The serratus anterior muscle shares in the formation of its medial wall."
+      }
+    },
+    {
+      "number": 98,
+      "stem": "One of the followings regarding the movements of thumb, is false:",
+      "options": {
+        "a": "It flexed by two muscles.",
+        "b": "It is extended by two muscles.",
+        "c": "It is adducted by two muscles.",
+        "d": "It is abducted by two muscles."
+      }
+    },
+    {
+      "number": 99,
+      "stem": "Regarding the brachialis muscle, select the correct statement:",
+      "options": {
+        "a": "It is innervated by the median nerve.",
+        "b": "Arises from the upper third of the shaft of humerus.",
+        "c": "The main flexor of the elbow joint.",
+        "d": "Attaches to the pronator tuberosity of the radius."
+      }
+    },
+    {
+      "number": 100,
+      "stem": "Lymphatics from the skin of the back above the iliac crest drain into the:",
+      "options": {
+        "a": "Pectoral group of the axillary lymph nodes.",
+        "b": "Subscapular group of the axillary lymph nodes.",
+        "c": "Central group of the axillary lymph nodes.",
+        "d": "Apical group of the axillary lymph nodes."
+      }
+    },
+    {
+      "number": 101,
+      "stem": "One of the following muscles is not a rotator cuff muscle:",
+      "options": {
+        "a": "Supraspinatus.",
+        "b": "Infraspinatus.",
+        "c": "Teres minor.",
+        "d": "Teres major."
+      }
+    },
+    {
+      "number": 102,
+      "stem": "Paralysis of the deltoid muscle causes:",
+      "options": {
+        "a": "Loss of abduction of the arm from zero to 15°.",
+        "b": "Loss of abduction of the arm from zero to 90°.",
+        "c": "Loss of abduction of the arm from 15° to 90°.",
+        "d": "Loss of abduction of the arm from 90° to 180°."
+      }
+    },
+    {
+      "number": 103,
+      "stem": "One of the following is not a branch of the radial artery:",
+      "options": {
+        "a": "Radial recurrent artery.",
+        "b": "Common interosseous artery.",
+        "c": "Palmar (anterior) carpal.",
+        "d": "Dorsal (posterior) carpal."
+      }
+    },
+    {
+      "number": 104,
+      "stem": "Ulnar nerve enter the forearm between the two heads of the following muscle:",
+      "options": {
+        "a": "Flexor carpi ulnaris",
+        "b": "Flexor carpi radialis",
+        "c": "Pronator teres",
+        "d": "Flexor digitorum superficialis"
+      }
+    },
+    {
+      "number": 105,
+      "stem": "The musculocutaneous nerve pierces which muscle?",
+      "options": {
+        "a": "Coracobrachialis",
+        "b": "Short head of biceps",
+        "c": "Brachialis",
+        "d": "Long head of biceps"
+      }
+    },
+    {
+      "number": 106,
+      "stem": "All the followings are among the structures deep to the radial artery in forearm except:",
+      "options": {
+        "a": "Pronator teres",
+        "b": "Lower end of ulna",
+        "c": "Biceps",
+        "d": "Pronator quadratus"
+      }
+    },
+    {
+      "number": 107,
+      "stem": "One of the following arteries is not sharing in formation of anterior carpal arch:",
+      "options": {
+        "a": "Anterior carpal artery",
+        "b": "Descending anastomotic branch of anterior interosseous artery",
+        "c": "Recurrent branch of deep palmar arch",
+        "d": "Radial collateral"
+      }
+    },
+    {
+      "number": 108,
+      "stem": "Which muscle initiates abduction of the shoulder?",
+      "options": {
+        "a": "Infraspinatus",
+        "b": "Latissimus dorsi",
+        "c": "Supraspinatus",
+        "d": "Deltoid"
+      }
+    },
+    {
+      "number": 109,
+      "stem": "Which of the following is NOT a branch of the radial nerve?",
+      "options": {
+        "a": "posterior cutaneous nerve of the arm",
+        "b": "posterior cutaneous nerve of the forearm",
+        "c": "lower lateral cutaneous nerve of the arm",
+        "d": "upper lateral cutaneous nerve of the arm"
+      }
+    },
+    {
+      "number": 110,
+      "stem": "What muscles are necessary to raise the arm above the shoulder?",
+      "options": {
+        "a": "First the supraspinatus, next the deltoid, and then the serratus anterior",
+        "b": "First the deltoid, next the supraspinatus, and then the serratus anterior",
+        "c": "First the supraspinatus, next the serratus anterior, and then the deltoid",
+        "d": "First the serratus anterior, next the deltoid, and then the supraspinatus"
+      }
+    },
+    {
+      "number": 111,
+      "stem": "One of the followings is a branch of superficial palmar arch:",
+      "options": {
+        "a": "Descending anastomotic branch",
+        "b": "Common palmar digital artery",
+        "c": "2nd Dorsal metacarpal artery",
+        "d": "Radialis indicis artery"
+      }
+    },
+    {
+      "number": 112,
+      "stem": "A 14-year-old boy fell on his outstretched hand and has a fracture of the scaphoid bone. The fracture is most likely accompanied by a rupture of which of the following arteries?",
+      "options": {
+        "a": "Ulnar artery",
+        "b": "Deep palmar arterial arch",
+        "c": "Radial artery",
+        "d": "Princeps pollicis artery"
+      }
+    },
+    {
+      "number": 113,
+      "stem": "Which of the following muscles does NOT extend to the wrist?",
+      "options": {
+        "a": "Brachioradialis",
+        "b": "Extensor carpi radialis longus",
+        "c": "Extensor carpi ulnaris",
+        "d": "Extensor digitorum"
+      }
+    },
+    {
+      "number": 114,
+      "stem": "The trapezius muscle is supplied by the:",
+      "options": {
+        "a": "Cranial accessory nerve.",
+        "b": "Spinal accessory nerve.",
+        "c": "Dorsal scapular nerve.",
+        "d": "Thoracodorsal nerve."
+      }
+    },
+    {
+      "number": 115,
+      "stem": "A patient complaining of inability to flex the distal interphalangeal joints. Which of the following muscles appear to be paralyzed?",
+      "options": {
+        "a": "Palmar interossei",
+        "b": "Lumbricals",
+        "c": "Flexor digitorum profundus",
+        "d": "Flexor digitorum superficialis"
+      }
+    },
+    {
+      "number": 116,
+      "stem": "Which of the following muscles does NOT take an origin from the lateral epicondyle of the humerus?",
+      "options": {
+        "a": "Extensor carpi radialis brevis",
+        "b": "Extensor carpi ulnaris",
+        "c": "Abductor pollicis longus",
+        "d": "Extensor digiti minimi"
+      }
+    },
+    {
+      "number": 117,
+      "stem": "Which of the following does NOT abduct the hand at the wrist joint?",
+      "options": {
+        "a": "Palmaris longus",
+        "b": "Flexor carpi radialis",
+        "c": "Extensor carpi radialis brevis",
+        "d": "Abductor pollicis longus"
+      }
+    },
+    {
+      "number": 118,
+      "stem": "Which of the following is true in respect to the anatomical snuff box?",
+      "options": {
+        "a": "It is bounded anteriorly by the tendons of the extensor pollicis longus.",
+        "b": "It is bounded posteriorly by the tendons of the abductor pollicis longus and extensor pollicis brevis.",
+        "c": "The radial artery lies on the floor of the snuff box.",
+        "d": "The snuff box is visible when the thumb is fully flexed."
+      }
+    },
+    {
+      "number": 119,
+      "stem": "Which of the following is true in respect to the elbow joint?",
+      "options": {
+        "a": "It is strengthened by the radial and ulnar collateral ligaments.",
+        "b": "It is a plane type of synovial joint.",
+        "c": "It is supplied by the cephalic and basilic arteries.",
+        "d": "It is innervated by the median and axillary nerves."
+      }
+    },
+    {
+      "number": 120,
+      "stem": "The extensor expansion of the fingers is formed by the tendon of the:",
+      "options": {
+        "a": "Extensor carpi radialis longus",
+        "b": "Extensor digitorum",
+        "c": "Extensor pollicis longus",
+        "d": "Extensor pollicis brevis."
+      }
+    }
+  ],
+  "198": [
+    {
+      "number": 1,
+      "stem": "Metachromatic stain is ______.",
+      "options": {
+        "a": "Toluidine blue",
+        "b": "Trypan blue",
+        "c": "Indian ink",
+        "d": "Sudan III."
+      }
+    },
+    {
+      "number": 2,
+      "stem": "Reticulocytes are stained by ______ stain:",
+      "options": {
+        "a": "Silver",
+        "b": "Brilliant cresyl blue",
+        "c": "Leishman",
+        "d": "Janus green"
+      }
+    },
+    {
+      "number": 3,
+      "stem": "The following is a non-membranous organelle:",
+      "options": {
+        "a": "Cell membrane",
+        "b": "Mitochondria",
+        "c": "Golgi apparatus",
+        "d": "Ribosomes"
+      }
+    },
+    {
+      "number": 4,
+      "stem": "Regarding the peroxisomes (microbodies):",
+      "options": {
+        "a": "Bud from smooth endoplasmic reticulum (sER)",
+        "b": "Divide by simple division",
+        "c": "Numerous in cardiac muscle",
+        "d": "Produce energy stored as ATP"
+      }
+    },
+    {
+      "number": 5,
+      "stem": "Heterolysosome is formed of primary lysosome and ______:",
+      "options": {
+        "a": "Pinocytic vesicle",
+        "b": "Destroyed organelle",
+        "c": "Residual body",
+        "d": "Phagosome"
+      }
+    },
+    {
+      "number": 6,
+      "stem": "The nucleus of an active protein-forming cell appears:",
+      "options": {
+        "a": "Condensed",
+        "b": "Vesicular",
+        "c": "Heterochromatic",
+        "d": "Electron dense by E.M."
+      }
+    },
+    {
+      "number": 7,
+      "stem": "The cytoplasmic organelle concerned with detoxification of drugs is:",
+      "options": {
+        "a": "sER",
+        "b": "rER",
+        "c": "Golgi apparatus",
+        "d": "Lysosomes"
+      }
+    },
+    {
+      "number": 8,
+      "stem": "The intermediate filament found in cells of connective tissue is:",
+      "options": {
+        "a": "Desmin",
+        "b": "Vimentin",
+        "c": "Cytokeratin",
+        "d": "Glial fibrillary acidic protein"
+      }
+    },
+    {
+      "number": 9,
+      "stem": "The shaft of cilia is composed of ______ microtubules:",
+      "options": {
+        "a": "9",
+        "b": "27",
+        "c": "18",
+        "d": "20"
+      }
+    },
+    {
+      "number": 10,
+      "stem": "Regarding the microfilaments:",
+      "options": {
+        "a": "Formed of tubulin",
+        "b": "Form microvilli",
+        "c": "Diameter 8–10 nm",
+        "d": "Include lamins"
+      }
+    },
+    {
+      "number": 11,
+      "stem": "Which statement applies to the ribosomes:",
+      "options": {
+        "a": "Arise from Golgi apparatus",
+        "b": "Cause cytoplasmic acidophilia",
+        "c": "Bind to rER at ribophorins",
+        "d": "Form the steroid hormones"
+      }
+    },
+    {
+      "number": 12,
+      "stem": "The secretory vesicles in a cell arise from:",
+      "options": {
+        "a": "SER",
+        "b": "rER",
+        "c": "Golgi apparatus",
+        "d": "Mitochondria"
+      }
+    },
+    {
+      "number": 13,
+      "stem": "Which statement is correct about the mitochondria?",
+      "options": {
+        "a": "Responsible for cell digestion",
+        "b": "Inner membrane forms cristae",
+        "c": "Form intracellular pathway",
+        "d": "Stain orange with silver"
+      }
+    },
+    {
+      "number": 14,
+      "stem": "Pars amorpha of nucleolus is:",
+      "options": {
+        "a": "Light area",
+        "b": "Filaments of rRNA",
+        "c": "Strands of DNA",
+        "d": "Granules of rRNA"
+      }
+    },
+    {
+      "number": 15,
+      "stem": "Regarding the Golgi apparatus, it is:",
+      "options": {
+        "a": "Formed of saccules covered by ribosomes",
+        "b": "The powerhouse of the cell",
+        "c": "Stained by silver",
+        "d": "A non-membranous organelle"
+      }
+    },
+    {
+      "number": 16,
+      "stem": "Glycogen in the liver can be stained by:",
+      "options": {
+        "a": "PAS",
+        "b": "Silver",
+        "c": "Iron hematoxylin",
+        "d": "Sudan III"
+      }
+    },
+    {
+      "number": 17,
+      "stem": "Formation of mitotic spindle in mitosis is related to:",
+      "options": {
+        "a": "Actin",
+        "b": "Microvilli",
+        "c": "Centriole",
+        "d": "Lysosome"
+      }
+    },
+    {
+      "number": 18,
+      "stem": "The C.T. cell with mitochondria rich in cytochrome oxidase is ______ cell:",
+      "options": {
+        "a": "Reticular",
+        "b": "Multilocular fat",
+        "c": "Unilocular fat",
+        "d": "Plasma"
+      }
+    },
+    {
+      "number": 19,
+      "stem": "Type of connective tissue proper forming stroma of organs is C.T.:",
+      "options": {
+        "a": "Reticular",
+        "b": "White fibrous",
+        "c": "Loose areolar",
+        "d": "Brown adipose"
+      }
+    },
+    {
+      "number": 20,
+      "stem": "The following cell can give rise to endothelial cell:",
+      "options": {
+        "a": "Fibroblast",
+        "b": "Mast cell",
+        "c": "Histiocyte",
+        "d": "Pericyte"
+      }
+    },
+    {
+      "number": 21,
+      "stem": "Monocytes are the origin of cells:",
+      "options": {
+        "a": "Plasma",
+        "b": "Mast",
+        "c": "Macrophages",
+        "d": "Fibroblasts"
+      }
+    },
+    {
+      "number": 22,
+      "stem": "Reticular fibers can be specially stained with:",
+      "options": {
+        "a": "H&E",
+        "b": "Van Gieson",
+        "c": "PAS",
+        "d": "Orcein"
+      }
+    },
+    {
+      "number": 23,
+      "stem": "Endocrine secretion of leptin is a function of:",
+      "options": {
+        "a": "Fibroblast",
+        "b": "Unilocular fat cell",
+        "c": "Reticulocyte",
+        "d": "Pericytes"
+      }
+    },
+    {
+      "number": 24,
+      "stem": "The antigen-presenting C.T. cell is:",
+      "options": {
+        "a": "Histiocyte",
+        "b": "Plasma cell",
+        "c": "Mast cell",
+        "d": "Fibroblast"
+      }
+    },
+    {
+      "number": 25,
+      "stem": "Mast cells show:",
+      "options": {
+        "a": "Deep acidophilic cytoplasm",
+        "b": "Clock-face nucleus",
+        "c": "Surface receptor for IgE",
+        "d": "Non-granular cytoplasm"
+      }
+    },
+    {
+      "number": 26,
+      "stem": "The cells that synthesize C.T. fibers and ground substance:",
+      "options": {
+        "a": "Macrophage",
+        "b": "Mast cell",
+        "c": "Plasma cell",
+        "d": "Fibroblast"
+      }
+    },
+    {
+      "number": 27,
+      "stem": "Regarding the holocrine mode of glandular secretion:",
+      "options": {
+        "a": "No change in secretory cells",
+        "b": "Apex of cell comes out with secretion",
+        "c": "The whole cell is lost with secretion",
+        "d": "The most common type"
+      }
+    },
+    {
+      "number": 28,
+      "stem": "Simple cubical epithelium is found in the following site:",
+      "options": {
+        "a": "Bowman’s capsule of kidney",
+        "b": "Convoluted tubules of kidney",
+        "c": "Endothelium of blood vessels",
+        "d": "Epidermis of the skin"
+      }
+    },
+    {
+      "number": 29,
+      "stem": "Lung bronchioles are lined with:",
+      "options": {
+        "a": "Simple squamous epithelium",
+        "b": "Simple columnar epithelium",
+        "c": "Simple columnar ciliated epithelium",
+        "d": "Stratified squamous epithelium"
+      }
+    },
+    {
+      "number": 30,
+      "stem": "Basement membrane shows the following types of collagen:",
+      "options": {
+        "a": "III, IV & VII",
+        "b": "I, III & IV",
+        "c": "IV, V & VII",
+        "d": "II, III & IV"
+      }
+    },
+    {
+      "number": 31,
+      "stem": "The strongest type of junctions is:",
+      "options": {
+        "a": "Adherent junction",
+        "b": "Desmosome",
+        "c": "Gap junction",
+        "d": "Tight junction"
+      }
+    },
+    {
+      "number": 32,
+      "stem": "Pseudostratified columnar ciliated epithelium with stereocilia lines:",
+      "options": {
+        "a": "Fallopian tube",
+        "b": "Esophagus",
+        "c": "Ureter",
+        "d": "Epididymis"
+      }
+    },
+    {
+      "number": 33,
+      "stem": "Lung alveoli are lined by:",
+      "options": {
+        "a": "Simple squamous epithelium",
+        "b": "Stratified columnar epithelium",
+        "c": "Respiratory epithelium",
+        "d": "Transitional epithelium"
+      }
+    },
+    {
+      "number": 34,
+      "stem": "Passage of impulses between muscle cells is helped by:",
+      "options": {
+        "a": "Zonula adherens",
+        "b": "Nexus",
+        "c": "Macula adherens",
+        "d": "Occluding junction"
+      }
+    },
+    {
+      "number": 35,
+      "stem": "Regarding the RBCs:",
+      "options": {
+        "a": "Basophilic by L.M.",
+        "b": "Show crenation in hypotonic solution",
+        "c": "Contain carbonic anhydrase enzyme",
+        "d": "Single nucleus"
+      }
+    },
+    {
+      "number": 36,
+      "stem": "Lysosomes in blood platelets are present in:",
+      "options": {
+        "a": "Lambda granule",
+        "b": "Alpha granule",
+        "c": "Delta granule",
+        "d": "Canalicular system"
+      }
+    },
+    {
+      "number": 37,
+      "stem": "The cell of origin of platelets is characterized by:",
+      "options": {
+        "a": "Multinucleated",
+        "b": "Acidophilic",
+        "c": "Seen in blood film",
+        "d": "Size 50–70 µm"
+      }
+    },
+    {
+      "number": 38,
+      "stem": "The blood cells with receptor for IgE are:",
+      "options": {
+        "a": "Basophils",
+        "b": "RBCs",
+        "c": "Lymphocytes",
+        "d": "Eosinophils"
+      }
+    },
+    {
+      "number": 39,
+      "stem": "Oval specific granules with electron-dense core are seen in:",
+      "options": {
+        "a": "Neutrophil",
+        "b": "Monocyte",
+        "c": "Basophil",
+        "d": "Eosinophil"
+      }
+    },
+    {
+      "number": 40,
+      "stem": "Neutrophils:",
+      "options": {
+        "a": "Decrease in parasitic disease",
+        "b": "Terminate allergic reaction",
+        "c": "Increase in pyogenic infections",
+        "d": "Responsible for cell-mediated immunity"
+      }
+    },
+    {
+      "number": 41,
+      "stem": "The ratio between immature WBCs to immature RBCs in bone marrow is:",
+      "options": {
+        "a": "5:1",
+        "b": "1:5",
+        "c": "3:1",
+        "d": "1:10"
+      }
+    },
+    {
+      "number": 42,
+      "stem": "The perforins are secreted from the following type of T-lymphocyte:",
+      "options": {
+        "a": "Regulatory cell",
+        "b": "CD8+ T-cell",
+        "c": "Memory cell",
+        "d": "CD4+ T-cell"
+      }
+    },
+    {
+      "number": 43,
+      "stem": "Natural killer cells are characterized by:",
+      "options": {
+        "a": "Mature in thymus",
+        "b": "CD16+ cell",
+        "c": "Humoral immunity",
+        "d": "Memory cell"
+      }
+    },
+    {
+      "number": 44,
+      "stem": "A condition with decreased number of WBCs below 4000/mm³ is called:",
+      "options": {
+        "a": "Leukemia",
+        "b": "Leukopenia",
+        "c": "Anemia",
+        "d": "Pancytopenia"
+      }
+    },
+    {
+      "number": 45,
+      "stem": "Considering the movement of the radio-ulnar joint:",
+      "options": {
+        "a": "In supination, the axis of supination-pronation is oblique to the axis of the forearm",
+        "b": "In pronation, the bones of the forearm are parallel",
+        "c": "Pronation is the stronger movement",
+        "d": "Supination with the elbow in extension is done by biceps"
+      }
+    },
+    {
+      "number": 46,
+      "stem": "Regarding the palmar arterial arches:",
+      "options": {
+        "a": "The superficial palmar arch is formed by union of the ulnar artery with the superficial palmar branch of radial artery",
+        "b": "Five digital arteries arise from the convexity of the superficial palmar arch",
+        "c": "The deep palmar arch is at a level of distal border of extended thumb",
+        "d": "The deep palmar arch lies superficial to the long flexor tendons of the fingers"
+      }
+    },
+    {
+      "number": 47,
+      "stem": "After drinking heavily on a Saturday night, a man fell asleep with his arm over the back of a chair. When he woke up in the morning, he had flexion at the elbow with inability to extend his hand. The most probable nerve injury is to the:",
+      "options": {
+        "a": "Radial nerve above the elbow",
+        "b": "Innervation of the triceps muscle",
+        "c": "Radial nerve in the axilla",
+        "d": "Posterior cord"
+      }
+    },
+    {
+      "number": 48,
+      "stem": "The posterior wall of axilla is formed by:",
+      "options": {
+        "a": "Pectoralis minor",
+        "b": "Teres major",
+        "c": "Supraspinatus",
+        "d": "Serratus anterior"
+      }
+    },
+    {
+      "number": 49,
+      "stem": "Regarding the triceps brachii muscle:",
+      "options": {
+        "a": "It has a lateral, a medial and a short head",
+        "b": "Long head takes origin from supraglenoid tubercle of scapula",
+        "c": "It is supplied by ulnar nerve",
+        "d": "It is inserted into the olecranon process of ulna"
+      }
+    },
+    {
+      "number": 50,
+      "stem": "The muscles supplied by posterior interosseous nerve in forearm include:",
+      "options": {
+        "a": "Anconeus",
+        "b": "Extensor carpi radialis longus",
+        "c": "Extensor indicis",
+        "d": "Brachialis"
+      }
+    },
+    {
+      "number": 51,
+      "stem": "The muscles supplied by deep branch of ulnar nerve in hand include:",
+      "options": {
+        "a": "Abductor pollicis brevis",
+        "b": "Flexor pollicis brevis",
+        "c": "Lateral two lumbricals",
+        "d": "All interossei"
+      }
+    },
+    {
+      "number": 52,
+      "stem": "If the median nerve was injured above the elbow, which of the following muscles would retain function?",
+      "options": {
+        "a": "Pronators",
+        "b": "Ppponens pollicis",
+        "c": "Palmaris longus",
+        "d": "Flexor carpi ulnaris"
+      }
+    },
+    {
+      "number": 53,
+      "stem": "Opposition of thumb is dependent upon the functional integrity of this nerve:",
+      "options": {
+        "a": "Axillary nerve",
+        "b": "Median nerve",
+        "c": "Radial nerve",
+        "d": "Ulnar nerve"
+      }
+    },
+    {
+      "number": 54,
+      "stem": "The mid-palmar space (central compartment) of the palm contains the:",
+      "options": {
+        "a": "Terminal branches of musculocutaneous nerve",
+        "b": "Ulnar synovial bursa",
+        "c": "Lumbrical muscles",
+        "d": "Tendon of flexor carpi ulnaris muscle"
+      }
+    },
+    {
+      "number": 55,
+      "stem": "Regarding ulnar nerve injury:",
+      "options": {
+        "a": "Often occurs where the nerve passes posterior to medial epicondyle of the humerus",
+        "b": "The patient experiences numbness and tingling sensation on lateral part of the palm",
+        "c": "The patient exhibits “waiter’s tip” hand",
+        "d": "Power of abduction is impaired"
+      }
+    },
+    {
+      "number": 56,
+      "stem": "Concerning the muscles of the rotator cuff:",
+      "options": {
+        "a": "Infraspinatus acts as a medial rotator at the shoulder",
+        "b": "The subscapularis is intimately related to the subacromial bursa",
+        "c": "The supraspinatus is supplied by a branch of the posterior cord of the brachial plexus",
+        "d": "They are the main factor in stabilizing the shoulder joint"
+      }
+    },
+    {
+      "number": 57,
+      "stem": "A man came with fracture of the surgical neck of the humerus. The first movement of the shoulder joint that you would test to confirm the nerve injury is:",
+      "options": {
+        "a": "Flexion",
+        "b": "Extension",
+        "c": "Rotation",
+        "d": "Abduction"
+      }
+    },
+    {
+      "number": 58,
+      "stem": "A woman injured her wrist in trying to commit suicide. On examination, all the metacarpophalangeal joints of her fingers were extended and the interphalangeal joints were flexed. The most probable injury was to the:",
+      "options": {
+        "a": "Palmar branches of median and ulnar nerves",
+        "b": "Median nerve",
+        "c": "Ulnar nerve",
+        "d": "Both median and ulnar nerves"
+      }
+    },
+    {
+      "number": 59,
+      "stem": "After a dislocation of acromioclavicular joint, several structures could be torn, including the one that gives the joint its greatest strength and stability, namely:",
+      "options": {
+        "a": "Acromioclavicular ligament",
+        "b": "Coracoacromial ligament",
+        "c": "Coracoclavicular ligament",
+        "d": "Supraspinatus tendon"
+      }
+    },
+    {
+      "number": 60,
+      "stem": "A fracture of the surgical neck of the humerus, which artery may be injured?",
+      "options": {
+        "a": "Subscapular",
+        "b": "Posterior humeral circumflex",
+        "c": "Radial recurrent",
+        "d": "Deep brachial"
+      }
+    },
+    {
+      "number": 61,
+      "stem": "Patient was unable to retract his scapula because of paralysis of trapezius and:",
+      "options": {
+        "a": "Infraspinatus",
+        "b": "Levator scapulae",
+        "c": "Rhomboids",
+        "d": "Serratus posterior superior"
+      }
+    },
+    {
+      "number": 62,
+      "stem": "Lymphatics that accompany the cephalic vein drain into the:",
+      "options": {
+        "a": "Pectoral group of axillary lymph nodes",
+        "b": "Subscapular group of axillary lymph nodes",
+        "c": "Central group of axillary lymph nodes",
+        "d": "Apical group of axillary lymph nodes"
+      }
+    },
+    {
+      "number": 63,
+      "stem": "The median nerve:",
+      "options": {
+        "a": "Supplies flexor carpi ulnaris and half of flexor digitorum profundus",
+        "b": "Gives rise to most of its branches in the upper arm",
+        "c": "May be compressed between the two heads of pronator teres",
+        "d": "Enters cubital fossa lateral to the brachial artery"
+      }
+    },
+    {
+      "number": 64,
+      "stem": "Select the correct statement; the musculocutaneous nerve:",
+      "options": {
+        "a": "It is anterior to the biceps brachii muscle but deep to the brachialis",
+        "b": "Arises from the medial cord of the brachial plexus",
+        "c": "Becomes the lateral cutaneous nerve of the forearm lateral to the biceps tendon",
+        "d": "Supplies the brachioradialis muscle"
+      }
+    },
+    {
+      "number": 65,
+      "stem": "Lymphatics from the nipple and areola drain into the:",
+      "options": {
+        "a": "Pectoral group of axillary lymph nodes",
+        "b": "Subscapular group of axillary lymph nodes",
+        "c": "Central group of axillary lymph nodes",
+        "d": "Apical group of axillary lymph nodes"
+      }
+    },
+    {
+      "number": 66,
+      "stem": "A fracture of the midshaft of the humerus is most likely to injure which nerve?",
+      "options": {
+        "a": "Ulnar nerve",
+        "b": "Median nerve",
+        "c": "Radial nerve",
+        "d": "Axillary nerve"
+      }
+    },
+    {
+      "number": 67,
+      "stem": "The biceps brachii muscle is primarily involved in:",
+      "options": {
+        "a": "Extension of the forearm",
+        "b": "Flexion and supination of the forearm",
+        "c": "Pronation of the forearm",
+        "d": "Flexion of the wrist"
+      }
+    },
+    {
+      "number": 68,
+      "stem": "The glenohumeral joint is classified as a:",
+      "options": {
+        "a": "Hinge joint",
+        "b": "Pivot joint",
+        "c": "Ball-and-socket joint",
+        "d": "Saddle joint"
+      }
+    },
+    {
+      "number": 69,
+      "stem": "In a patient with Erb-Duchenne palsy, a nerve arising from the superior trunk of the brachial plexus is nonfunctional. This nerve is the:",
+      "options": {
+        "a": "Suprascapular",
+        "b": "Dorsal scapular",
+        "c": "Long thoracic",
+        "d": "Lateral pectoral"
+      }
+    },
+    {
+      "number": 70,
+      "stem": "Which muscle is the strongest medial rotator of the arm?",
+      "options": {
+        "a": "Teres minor",
+        "b": "Infraspinatus",
+        "c": "Subscapularis",
+        "d": "Supraspinatus"
+      }
+    },
+    {
+      "number": 71,
+      "stem": "A person has a fracture of the upper end of humerus. During the repair the surgeon ties off the artery traveling through the quadrangular space to stop the hemorrhage. Which artery did he ligate?",
+      "options": {
+        "a": "Dorsal scapular",
+        "b": "Posterior circumflex humeral",
+        "c": "Scapular circumflex",
+        "d": "Subscapular"
+      }
+    },
+    {
+      "number": 72,
+      "stem": "The following fact is true of the serratus anterior muscle:",
+      "options": {
+        "a": "It arises as digitations from the lower eight ribs",
+        "b": "The upper four digitations insert into the lateral border of the costal surface of scapula",
+        "c": "The lower digitations rotate the scapula upward during abduction",
+        "d": "It is innervated by intercostal nerves"
+      }
+    },
+    {
+      "number": 73,
+      "stem": "Considering the nerve supply of pectoralis major; it is innervated by:",
+      "options": {
+        "a": "Lateral pectoral nerve",
+        "b": "Medial pectoral nerve",
+        "c": "Both medial and lateral pectoral nerves",
+        "d": "Nerve to pectoralis major"
+      }
+    },
+    {
+      "number": 74,
+      "stem": "The superficial muscles of front of forearm include:",
+      "options": {
+        "a": "Pronator quadratus",
+        "b": "Flexor carpi radialis",
+        "c": "Flexor pollicis longus",
+        "d": "Supinator"
+      }
+    },
+    {
+      "number": 75,
+      "stem": "The contents of cubital fossa include:",
+      "options": {
+        "a": "Brachial artery",
+        "b": "Musculocutaneous nerve",
+        "c": "Ulnar nerve",
+        "d": "Tendon of brachialis"
+      }
+    },
+    {
+      "number": 76,
+      "stem": "The muscles supplied by anterior interosseous nerve in forearm include:",
+      "options": {
+        "a": "Flexor pollicis longus",
+        "b": "Pronator teres",
+        "c": "Palmaris longus",
+        "d": "Lateral half of flexor digitorum profundus"
+      }
+    },
+    {
+      "number": 77,
+      "stem": "The deep muscles of back of forearm include:",
+      "options": {
+        "a": "Extensor carpi radialis longus",
+        "b": "Extensor carpi radialis brevis",
+        "c": "Supinator",
+        "d": "Extensor carpi ulnaris"
+      }
+    },
+    {
+      "number": 78,
+      "stem": "The structures passing deep to flexor retinaculum include:",
+      "options": {
+        "a": "Tendon of flexor digitorum profundus",
+        "b": "Ulnar artery",
+        "c": "Radial artery",
+        "d": "Ulnar nerve"
+      }
+    },
+    {
+      "number": 79,
+      "stem": "Concerning the anatomical snuff box:",
+      "options": {
+        "a": "The ulnar artery lies in the floor of snuff box",
+        "b": "The scaphoid forms the floor",
+        "c": "It is visible when the thumb is fully flexed",
+        "d": "It contains the ulnar artery"
+      }
+    },
+    {
+      "number": 80,
+      "stem": "Clavicular part of deltoid is associated with:",
+      "options": {
+        "a": "Lateral rotation",
+        "b": "Medial rotation",
+        "c": "Abduction",
+        "d": "Adduction"
+      }
+    },
+    {
+      "number": 81,
+      "stem": "What muscles are necessary to raise the arm above the shoulder?",
+      "options": {
+        "a": "First the deltoid, next the supraspinatus, and then the serratus anterior",
+        "b": "First the supraspinatus, next the deltoid, and then the serratus anterior",
+        "c": "First the supraspinatus, next the serratus anterior, and then the deltoid",
+        "d": "First the serratus anterior, next the deltoid, and then the supraspinatus"
+      }
+    },
+    {
+      "number": 82,
+      "stem": "Which structure passes through the carpal tunnel?",
+      "options": {
+        "a": "Ulnar nerve",
+        "b": "Radial artery",
+        "c": "Median nerve",
+        "d": "Brachial artery"
+      }
+    },
+    {
+      "number": 83,
+      "stem": "The elbow joint is classified as a:",
+      "options": {
+        "a": "Ball and socket joint",
+        "b": "Hinge joint",
+        "c": "Pivot joint",
+        "d": "Saddle joint"
+      }
+    },
+    {
+      "number": 84,
+      "stem": "A 45-year-old man is stabbed in the lateral chest wall. He now presents with winging of scapula when pushing against a wall. Which nerve is likely damaged?",
+      "options": {
+        "a": "Axillary nerve",
+        "b": "Long thoracic nerve",
+        "c": "Dorsal scapular nerve",
+        "d": "Thoracodorsal nerve"
+      }
+    },
+    {
+      "number": 85,
+      "stem": "A 45-year-old man arrived at the emergency department with injuries to his left elbow after he fell in a bicycle race. Plain radiographic and magnetic resonance imaging (MRI) examinations show a fracture of the medial epicondyle and an injured ulnar nerve. Which of the following muscles will most likely be paralyzed?",
+      "options": {
+        "a": "Flexor digitorum superficialis",
+        "b": "Biceps brachii",
+        "c": "Brachioradialis",
+        "d": "Flexor carpi ulnaris"
+      }
+    },
+    {
+      "number": 86,
+      "stem": "The trapezius muscle is supplied by the nerve:",
+      "options": {
+        "a": "Cranial accessory",
+        "b": "Spinal accessory",
+        "c": "Long thoracic",
+        "d": "Dorsal scapular"
+      }
+    },
+    {
+      "number": 87,
+      "stem": "When the deep branch of the ulnar nerve has been destroyed by compression, the patient presents with:",
+      "options": {
+        "a": "Paralysis of abductor pollicis brevis",
+        "b": "An ape-like deformity of the hand",
+        "c": "Paralysis of adductor pollicis",
+        "d": "Loss of sensation over palmar surface of little finger"
+      }
+    },
+    {
+      "number": 88,
+      "stem": "Loss of sensation from the tip of the index finger is indicative of injury to which nerve?",
+      "options": {
+        "a": "Radial",
+        "b": "Median",
+        "c": "Ulnar",
+        "d": "Musculocutaneous"
+      }
+    },
+    {
+      "number": 89,
+      "stem": "What is the innervation of the lumbrical muscles?",
+      "options": {
+        "a": "All ulnar nerve",
+        "b": "All radial nerve",
+        "c": "All median nerve",
+        "d": "Half median and half ulnar nerves"
+      }
+    },
+    {
+      "number": 90,
+      "stem": "The ulnar nerve:",
+      "options": {
+        "a": "Is a terminal branch of the lateral cord of the brachial plexus",
+        "b": "Lies behind the medial epicondyle of the humerus",
+        "c": "Descends with the long head of the triceps",
+        "d": "Innervates the triceps muscle"
+      }
+    },
+    {
+      "number": 91,
+      "stem": "The cephalic vein is located on which aspect of the upper limb?",
+      "options": {
+        "a": "Lateral",
+        "b": "Medial",
+        "c": "Anterior",
+        "d": "Posterior"
+      }
+    },
+    {
+      "number": 92,
+      "stem": "As it emerges from the axilla, the median nerve lies where with regard to the brachial artery?",
+      "options": {
+        "a": "Lateral",
+        "b": "Anterior",
+        "c": "Medial",
+        "d": "Posterior"
+      }
+    },
+    {
+      "number": 93,
+      "stem": "The rotator cuff muscles attached to the greater tuberosity of the humerus include the following except:",
+      "options": {
+        "a": "Supraspinatus",
+        "b": "Infraspinatus",
+        "c": "Teres minor",
+        "d": "Subscapularis"
+      }
+    },
+    {
+      "number": 94,
+      "stem": "Considering the vessels of the upper limb:",
+      "options": {
+        "a": "The cephalic vein is the medial continuation of the dorsal venous plexus of the hand",
+        "b": "The basilic vein unites with the venae comitantes of brachial artery to form basilic vein",
+        "c": "The brachial artery divides into radial and ulnar arteries at the apex of the cubital fossa",
+        "d": "The ulnar artery is the smaller division of the brachial artery"
+      }
+    },
+    {
+      "number": 95,
+      "stem": "Longitudinal growth in a growing bone passes through which of the following?",
+      "options": {
+        "a": "Metaphysis",
+        "b": "Diaphysis",
+        "c": "Epiphyseal plate",
+        "d": "Epiphyseal line"
+      }
+    },
+    {
+      "number": 96,
+      "stem": "Which of the following bones is a sesamoid bone?",
+      "options": {
+        "a": "Pisiform",
+        "b": "Scaphoid",
+        "c": "Triquetral",
+        "d": "Hamate"
+      }
+    },
+    {
+      "number": 97,
+      "stem": "In what joint is the root of the tooth attached to a periodontal ligament and held into a tooth socket?",
+      "options": {
+        "a": "Gomphosis",
+        "b": "Suture",
+        "c": "Syndesmosis",
+        "d": "Serrate suture"
+      }
+    },
+    {
+      "number": 98,
+      "stem": "Which is an example of hyaline cartilage?",
+      "options": {
+        "a": "Intervertebral discs",
+        "b": "Symphysis pubis",
+        "c": "Epiphyses",
+        "d": "Auricle of the ear"
+      }
+    },
+    {
+      "number": 99,
+      "stem": "An example of a secondary cartilaginous joint is:",
+      "options": {
+        "a": "Shoulder joint",
+        "b": "Intervertebral disc",
+        "c": "Inferior tibiofibular joint",
+        "d": "Lambdoid suture (head)"
+      }
+    },
+    {
+      "number": 100,
+      "stem": "Regarding the deep fascia:",
+      "options": {
+        "a": "It is present in the face",
+        "b": "It forms the retinaculae",
+        "c": "It contains blood vessels and nerves",
+        "d": "It is loosely attached to the skin"
+      }
+    },
+    {
+      "number": 101,
+      "stem": "Which of the following terms describes a muscle that assists the prime mover in performing its action?",
+      "options": {
+        "a": "Agonist",
+        "b": "Antagonist",
+        "c": "Synergist",
+        "d": "Fixator"
+      }
+    },
+    {
+      "number": 102,
+      "stem": "Which of the following bones is classified as a flat bone?",
+      "options": {
+        "a": "Scapula",
+        "b": "Femur",
+        "c": "Carpals",
+        "d": "Patella"
+      }
+    },
+    {
+      "number": 103,
+      "stem": "Which of the following bones forms part of the axial skeleton?",
+      "options": {
+        "a": "Clavicle",
+        "b": "Ulna",
+        "c": "Sternum",
+        "d": "Scapula"
+      }
+    },
+    {
+      "number": 104,
+      "stem": "A plane which separates the body into an anterior and posterior part is called a:",
+      "options": {
+        "a": "Median plane",
+        "b": "Sagittal plane",
+        "c": "Horizontal plane",
+        "d": "Coronal plane"
+      }
+    },
+    {
+      "number": 105,
+      "stem": "What does the term “superior” indicate in this description?",
+      "options": {
+        "a": "Closer to the midline",
+        "b": "Farther from the body surface",
+        "c": "Closer to the head",
+        "d": "Farther from the point of origin"
+      }
+    },
+    {
+      "number": 106,
+      "stem": "Which of the following vessels is part of the systemic circulation?",
+      "options": {
+        "a": "Pulmonary veins",
+        "b": "Pulmonary artery",
+        "c": "Aorta",
+        "d": "Coronary arteries"
+      }
+    },
+    {
+      "number": 107,
+      "stem": "Which chamber of the heart pumps deoxygenated blood to the lungs?",
+      "options": {
+        "a": "Right atrium",
+        "b": "Left atrium",
+        "c": "Right ventricle",
+        "d": "Left ventricle"
+      }
+    },
+    {
+      "number": 108,
+      "stem": "Which of the following does NOT take place during fertilization?",
+      "options": {
+        "a": "Cleavage initiated",
+        "b": "Endometrial implantation occurs",
+        "c": "Restoration of a diploid genome",
+        "d": "Determination of genetic sex of the embryo"
+      }
+    },
+    {
+      "number": 109,
+      "stem": "Which structure bounds cells after fertilization as they compact to form the morula?",
+      "options": {
+        "a": "Zona pellucida",
+        "b": "Corona radiate",
+        "c": "Pronucleus",
+        "d": "Inner cell mass"
+      }
+    },
+    {
+      "number": 110,
+      "stem": "Cells of the embryoblast form the hypoblast and epiblast, which begin to form:",
+      "options": {
+        "a": "Chorionic cavity",
+        "b": "Antrum",
+        "c": "Blastocoele",
+        "d": "Amniotic cavity"
+      }
+    },
+    {
+      "number": 111,
+      "stem": "On day nine, trophoblastic lacunae and maternal sinusoids begin to form around what cells:",
+      "options": {
+        "a": "Syncytiotrophoblast",
+        "b": "Extraembryonic coelom",
+        "c": "Extraembryonic splanchnopleuric",
+        "d": "Exocoelomic"
+      }
+    },
+    {
+      "number": 112,
+      "stem": "Notochord is developed from:",
+      "options": {
+        "a": "The epiblast cells at the primitive streak",
+        "b": "The hypoblast cells",
+        "c": "Intraembryonic mesoderm",
+        "d": "Epiblast cells at the wall of primitive pit"
+      }
+    },
+    {
+      "number": 113,
+      "stem": "Placenta previa:",
+      "options": {
+        "a": "Is the implantation of blastocyst in the lower segment of uterine cavity",
+        "b": "Is the implantation of blastocyst in the uterine tube",
+        "c": "Is the implantation of blastocyst at the surface of ovary",
+        "d": "Is the implantation of blastocyst in the pelvic cavity"
+      }
+    },
+    {
+      "number": 114,
+      "stem": "Regarding sclerotome of somite:",
+      "options": {
+        "a": "It is dorsolateral part of the somite",
+        "b": "It forms vertebral column",
+        "c": "It forms skeletal muscles behind vertebral column",
+        "d": "It forms three meninges around spinal cord"
+      }
+    },
+    {
+      "number": 115,
+      "stem": "After folding, the most cranial structure in the head fold is:",
+      "options": {
+        "a": "Buccopharyngeal membrane",
+        "b": "Cloacal membrane",
+        "c": "Septum transversum",
+        "d": "Pericardium"
+      }
+    },
+    {
+      "number": 116,
+      "stem": "The finger-like projections of cytotrophoblast into syncytiotrophoblast are called:",
+      "options": {
+        "a": "Somatic villi",
+        "b": "Splanchnic villi",
+        "c": "Primary chorionic villi",
+        "d": "Secondary chorionic villi"
+      }
+    },
+    {
+      "number": 117,
+      "stem": "Which of the following is responsible for bladder development?",
+      "options": {
+        "a": "Allantois",
+        "b": "Yolk sac",
+        "c": "Amniotic fluid",
+        "d": "Primordial gut"
+      }
+    },
+    {
+      "number": 118,
+      "stem": "Abnormally long umbilical cord may lead to:",
+      "options": {
+        "a": "Formation of false knots",
+        "b": "Early separation of placenta during delivery",
+        "c": "Strangulation of the baby during delivery",
+        "d": "Adhesion between fetus and wall of uterus"
+      }
+    },
+    {
+      "number": 119,
+      "stem": "Yolk sac shares in the formation of:",
+      "options": {
+        "a": "Forebrain, midbrain and hindbrain",
+        "b": "Kidneys",
+        "c": "Foregut, midgut and hindgut",
+        "d": "Spleen"
+      }
+    },
+    {
+      "number": 120,
+      "stem": "Regarding monozygotic twins:",
+      "options": {
+        "a": "Is the commonest type",
+        "b": "Twins are always of same sex",
+        "c": "Are non-identical in shape",
+        "d": "Are developed by fertilization of two ova"
+      }
+    }
+  ],
+  "199": [
+    {
+      "number": 1,
+      "stem": "The specific granules of eosinophils contain:",
+      "options": {
+        "a": "Lactoferrin",
+        "b": "Histaminase",
+        "c": "Collagenase",
+        "d": "Phagocitin"
+      }
+    },
+    {
+      "number": 2,
+      "stem": "Reticulocytes can be identified histologically by:",
+      "options": {
+        "a": "Absence of any cytoplasmic content",
+        "b": "Numerous azurophilic granules",
+        "c": "Dense chromatin in the nucleus",
+        "d": "Residual ribosomal RNA"
+      }
+    },
+    {
+      "number": 3,
+      "stem": "Concerning the multilocular adipose cell, which of the following is true?",
+      "options": {
+        "a": "It has few mitochondria",
+        "b": "It has flattened peripheral nucleus",
+        "c": "It is pigmented",
+        "d": "It has abundant sER"
+      }
+    },
+    {
+      "number": 4,
+      "stem": "The thick cell coat of the platelets is related to the following:",
+      "options": {
+        "a": "Maintaining its shape",
+        "b": "Platelet aggregation",
+        "c": "Clot retraction",
+        "d": "Serotonin release"
+      }
+    },
+    {
+      "number": 5,
+      "stem": "The most predominant organelles in the phagocytic cells are:",
+      "options": {
+        "a": "sER & lysosomes",
+        "b": "sER & Golgi apparatus",
+        "c": "Mitochondria & rER",
+        "d": "Lysosomes & Golgi apparatus"
+      }
+    },
+    {
+      "number": 6,
+      "stem": "Hemidesmosomes anchor epithelial cells to:",
+      "options": {
+        "a": "Adjacent epithelial cells",
+        "b": "The basement membrane",
+        "c": "Microvilli core filaments",
+        "d": "Tight junctions"
+      }
+    },
+    {
+      "number": 7,
+      "stem": "Histological detection of stored glycogen in liver requires staining by ..... stain.",
+      "options": {
+        "a": "Silver",
+        "b": "Toluidine blue",
+        "c": "Sudan III",
+        "d": "Best's carmine"
+      }
+    },
+    {
+      "number": 8,
+      "stem": "As regards the elastic fibers, which of the following is correct?",
+      "options": {
+        "a": "It forms wavy branching bundles",
+        "b": "It is stained brown by silver",
+        "c": "It is single, thin & branching",
+        "d": "It is stained red by Van Gieson"
+      }
+    },
+    {
+      "number": 9,
+      "stem": "Shaft of a cilium is characterized by core formed of:",
+      "options": {
+        "a": "Actin filaments inserted into a terminal web",
+        "b": "9 microtubules",
+        "c": "27 microtubules arranged in nine triplets",
+        "d": "20 microtubules arranged in 9 peripheral doublets & 2 central singlets"
+      }
+    },
+    {
+      "number": 10,
+      "stem": "An intermediate filament specific for epithelial tissue is:",
+      "options": {
+        "a": "Desmin",
+        "b": "Vimentin",
+        "c": "Cytokeratin",
+        "d": "Lamins"
+      }
+    },
+    {
+      "number": 11,
+      "stem": "Microphages are characterized by:",
+      "options": {
+        "a": "Secrete trephone substances",
+        "b": "Show rounded nucleus",
+        "c": "Having dark basophilic cytoplasm",
+        "d": "Increased in number in viral infections"
+      }
+    },
+    {
+      "number": 12,
+      "stem": "Reticular fibers are mainly composed of collagen:",
+      "options": {
+        "a": "Type I",
+        "b": "Type II",
+        "c": "Type III",
+        "d": "Type IV"
+      }
+    },
+    {
+      "number": 13,
+      "stem": "Regarding residual bodies:",
+      "options": {
+        "a": "They are primary lysosomes that fuse with a phagocytic vesicle",
+        "b": "They accumulate in short lived cells as nerve cells",
+        "c": "They discharge their contents by exocytosis",
+        "d": "They are primary lysosomes that fuse with a pinocytic vesicle"
+      }
+    },
+    {
+      "number": 14,
+      "stem": "The alveoli of the lung are lined by:",
+      "options": {
+        "a": "Simple squamous epithelium",
+        "b": "Simple cuboidal epithelium",
+        "c": "Stratified squamous epithelium",
+        "d": "Transitional epithelium"
+      }
+    },
+    {
+      "number": 15,
+      "stem": "Which of the following leucocytes are involved in allergies:",
+      "options": {
+        "a": "Neutrophils & Eosinophils",
+        "b": "Monocytes & Basophils",
+        "c": "Eosinophils & Basophils",
+        "d": "Basophils & Neutrophils"
+      }
+    },
+    {
+      "number": 16,
+      "stem": "Silver staining is used to demonstrate:",
+      "options": {
+        "a": "Mitochondria & cell membrane",
+        "b": "Golgi apparatus & cell membrane",
+        "c": "Lysosomes & Golgi apparatus",
+        "d": "sER & mitochondria"
+      }
+    },
+    {
+      "number": 17,
+      "stem": "While examining the epithelial lining in a section from the esophagus, which of the following characterizes the superficial cells?",
+      "options": {
+        "a": "Columnar cells with basal oval nuclei",
+        "b": "Flat cells with flat nuclei",
+        "c": "Dome cells with convex upper surface & central rounded nuclei",
+        "d": "Cubical cells with central rounded nuclei"
+      }
+    },
+    {
+      "number": 18,
+      "stem": "The following cell can differentiate into Plasma cells:",
+      "options": {
+        "a": "Monocyte",
+        "b": "Megakaryocyte",
+        "c": "B-Lymphocyte",
+        "d": "T-Lymphocyte"
+      }
+    },
+    {
+      "number": 19,
+      "stem": "The main ultrastructural feature of fibroblasts is:",
+      "options": {
+        "a": "Abundant rough endoplasmic reticulum and prominent Golgi",
+        "b": "Abundant smooth endoplasmic reticulum and lipid droplets",
+        "c": "Numerous mitochondria and glycogen granules",
+        "d": "Presence of phagosomes and lysosomes"
+      }
+    },
+    {
+      "number": 20,
+      "stem": "Two organelles share in the formation of Peroxisomes:",
+      "options": {
+        "a": "Ribosomes & rER",
+        "b": "Mitochondria & rER",
+        "c": "Golgi complex & sER",
+        "d": "Mitochondria & sER"
+      }
+    },
+    {
+      "number": 21,
+      "stem": "On examining a slide using the light microscope, a tissue with highly crowded cells resting on basement membrane, oval nuclei at more than one level and not all cells reaching the surface. This is:",
+      "options": {
+        "a": "Pseudostratified columnar epithelium",
+        "b": "Simple cubical epithelium",
+        "c": "Stratified columnar epithelium",
+        "d": "Simple squamous epithelium"
+      }
+    },
+    {
+      "number": 22,
+      "stem": "The WBC secreting perforin shows:",
+      "options": {
+        "a": "Deep acidophilic cytoplasm",
+        "b": "Receptor for IgD",
+        "c": "S shaped nucleus",
+        "d": "CD8 ptn receptor"
+      }
+    },
+    {
+      "number": 23,
+      "stem": "Yellow elastic connective tissue:",
+      "options": {
+        "a": "Is a loose type of connective tissue",
+        "b": "Has large amount of matrix",
+        "c": "Is present in the wall of the aorta",
+        "d": "Is present in tendons"
+      }
+    },
+    {
+      "number": 24,
+      "stem": "Cytoplasmic basophilia indicates the presence of:",
+      "options": {
+        "a": "Mitochondria",
+        "b": "Golgi apparatus",
+        "c": "sER",
+        "d": "rER"
+      }
+    },
+    {
+      "number": 25,
+      "stem": "Actin filaments are shared in the formation of:",
+      "options": {
+        "a": "Cilia",
+        "b": "Flagella",
+        "c": "Mitotic spindle",
+        "d": "Microvilli"
+      }
+    },
+    {
+      "number": 26,
+      "stem": "Eosinophils can be distinguished histologically by:",
+      "options": {
+        "a": "Large basophilic granules obscuring the nucleus",
+        "b": "Bright red cytoplasmic granules and bilobed nucleus",
+        "c": "Pale cytoplasm without granules",
+        "d": "Round nucleus with dense chromatin"
+      }
+    },
+    {
+      "number": 27,
+      "stem": "Which of the following cells is derived from monocytes?",
+      "options": {
+        "a": "Macrophages",
+        "b": "Plasma cells",
+        "c": "Fibroblasts",
+        "d": "Mast cells"
+      }
+    },
+    {
+      "number": 28,
+      "stem": "The main function of the nucleolus is:",
+      "options": {
+        "a": "DNA replication",
+        "b": "Ribosomal RNA synthesis",
+        "c": "Carrying genetic information",
+        "d": "Protein degradation"
+      }
+    },
+    {
+      "number": 29,
+      "stem": "The undifferentiated mesenchymal cells are characterized by:",
+      "options": {
+        "a": "Deep basophilic cytoplasm & long thin process",
+        "b": "Flattened peripheral nuclei",
+        "c": "Many free ribosomes",
+        "d": "Many mitochondria rich in cytochrome oxidase"
+      }
+    },
+    {
+      "number": 30,
+      "stem": "Which of the following organelles is surrounded by a double membrane?",
+      "options": {
+        "a": "Lysosome",
+        "b": "Peroxisome",
+        "c": "Ribosome",
+        "d": "Mitochondrion"
+      }
+    },
+    {
+      "number": 31,
+      "stem": "Collagen type IV is secreted by:",
+      "options": {
+        "a": "Fibroblast",
+        "b": "Osteoblast",
+        "c": "Epithelial cell",
+        "d": "Chondroblast"
+      }
+    },
+    {
+      "number": 32,
+      "stem": "Concerning the tight junction, which of the following data is correct?",
+      "options": {
+        "a": "Two adjacent cell membranes are separated by wide intercellular space",
+        "b": "It does not encircle the cell but scattered as circular spots",
+        "c": "Two adjacent cell membranes fuse at certain points",
+        "d": "Adjacent cells are connected by narrow channels that bridge a narrow intercellular space"
+      }
+    },
+    {
+      "number": 33,
+      "stem": "Which feature best identifies a neutrophil in a peripheral blood smear?",
+      "options": {
+        "a": "Large round nucleus with one lobe",
+        "b": "Bilobed nucleus with red granules",
+        "c": "Multilobed nucleus with fine granules",
+        "d": "Kidney-shaped nucleus"
+      }
+    },
+    {
+      "number": 34,
+      "stem": "The smooth endoplasmic reticulum is specialized in:",
+      "options": {
+        "a": "Protein synthesis",
+        "b": "Lipid synthesis",
+        "c": "rRNA production",
+        "d": "ATP production"
+      }
+    },
+    {
+      "number": 35,
+      "stem": "Which of the following allows passage of impulses between cells:",
+      "options": {
+        "a": "Zonula adherens",
+        "b": "Zonula occludens",
+        "c": "Desmosome",
+        "d": "Gap junction"
+      }
+    },
+    {
+      "number": 36,
+      "stem": "The main site of glycosylation and packaging of proteins for secretion is:",
+      "options": {
+        "a": "rER",
+        "b": "Golgi apparatus",
+        "c": "sER",
+        "d": "Lysosome"
+      }
+    },
+    {
+      "number": 37,
+      "stem": "Receptor mediated endocytosis needs:",
+      "options": {
+        "a": "Clathrin",
+        "b": "Integral proteins",
+        "c": "Pseudopodia",
+        "d": "Both integral proteins & clathrin"
+      }
+    },
+    {
+      "number": 38,
+      "stem": "Regarding transfer vesicles of cytoplasm:",
+      "options": {
+        "a": "Transfer from Golgi apparatus to cell membrane",
+        "b": "Arise from sER",
+        "c": "Bud off rER",
+        "d": "They are lysosomes"
+      }
+    },
+    {
+      "number": 39,
+      "stem": "The main function of keratinized stratified squamous epithelium is:",
+      "options": {
+        "a": "Absorption",
+        "b": "Protection against mechanical stress",
+        "c": "Secretion",
+        "d": "Filtration"
+      }
+    },
+    {
+      "number": 40,
+      "stem": "Examining a blood film stained by Leishman's stain revealed a cell with large acidophilic granules & horse shoe nucleus, these are characters of the following:",
+      "options": {
+        "a": "Neutrophils",
+        "b": "Lymphocytes",
+        "c": "Basophils",
+        "d": "Eosinophils"
+      }
+    },
+    {
+      "number": 41,
+      "stem": "A compound tubulo-alveolar gland shows:",
+      "options": {
+        "a": "Secretory part rounded and single duct",
+        "b": "Secretory part rounded and branched with single duct",
+        "c": "Secretory part is tube like with branching duct",
+        "d": "Secretory part is flask shape with branching duct"
+      }
+    },
+    {
+      "number": 42,
+      "stem": "The basal lamina is:",
+      "options": {
+        "a": "Attached to the underlying connective tissue by collagen type V",
+        "b": "Stained by orcein",
+        "c": "The epithelial component of the basement membrane",
+        "d": "Formed of collagen type III fibers & ground substances"
+      }
+    },
+    {
+      "number": 43,
+      "stem": "Examination of a histological section revealed regularly arranged collagen bundles with fibroblasts arranged in rows in-between. The structure examined might be which of the following?",
+      "options": {
+        "a": "Reticular layer of dermis of skin",
+        "b": "Aorta",
+        "c": "Tendon",
+        "d": "Papillary layer of dermis of skin"
+      }
+    },
+    {
+      "number": 44,
+      "stem": "The core of microvilli containing filaments with a diameter of:",
+      "options": {
+        "a": "24 nm",
+        "b": "5-7 nm",
+        "c": "8-10 nm",
+        "d": "24-50 nm"
+      }
+    },
+    {
+      "number": 45,
+      "stem": "Which of the following bones is a sesamoid bone?",
+      "options": {
+        "a": "Pisiform",
+        "b": "Scaphoid",
+        "c": "Triquetral",
+        "d": "Hamate"
+      }
+    },
+    {
+      "number": 46,
+      "stem": "Epiphysio-diaphyseal joint is:",
+      "options": {
+        "a": "Primary cartilaginous",
+        "b": "Gomphosis",
+        "c": "Syndesmosis",
+        "d": "Synovial"
+      }
+    },
+    {
+      "number": 47,
+      "stem": "Which is an example of hyaline cartilage?",
+      "options": {
+        "a": "Intervertebral discs",
+        "b": "Symphysis pubis",
+        "c": "Epiphyses",
+        "d": "Ear pinna"
+      }
+    },
+    {
+      "number": 48,
+      "stem": "An example of a secondary cartilaginous joint is:",
+      "options": {
+        "a": "Gomphosis",
+        "b": "Intervertebral disc",
+        "c": "Inferior tibiofibular joint",
+        "d": "Suture"
+      }
+    },
+    {
+      "number": 49,
+      "stem": "Regarding the deep fascia:",
+      "options": {
+        "a": "It is present in the face",
+        "b": "It forms the retinaculae",
+        "c": "It contains mammary gland",
+        "d": "It contains blood vessels for heat regulation"
+      }
+    },
+    {
+      "number": 50,
+      "stem": "Which of the following applies to the thoracic duct?",
+      "options": {
+        "a": "It drains the entire body above diaphragm",
+        "b": "It drains the right half of thorax",
+        "c": "It drains the right upper limb",
+        "d": "It drains the right lower limb"
+      }
+    },
+    {
+      "number": 51,
+      "stem": "Which of the following terms describes a muscle that opposes the action of the prime mover?",
+      "options": {
+        "a": "Agonist",
+        "b": "Antagonist",
+        "c": "Synergist",
+        "d": "Fixator"
+      }
+    },
+    {
+      "number": 52,
+      "stem": "Which of the following bones is classified as a flat bone?",
+      "options": {
+        "a": "Scapula",
+        "b": "Femur",
+        "c": "Carpals",
+        "d": "Patella"
+      }
+    },
+    {
+      "number": 53,
+      "stem": "A plane which separates the body into an anterior and posterior part is called a:",
+      "options": {
+        "a": "Median plane",
+        "b": "Sagittal plane",
+        "c": "Horizontal plane",
+        "d": "Coronal plane"
+      }
+    },
+    {
+      "number": 54,
+      "stem": "Which vessel carries deoxygenated blood from the heart to the lungs?",
+      "options": {
+        "a": "Aorta",
+        "b": "Pulmonary vein",
+        "c": "Pulmonary artery",
+        "d": "Superior vena cava"
+      }
+    },
+    {
+      "number": 55,
+      "stem": "The pulmonary circulation begins in the and ends in the:",
+      "options": {
+        "a": "Right atrium, left ventricle",
+        "b": "Right ventricle, left atrium",
+        "c": "Left atrium, right ventricle",
+        "d": "Left ventricle, right atrium"
+      }
+    },
+    {
+      "number": 56,
+      "stem": "Which vessel is the largest artery in the systemic circulation?",
+      "options": {
+        "a": "Pulmonary artery",
+        "b": "Carotid artery",
+        "c": "Aorta",
+        "d": "Coronary artery"
+      }
+    },
+    {
+      "number": 57,
+      "stem": "The opposite movement of supination is:",
+      "options": {
+        "a": "Abduction",
+        "b": "Protraction",
+        "c": "Opposition",
+        "d": "Pronation"
+      }
+    },
+    {
+      "number": 58,
+      "stem": "The following statement describes the anatomical position:",
+      "options": {
+        "a": "Eyes are looking backwards",
+        "b": "Upper limbs are hanging by the sides",
+        "c": "Palms are facing backwards",
+        "d": "Thumbs are directed medially"
+      }
+    },
+    {
+      "number": 59,
+      "stem": "One of the functions of superficial fascia is:",
+      "options": {
+        "a": "Presence of skin muscles",
+        "b": "Formation of aponeurosis",
+        "c": "Formation of intermuscular septa",
+        "d": "Formation of interosseous membranes"
+      }
+    },
+    {
+      "number": 60,
+      "stem": "The skeletal muscles are:",
+      "options": {
+        "a": "Involuntary",
+        "b": "Present in the heart",
+        "c": "Present in the wall of blood vessels",
+        "d": "Attached to the bones"
+      }
+    },
+    {
+      "number": 61,
+      "stem": "The following fact is true of palmar aponeurosis:",
+      "options": {
+        "a": "The base of the aponeurosis divides into five slips",
+        "b": "Its apex is attached to the flexor retinaculum as the continuation of palmaris longus",
+        "c": "It is loosely attached to the skin of the palm",
+        "d": "The deep palmar arterial arch lies immediately under the aponeurosis"
+      }
+    },
+    {
+      "number": 62,
+      "stem": "The posterior wall of axilla is formed by:",
+      "options": {
+        "a": "Pectoralis minor",
+        "b": "Teres major",
+        "c": "Short head of biceps",
+        "d": "Serratus anterior"
+      }
+    },
+    {
+      "number": 63,
+      "stem": "Regarding the triceps brachii muscle:",
+      "options": {
+        "a": "It has a lateral, a medial and a short head",
+        "b": "Long head takes origin from supraglenoid tubercle of scapula",
+        "c": "It is supplied by ulnar nerve",
+        "d": "It is inserted into the olecranon process of ulna"
+      }
+    },
+    {
+      "number": 64,
+      "stem": "The muscles supplied by posterior interosseous nerve in forearm include:",
+      "options": {
+        "a": "Anconeus",
+        "b": "Extensor carpi radialis longus",
+        "c": "Extensor indicis",
+        "d": "Brachialis"
+      }
+    },
+    {
+      "number": 65,
+      "stem": "The muscles supplied by deep branch of ulnar nerve in hand include:",
+      "options": {
+        "a": "Abductor pollicis brevis",
+        "b": "Flexor pollicis brevis",
+        "c": "Lateral two lumbricals",
+        "d": "All interossei"
+      }
+    },
+    {
+      "number": 66,
+      "stem": "A fracture of the midshaft of the humerus is most likely to injure which nerve?",
+      "options": {
+        "a": "Ulnar nerve",
+        "b": "Median nerve",
+        "c": "Radial nerve",
+        "d": "Axillary nerve"
+      }
+    },
+    {
+      "number": 67,
+      "stem": "Concerning the muscles of the rotator cuff:",
+      "options": {
+        "a": "Infraspinatus acts as a medial rotator at the shoulder",
+        "b": "Subscapularis is supplied by the medial cord of brachial plexus",
+        "c": "Supraspinatus is supplied by a branch of the posterior cord of the brachial plexus",
+        "d": "They are the main factor in stabilizing the shoulder joint"
+      }
+    },
+    {
+      "number": 68,
+      "stem": "Movements of the shoulder joint:",
+      "options": {
+        "a": "Supraspinatus is the main adductor",
+        "b": "Pectoralis major adducts and medially rotates the humerus",
+        "c": "Teres major is a lateral rotator and teres minor is a medial rotator",
+        "d": "Pectoralis minor is a weak flexor"
+      }
+    },
+    {
+      "number": 69,
+      "stem": "A nerve arising from the upper trunk of the brachial plexus is:",
+      "options": {
+        "a": "Suprascapular",
+        "b": "Dorsal scapular",
+        "c": "Long thoracic",
+        "d": "Lateral pectoral"
+      }
+    },
+    {
+      "number": 70,
+      "stem": "Loss of sensation from the tip of index finger is indicative of injury to which nerve?",
+      "options": {
+        "a": "Radial",
+        "b": "Median",
+        "c": "Ulnar",
+        "d": "Musculocutaneous"
+      }
+    },
+    {
+      "number": 71,
+      "stem": "A fracture of the surgical neck of the humerus, which artery may be injured?",
+      "options": {
+        "a": "Subscapular",
+        "b": "Posterior humeral circumflex",
+        "c": "Radial recurrent",
+        "d": "Circumflex scapular"
+      }
+    },
+    {
+      "number": 72,
+      "stem": "The following facts is true of the serratus anterior muscle:",
+      "options": {
+        "a": "It arises as digitations from the lower eight ribs",
+        "b": "The upper four digitations insert into the lateral border of costal surface of scapula",
+        "c": "The lower five digitations rotate the scapula upward during abduction",
+        "d": "It is innervated by intercostal nerves"
+      }
+    },
+    {
+      "number": 73,
+      "stem": "Lymphatics that accompany the cephalic vein drain into the:",
+      "options": {
+        "a": "Pectoral group of axillary lymph nodes",
+        "b": "Subscapular group of axillary lymph nodes",
+        "c": "Lateral group of axillary lymph nodes",
+        "d": "Apical group of axillary lymph nodes"
+      }
+    },
+    {
+      "number": 74,
+      "stem": "The patient was unable to retract his scapula because of paralysis of trapezius and:",
+      "options": {
+        "a": "Infraspinatus",
+        "b": "Pectoralis minor",
+        "c": "Rhomboids",
+        "d": "Serratus posterior superior"
+      }
+    },
+    {
+      "number": 75,
+      "stem": "The contents of cubital fossa include:",
+      "options": {
+        "a": "Median nerve",
+        "b": "Musculocutaneous nerve",
+        "c": "Ulnar nerve",
+        "d": "Tendon of brachialis"
+      }
+    },
+    {
+      "number": 76,
+      "stem": "The median nerve:",
+      "options": {
+        "a": "Supplies flexor carpi ulnaris and half of flexor digitorum profundus",
+        "b": "Gives rise to most of its branches in the upper arm",
+        "c": "May be compressed between the two heads of pronator teres",
+        "d": "Enters cubital fossa lateral to the brachial artery"
+      }
+    },
+    {
+      "number": 77,
+      "stem": "The deep muscles of back of forearm include:",
+      "options": {
+        "a": "Extensor carpi radialis longus",
+        "b": "Extensor carpi radialis brevis",
+        "c": "Supinator",
+        "d": "Extensor carpi ulnaris"
+      }
+    },
+    {
+      "number": 78,
+      "stem": "Select the correct statement; the Musculo-cutaneous nerve:",
+      "options": {
+        "a": "It is anterior to the biceps brachii muscle but deep to the brachialis",
+        "b": "Arises from the medial cord of the brachial plexus",
+        "c": "Becomes the lateral cutaneous nerve of the forearm lateral to the biceps tendon",
+        "d": "Supplies the brachioradialis muscle"
+      }
+    },
+    {
+      "number": 79,
+      "stem": "Which nerve is responsible for the innervation of the deltoid muscle?",
+      "options": {
+        "a": "Radial nerve",
+        "b": "Ulnar nerve",
+        "c": "Axillary nerve",
+        "d": "Musculocutaneous nerve"
+      }
+    },
+    {
+      "number": 80,
+      "stem": "Which joint allows for the pronation and supination of the forearm?",
+      "options": {
+        "a": "Elbow joint",
+        "b": "Superior radio-ulnar joint",
+        "c": "Gleno-humeral joint",
+        "d": "Wrist joint"
+      }
+    },
+    {
+      "number": 81,
+      "stem": "The cephalic vein is located on which aspect of the upper limb?",
+      "options": {
+        "a": "Lateral",
+        "b": "Medial",
+        "c": "Anterior",
+        "d": "Posterior"
+      }
+    },
+    {
+      "number": 82,
+      "stem": "The biceps brachii muscle is primarily involved in:",
+      "options": {
+        "a": "Extension of the forearm",
+        "b": "Flexion and supination of the forearm",
+        "c": "Pronation of the forearm",
+        "d": "Flexion of the wrist"
+      }
+    },
+    {
+      "number": 83,
+      "stem": "The elbow joint is classified as a:",
+      "options": {
+        "a": "Ball and socket joint",
+        "b": "Hinge joint",
+        "c": "Pivot joint",
+        "d": "Saddle joint"
+      }
+    },
+    {
+      "number": 84,
+      "stem": "The gleno-humeral joint is classified as a:",
+      "options": {
+        "a": "Hinge joint",
+        "b": "Pivot joint",
+        "c": "Ball-and-socket joint",
+        "d": "Saddle joint"
+      }
+    },
+    {
+      "number": 85,
+      "stem": "Considering the nerve supply of pectoralis major; it is innervated by:",
+      "options": {
+        "a": "Lateral pectoral nerve only",
+        "b": "Medial pectoral nerve only",
+        "c": "Both medial and lateral pectoral nerves",
+        "d": "Nerve to pectoralis major only"
+      }
+    },
+    {
+      "number": 86,
+      "stem": "The coracoid process of the scapula has the attachments of:",
+      "options": {
+        "a": "Long head of biceps",
+        "b": "Coracobrachialis muscle",
+        "c": "Pectoralis major",
+        "d": "Short head of triceps"
+      }
+    },
+    {
+      "number": 87,
+      "stem": "The best site for giving an intravenous injection is:",
+      "options": {
+        "a": "Cephalic vein at the origin",
+        "b": "Cephalic vein at delto-pectoral groove",
+        "c": "Basilic vein",
+        "d": "Median cubital vein"
+      }
+    },
+    {
+      "number": 88,
+      "stem": "The branches of axillary artery include:",
+      "options": {
+        "a": "Acromio-thoracic artery",
+        "b": "Medial thoracic artery",
+        "c": "Superior ulnar collateral artery",
+        "d": "Profunda brachii artery"
+      }
+    },
+    {
+      "number": 89,
+      "stem": "What is the innervation of the lumbrical muscles?",
+      "options": {
+        "a": "All ulnar nerve",
+        "b": "All radial nerve",
+        "c": "All median nerve",
+        "d": "Half median & half ulnar nerves"
+      }
+    },
+    {
+      "number": 90,
+      "stem": "The branches from posterior cord of brachial plexus include:",
+      "options": {
+        "a": "Median nerve",
+        "b": "Axillary nerve",
+        "c": "Medial cutaneous nerve of arm",
+        "d": "Suprascapular nerve"
+      }
+    },
+    {
+      "number": 91,
+      "stem": "The structures passing deep to flexor retinaculum include:",
+      "options": {
+        "a": "Tendons of flexor digitorum profundus",
+        "b": "Ulnar artery",
+        "c": "Radial artery",
+        "d": "Ulnar nerve"
+      }
+    },
+    {
+      "number": 92,
+      "stem": "Superficial palmar arch is formed by:",
+      "options": {
+        "a": "Superficial palmar branch of radial artery",
+        "b": "Continuation of radial artery",
+        "c": "Anterior interosseous artery",
+        "d": "Deep palmar branch of ulnar artery"
+      }
+    },
+    {
+      "number": 93,
+      "stem": "Concerning the anatomical snuff box:",
+      "options": {
+        "a": "Ulnar artery lies in floor of snuff box",
+        "b": "Scaphoid forms the floor",
+        "c": "It is visible when thumb is fully flexed",
+        "d": "Superficial radial nerve lies in its floor"
+      }
+    },
+    {
+      "number": 94,
+      "stem": "Opposition of the thumb is dependent upon the functional integrity of this nerve:",
+      "options": {
+        "a": "Axillary nerve",
+        "b": "Median nerve",
+        "c": "Radial nerve",
+        "d": "Ulnar nerve"
+      }
+    },
+    {
+      "number": 95,
+      "stem": "Winging of the scapula is due to injury to what muscle?",
+      "options": {
+        "a": "Deltoid",
+        "b": "Trapezius",
+        "c": "Serratus anterior",
+        "d": "Latissimus dorsi"
+      }
+    },
+    {
+      "number": 96,
+      "stem": "The quadrangular space transmits:",
+      "options": {
+        "a": "Axillary artery",
+        "b": "Lower subscapular artery",
+        "c": "Profunda brachii vessels",
+        "d": "Posterior circumflex humeral artery"
+      }
+    },
+    {
+      "number": 97,
+      "stem": "The clavipectoral fascia:",
+      "options": {
+        "a": "Is pierced by the axillary artery",
+        "b": "Surrounds the pectoralis major muscle",
+        "c": "Lies between the pectoralis minor and subclavius muscles",
+        "d": "The axillary septum is part from it"
+      }
+    },
+    {
+      "number": 98,
+      "stem": "The trapezius attaches to which of the following region of the clavicle?",
+      "options": {
+        "a": "Conoid tubercle",
+        "b": "Lateral one-third of clavicle",
+        "c": "Trapezoid line",
+        "d": "Quadrangular space"
+      }
+    },
+    {
+      "number": 99,
+      "stem": "Flexor pollicis longus:",
+      "options": {
+        "a": "Is a muscle of the superficial group of front of the forearm",
+        "b": "Arises from the common flexor origin",
+        "c": "Supplied by the anterior interosseous branch of median nerve",
+        "d": "Inserts into the radial border of the proximal phalanx"
+      }
+    },
+    {
+      "number": 100,
+      "stem": "The wrist joint is classified as a:",
+      "options": {
+        "a": "Ball and socket joint",
+        "b": "Ellipsoid joint",
+        "c": "Pivot joint",
+        "d": "Saddle joint"
+      }
+    },
+    {
+      "number": 101,
+      "stem": "A patient with a \"wrist drop\" most likely has damage to which nerve?",
+      "options": {
+        "a": "Median nerve",
+        "b": "Radial nerve",
+        "c": "Ulnar nerve",
+        "d": "Axillary nerve"
+      }
+    },
+    {
+      "number": 102,
+      "stem": "The front of lateral epicondyle of the humerus is the common origin for which muscle group?",
+      "options": {
+        "a": "Forearm flexors",
+        "b": "Forearm extensors",
+        "c": "Anconeus",
+        "d": "Brachioradialis"
+      }
+    },
+    {
+      "number": 103,
+      "stem": "Injury to the ulnar nerve can result in which characteristic hand deformity?",
+      "options": {
+        "a": "Ape hand",
+        "b": "Claw hand",
+        "c": "Wrist drop",
+        "d": "Benediction hand"
+      }
+    },
+    {
+      "number": 104,
+      "stem": "The 3rd compartment deep to the extensor retinaculum contains:",
+      "options": {
+        "a": "Extensor carpi radialis longus",
+        "b": "Extensor indicis",
+        "c": "Extensor pollicis longus",
+        "d": "Anterior interosseous artery"
+      }
+    },
+    {
+      "number": 105,
+      "stem": "One of the branches of brachial artery:",
+      "options": {
+        "a": "Posterior circumflex humeral artery",
+        "b": "Subscapular artery",
+        "c": "Circumflex scapular artery",
+        "d": "Superior ulnar collateral artery"
+      }
+    },
+    {
+      "number": 106,
+      "stem": "What is the capacitation of sperms?",
+      "options": {
+        "a": "It is the removal of glycoprotein coat from the head of the sperm",
+        "b": "It starts inside the male genital system",
+        "c": "It is a process through which the amount of acrosomal enzymes is increased",
+        "d": "It is the increased motility of the sperm"
+      }
+    },
+    {
+      "number": 107,
+      "stem": "What is the non-cellular part of the ovum that carries sperm receptors and is composed of glycoprotein?",
+      "options": {
+        "a": "Nucleus of mature ovum",
+        "b": "Cell membrane of the ovum",
+        "c": "Corona radiata",
+        "d": "Zona pellucida"
+      }
+    },
+    {
+      "number": 108,
+      "stem": "What mechanism ensures that only one sperm fertilizes an ovum, thereby preventing polyspermy?",
+      "options": {
+        "a": "Corona radiata",
+        "b": "Receptors in zona pellucida layer",
+        "c": "Low count of sperm in semen",
+        "d": "Zona and cortical reaction"
+      }
+    },
+    {
+      "number": 109,
+      "stem": "Regarding the blastocyst:",
+      "options": {
+        "a": "It is formed inside the uterine tube",
+        "b": "It is formed at the 3rd day of development",
+        "c": "Its wall is known as outer cell mass or trophoblast",
+        "d": "Its cavity is known as amniotic cavity"
+      }
+    },
+    {
+      "number": 110,
+      "stem": "Neurenteric canal is the communication between:",
+      "options": {
+        "a": "Amniotic sac and chorionic cavity",
+        "b": "Yolk sac and chorionic cavity",
+        "c": "Amniotic cavity and yolk sac",
+        "d": "Notochordal canal and amniotic cavity"
+      }
+    },
+    {
+      "number": 111,
+      "stem": "Which one of the following is the cover of the umbilical cord?",
+      "options": {
+        "a": "Chorion",
+        "b": "Yolk sac",
+        "c": "Amniochorionic membrane",
+        "d": "Amnion"
+      }
+    },
+    {
+      "number": 112,
+      "stem": "Regarding placental (decidual) septa:",
+      "options": {
+        "a": "Extend from chorionic plate",
+        "b": "Are complete septa that extend between decidual and chorionic plates",
+        "c": "Contain fetal blood vessels",
+        "d": "They are composed of decidua basalis, cytotrophoblast and syncytiotrophoblast"
+      }
+    },
+    {
+      "number": 113,
+      "stem": "Serous sacs of the body are derived from one of the following sources:",
+      "options": {
+        "a": "Intraembryonic celom",
+        "b": "Chorionic cavity",
+        "c": "Amniotic cavity",
+        "d": "Yolk sac"
+      }
+    },
+    {
+      "number": 114,
+      "stem": "Which one of the following structures limits head fold?",
+      "options": {
+        "a": "Notochord",
+        "b": "Primitive streak",
+        "c": "Somites",
+        "d": "Neural tube"
+      }
+    },
+    {
+      "number": 115,
+      "stem": "Which one of the following structures separates between stomodeum and foregut?",
+      "options": {
+        "a": "Septum transversum",
+        "b": "Cloacal membrane",
+        "c": "Buccopharyngeal membrane",
+        "d": "Intermediate mesoderm"
+      }
+    },
+    {
+      "number": 116,
+      "stem": "What is the source of Heuser's membrane?",
+      "options": {
+        "a": "Hypoblast",
+        "b": "Epiblast",
+        "c": "Amnioblast",
+        "d": "Trophoblast"
+      }
+    },
+    {
+      "number": 117,
+      "stem": "Regarding cytotrophoblastic shell, it is formed:",
+      "options": {
+        "a": "At the beginning of 3rd week",
+        "b": "At the middle of the 3rd week",
+        "c": "At the end of the 3rd week",
+        "d": "At the end of 4th week"
+      }
+    },
+    {
+      "number": 118,
+      "stem": "What is the age of an embryo that has 28 pairs of somites?",
+      "options": {
+        "a": "23 days",
+        "b": "25 days",
+        "c": "27 days",
+        "d": "29 days"
+      }
+    },
+    {
+      "number": 119,
+      "stem": "Skeletal muscles of the body are developed from one of the following sources:",
+      "options": {
+        "a": "Paraxial intraembryonic mesoderm",
+        "b": "Intermediate intraembryonic mesoderm",
+        "c": "Extraembryonic mesoderm",
+        "d": "Splanchnic intraembryonic mesoderm"
+      }
+    },
+    {
+      "number": 120,
+      "stem": "Wharton's jelly of the definitive umbilical cord is derived from one of the following structures:",
+      "options": {
+        "a": "Allantois",
+        "b": "Mesoderm of connecting stalk",
+        "c": "Vitelline duct",
+        "d": "Definitive yolk sac"
+      }
+    }
+  ]
+}
