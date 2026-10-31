@@ -2,13 +2,13 @@ import { getChapters, getExamSources, filterQuestions } from "../data.js";
 import { escapeHtml } from "../router.js";
 import { t } from "../i18n.js";
 
-export function renderLibrary101(root) {
-  const chapters = getChapters();
-  const sources = getExamSources();
+export function renderLibrary(root, moduleId) {
+  const chapters = getChapters(moduleId);
+  const sources = getExamSources(moduleId);
 
   const categoryCards = chapters.categories
     .map((cat) => {
-      const all = filterQuestions({ categories: [cat.id] });
+      const all = filterQuestions({ module: moduleId, categories: [cat.id] });
       const readyCount = all.filter((q) => q.gradingStatus === "Ready").length;
       return `
       <div class="card">
@@ -33,8 +33,8 @@ export function renderLibrary101(root) {
 
   root.innerHTML = `
     <div class="container">
-      <div class="breadcrumb"><a href="#/" data-nav-link>${t("nav.home")}</a> / <a href="#/exams" data-nav-link>${t("lib.breadcrumbEom")}</a> / ${t("module.label", { n: "101" })}</div>
-      <h1>${t("module101.fullTitle")}</h1>
+      <div class="breadcrumb"><a href="#/" data-nav-link>${t("nav.home")}</a> / <a href="#/exams" data-nav-link>${t("lib.breadcrumbEom")}</a> / ${t("module.label", { n: moduleId })}</div>
+      <h1>${t(`module${moduleId}.fullTitle`)}</h1>
       <p class="section-sub">${escapeHtml(chapters.textbookEdition)}</p>
 
       <div class="grid grid-4" style="margin-bottom:24px;">${categoryCards}</div>
@@ -42,7 +42,7 @@ export function renderLibrary101(root) {
       <div class="card" style="margin-bottom:16px;">
         <h2 class="section-title">${t("lib.startTitle")}</h2>
         <p class="section-sub">${t("lib.startDesc")}</p>
-        <a class="btn btn-primary" href="#/setup/101" data-nav-link>${t("lib.startBtn")}</a>
+        <a class="btn btn-primary" href="#/setup/${moduleId}" data-nav-link>${t("lib.startBtn")}</a>
       </div>
 
       <div class="card">
