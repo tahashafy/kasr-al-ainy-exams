@@ -1,12 +1,18 @@
 import { t } from "../i18n.js";
+import { isRemoteEnabled, getAccessCode } from "../store.js";
+import { escapeHtml } from "../router.js";
 
 export function renderHome(root) {
+  const codeReminder = isRemoteEnabled()
+    ? `<p style="color:var(--red-600);font-weight:700;margin-top:10px;" dir="ltr">${t("home.codeReminder", { code: escapeHtml(getAccessCode()) })}</p>`
+    : "";
   root.innerHTML = `
     <div class="container">
       <div style="max-width:720px;margin:0 auto 32px;text-align:center;">
         <span class="badge badge-teal" style="margin-bottom:12px;">${t("home.badge")}</span>
         <h1 style="margin-top:10px;">${t("home.title")}</h1>
         <p>${t("home.subtitle")}</p>
+        ${codeReminder}
       </div>
       <div class="grid grid-2">
         <a class="choice-card" href="#/exams" data-nav-link>
