@@ -8,7 +8,7 @@ export function renderBookmarks(root) {
   const questions = ids.map((id) => getQuestionById(id)).filter(Boolean);
 
   if (!questions.length) {
-    root.innerHTML = `<div class="container-narrow"><div class="empty-state card"><div class="icon">⭐</div><h2>${t("bookmarks.emptyTitle")}</h2><p>${t("bookmarks.emptyDesc")}</p><a class="btn btn-primary" href="#/setup/101" data-nav-link>${t("mistakes.startPracticing")}</a></div></div>`;
+    root.innerHTML = `<div class="container-narrow"><div class="empty-state card"><div class="icon">⭐</div><h2>${t("bookmarks.emptyTitle")}</h2><p>${t("bookmarks.emptyDesc")}</p><a class="btn btn-primary" href="#/exams" data-nav-link>${t("mistakes.startPracticing")}</a></div></div>`;
     return;
   }
 

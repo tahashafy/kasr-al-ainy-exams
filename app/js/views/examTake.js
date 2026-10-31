@@ -15,7 +15,7 @@ export function renderExamTake(root) {
           <div class="icon">🗒️</div>
           <h2>${t("take.noExamTitle")}</h2>
           <p>${t("take.noExamDesc")}</p>
-          <a class="btn btn-primary" href="#/setup/101" data-nav-link>${t("take.buildExam")}</a>
+          <a class="btn btn-primary" href="#/exams" data-nav-link>${t("take.buildExam")}</a>
         </div>
       </div>`;
     return;
@@ -169,7 +169,8 @@ function paint(root, attempt) {
 
   root.querySelector("#exit-exam-btn").addEventListener("click", () => {
     saveInProgress(attempt);
-    navigate("/module/101");
+    const firstQ = getQuestionById(attempt.questionIds[0]);
+    navigate(`/module/${firstQ?.module || "101"}`);
   });
 
   // Keyboard navigation: left/right arrows, 1-5/a-e for options

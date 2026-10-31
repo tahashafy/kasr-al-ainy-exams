@@ -1,47 +1,102 @@
 [
  {
+  "module": "101",
   "batch": "194",
   "label": "Batch 194 — 2020-2021 End-of-Module Exam",
   "academicYear": "2020-2021",
   "examDate": "2020-12-24",
   "importedCount": 48,
-  "questionsFile": "Module101_EOM_2020-2021_Batch194_Round1_Dec2020-24-12-2020.docx",
+  "questionsFile": "Batch194_questions.docx",
   "answerKeyFile": "Module101_Batch194_Book_Verified_Answer_Key.docx"
  },
  {
+  "module": "101",
   "batch": "195",
   "label": "Batch 195 — 2021-2022 End-of-Module Exam",
   "academicYear": "2021-2022",
   "examDate": "2021-12-18",
   "importedCount": 120,
-  "questionsFile": "Module101_EOM_Batch195_2021-2022.docx",
+  "questionsFile": "Batch195_questions.docx",
   "answerKeyFile": "Module101_Batch195_Book_Verified_Answer_Key.docx"
  },
  {
+  "module": "101",
   "batch": "196",
   "label": "Batch 196 — 2022-2023 End-of-Module Exam",
   "academicYear": "2022-2023",
   "examDate": "2022-12-10",
   "importedCount": 120,
-  "questionsFile": "Module101_EOM_Batch196_2022-2023.docx",
+  "questionsFile": "Batch196_questions.docx",
   "answerKeyFile": "Module101_Batch196_Book_Verified_Answer_Key.docx"
  },
  {
+  "module": "101",
   "batch": "198",
   "label": "Batch 198 — 2024-2025 End-of-Module Exam",
   "academicYear": "2024-2025",
   "examDate": "2024-12-05",
   "importedCount": 120,
-  "questionsFile": "Batch198_5-12-2024.docx",
+  "questionsFile": "Batch198_questions.docx",
   "answerKeyFile": "Module101_Batch198_Book_Verified_Answer_Key.docx"
  },
  {
+  "module": "101",
   "batch": "199",
   "label": "Batch 199 — 2025-2026 End-of-Module Exam",
   "academicYear": "2025-2026",
   "examDate": "2025-11-20",
   "importedCount": 120,
-  "questionsFile": "Module101_EOM_Batch199_2025-2026.docx",
+  "questionsFile": "Batch199_questions.docx",
   "answerKeyFile": "Module101_Batch199_Book_Verified_Answer_Key.docx"
+ },
+ {
+  "module": "102",
+  "batch": "20200115",
+  "label": "Module 102 — 2020-01-15 End-of-Module Exam",
+  "academicYear": "2019-2020",
+  "examDate": "2020-01-15",
+  "importedCount": 96,
+  "questionsFile": "20200115_questions.docx",
+  "answerKeyFile": "Module102_20200115_Book_Verified_Answer_Key.docx"
+ },
+ {
+  "module": "102",
+  "batch": "20201220",
+  "label": "Module 102 — 2020-12-20 End-of-Module Exam",
+  "academicYear": "2020-2021",
+  "examDate": "2020-12-20",
+  "importedCount": 96,
+  "questionsFile": "20201220_questions.docx",
+  "answerKeyFile": "Module102_20201220_Book_Verified_Answer_Key.docx"
+ },
+ {
+  "module": "102",
+  "batch": "20211226",
+  "label": "Module 102 — 2021-12-26 End-of-Module Exam",
+  "academicYear": "2021-2022",
+  "examDate": "2021-12-26",
+  "importedCount": 120,
+  "questionsFile": "20211226_questions.docx",
+  "answerKeyFile": "Module102_20211226_Book_Verified_Answer_Key.docx"
+ },
+ {
+  "module": "102",
+  "batch": "20231130",
+  "label": "Module 102 — 2023-11-30 End-of-Module Exam",
+  "academicYear": "2023-2024",
+  "examDate": "2023-11-30",
+  "importedCount": 120,
+  "questionsFile": "20231130_questions.docx",
+  "answerKeyFile": "Module102_20231130_Book_Verified_Answer_Key.docx"
+ },
+ {
+  "module": "102",
+  "batch": "20241128",
+  "label": "Module 102 — 2024-11-28 End-of-Module Exam",
+  "academicYear": "2024-2025",
+  "examDate": "2024-11-28",
+  "importedCount": 120,
+  "questionsFile": "20241128_questions.docx",
+  "answerKeyFile": "Module102_20241128_Book_Verified_Answer_Key.docx"
  }
 ]

@@ -13,12 +13,12 @@ export function renderModuleSelect(root) {
           <p>${t("modules.m101desc")}</p>
           <span class="badge badge-green" style="margin-top:14px;">${t("home.available")}</span>
         </a>
-        <div class="choice-card disabled" aria-disabled="true">
+        <a class="choice-card" href="#/module/102" data-nav-link>
           <div class="choice-icon">102</div>
           <h3>${t("module.label", { n: "102" })}</h3>
           <p>${t("modules.m102desc")}</p>
-          <span class="badge badge-amber" style="margin-top:14px;">${t("home.comingSoon")}</span>
-        </div>
+          <span class="badge badge-green" style="margin-top:14px;">${t("home.available")}</span>
+        </a>
         <div class="choice-card disabled" aria-disabled="true">
           <div class="choice-icon">103</div>
           <h3>${t("module.label", { n: "103" })}</h3>

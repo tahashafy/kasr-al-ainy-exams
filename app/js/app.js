@@ -1,11 +1,11 @@
-import { loadData } from "./data.js";
+import { loadData, getAvailableModuleIds } from "./data.js";
 import { registerRoute, registerNotFound, startRouter } from "./router.js";
 import { getSettings, saveSettings, initStore, isRemoteEnabled, getAccessCode, switchAccessCode } from "./store.js";
 import { hasStoredAccessCode } from "./identity.js";
 import { setLang, applyStaticTranslations, t } from "./i18n.js";
 import { renderHome } from "./views/home.js";
 import { renderModuleSelect } from "./views/moduleSelect.js";
-import { renderLibrary101 } from "./views/library101.js";
+import { renderLibrary } from "./views/library.js";
 import { renderExamSetup } from "./views/examSetup.js";
 import { renderExamTake } from "./views/examTake.js";
 import { renderExamResults } from "./views/examResults.js";
@@ -110,10 +110,12 @@ async function main() {
   await initStore();
   setupAccessCodeUI();
 
+  const availableModuleIds = getAvailableModuleIds();
+
   registerRoute("/", (r) => renderHome(r));
   registerRoute("/exams", (r) => renderModuleSelect(r));
-  registerRoute("/module/:id", (r, p) => (p.id === "101" ? renderLibrary101(r) : renderComingSoon(r, p.id)));
-  registerRoute("/setup/:id", (r, p) => (p.id === "101" ? renderExamSetup(r) : renderComingSoon(r, p.id)));
+  registerRoute("/module/:id", (r, p) => (availableModuleIds.includes(p.id) ? renderLibrary(r, p.id) : renderComingSoon(r, p.id)));
+  registerRoute("/setup/:id", (r, p) => (availableModuleIds.includes(p.id) ? renderExamSetup(r, p.id) : renderComingSoon(r, p.id)));
   registerRoute("/exam/take", (r) => renderExamTake(r));
   registerRoute("/results/:id", (r, p) => renderExamResults(r, p));
   registerRoute("/mistakes", (r) => renderMistakes(r));

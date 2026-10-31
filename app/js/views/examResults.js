@@ -14,6 +14,7 @@ export function renderExamResults(root, params) {
   const s = attempt.score;
 
   const weakness = buildWeaknessSummary(questions, attempt.responses);
+  const attemptModuleId = questions[0]?.module || "101";
 
   root.innerHTML = `
     <div class="container">
@@ -55,7 +56,7 @@ export function renderExamResults(root, params) {
               </div>`
               )
               .join("")}
-            <a class="btn btn-secondary" href="#/setup/101" data-nav-link>${t("results.revisionBtn")}</a>
+            <a class="btn btn-secondary" href="#/setup/${attemptModuleId}" data-nav-link>${t("results.revisionBtn")}</a>
           </div>`
         : ""}
 

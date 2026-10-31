@@ -20,20 +20,26 @@ export async function loadData() {
   ]);
 }
 
-export function getChapters() {
-  return _chapters;
+/** List of module ids that actually have chapter/category taxonomy loaded (i.e. are
+ * "lit up", not "Coming Soon"). */
+export function getAvailableModuleIds() {
+  return Object.keys(_chapters);
+}
+
+export function getChapters(moduleId) {
+  return _chapters[moduleId];
 }
 
 export function getSources() {
   return _sources;
 }
 
-export function getCategoryList() {
-  return _chapters.categories.map((c) => ({ id: c.id, name: c.name }));
+export function getCategoryList(moduleId) {
+  return _chapters[moduleId].categories.map((c) => ({ id: c.id, name: c.name }));
 }
 
-export function getChaptersForCategories(categoryIds) {
-  return _chapters.categories
+export function getChaptersForCategories(moduleId, categoryIds) {
+  return _chapters[moduleId].categories
     .filter((c) => categoryIds.includes(c.id))
     .flatMap((c) => c.chapters.map((ch) => ({ ...ch, categoryId: c.id, categoryName: c.name })));
 }
@@ -43,17 +49,21 @@ export function getAllQuestions() {
 }
 
 /**
- * Distinct historical exam sources ("papers") available for Module 101,
- * derived from the question bank itself plus the per-batch metadata in
- * sources.json (so it always reflects what was actually imported, never a
- * hand-maintained/possibly-stale list). Each paper now reports a Ready/
- * Review breakdown instead of a single verified/unverified flag, since
- * every question in the new Book Verified key has a recommended answer —
- * "Review" means "needs a faculty scoring decision", not "no answer".
+ * Distinct historical exam sources ("papers"), derived from the question
+ * bank itself plus the per-batch metadata in sources.json (so it always
+ * reflects what was actually imported, never a hand-maintained/possibly-
+ * stale list). Each paper reports a Ready/Review breakdown instead of a
+ * single verified/unverified flag, since every question in a Book Verified
+ * key has a recommended answer — "Review" means "needs a faculty scoring
+ * decision", not "no answer".
+ * @param {string} [moduleId] - when given, restricts to that module's own
+ *   papers (used by the library/exam-setup screens); omitted, returns every
+ *   module's papers together (used by the About page's full sources list).
  */
-export function getExamSources() {
+export function getExamSources(moduleId) {
   const map = new Map();
   for (const q of _questions) {
+    if (moduleId && q.module !== moduleId) continue;
     if (!map.has(q.sourceExam)) {
       map.set(q.sourceExam, {
         label: q.sourceExam,
@@ -91,13 +101,14 @@ export function coverageGroupOf(q) {
  * time (see scoring.js). coverageGroup is the opt-in "Advanced filters"
  * control for narrowing by book coverage.
  * @param {{
- *   categories?: string[], chapters?: string[], sourceExam?: string|null,
+ *   module?: string, categories?: string[], chapters?: string[], sourceExam?: string|null,
  *   coverageGroup?: ('book-supported'|'partial'|'not-covered'|'undetermined')|null
  * }} criteria
  */
 export function filterQuestions(criteria = {}) {
-  const { categories, chapters, sourceExam, coverageGroup } = criteria;
+  const { module, categories, chapters, sourceExam, coverageGroup } = criteria;
   return _questions.filter((q) => {
+    if (module && q.module !== module) return false;
     if (categories && categories.length && !categories.includes(q.category)) return false;
     if (chapters && chapters.length && !chapters.includes(q.chapter)) return false;
     if (sourceExam && q.sourceExam !== sourceExam) return false;
@@ -142,15 +153,23 @@ export function getQuestionById(id) {
   return _questions.find((q) => q.id === id) || null;
 }
 
+/** Chapter ids are unique across every module's taxonomy (e.g. "hist-1" vs "bio-1"), so
+ * this can resolve a chapter without the caller having to know/pass which module it
+ * belongs to. */
 export function getChapterMeta(chapterId) {
-  for (const cat of _chapters.categories) {
-    const ch = cat.chapters.find((c) => c.id === chapterId);
-    if (ch) return { ...ch, categoryId: cat.id, categoryName: cat.name };
+  for (const moduleChapters of Object.values(_chapters)) {
+    for (const cat of moduleChapters.categories) {
+      const ch = cat.chapters.find((c) => c.id === chapterId);
+      if (ch) return { ...ch, categoryId: cat.id, categoryName: cat.name };
+    }
   }
   return null;
 }
 
 export function getCategoryMeta(categoryId) {
-  const cat = _chapters.categories.find((c) => c.id === categoryId);
-  return cat ? { id: cat.id, name: cat.name } : null;
+  for (const moduleChapters of Object.values(_chapters)) {
+    const cat = moduleChapters.categories.find((c) => c.id === categoryId);
+    if (cat) return { id: cat.id, name: cat.name };
+  }
+  return null;
 }

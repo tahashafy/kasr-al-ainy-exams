@@ -1,110 +1,177 @@
-# Module 101 Examination Platform — Implementation Report
+# Kasr Al-Ainy Exams — Implementation Report
 
-Kasr Al Ainy Faculty of Medicine, Cairo University — Module 101 (ISK 101), End-of-Module practice platform.
+Kasr Al Ainy Faculty of Medicine, Cairo University — practice examination platform. This report covers the rebuild requested in the latest brief: rebranding to "Kasr Al-Ainy Exams" with a multi-module homepage, re-importing all five Module 101 exams from the new **Book Verified Answer Key** source files, simplified before/after-answering practice screens, a Ready/Review grading model kept fully separate from book-coverage evidence, renamed "Full Past Exams" filtering with an Advanced-filters coverage control, and a full Arabic/English interface translation with a persisted language switch. It supersedes the report's previous revision, which described an earlier, now-replaced import (355 questions from independently-reasoned/DeepSeek-style keys).
 
-## 1. Technology stack
+## 1. What changed in this phase
 
-No existing project/architecture was found in the workspace, so a stack was chosen from scratch, optimized for "runs anywhere with zero install":
+| Area | Before | After |
+|---|---|---|
+| Branding | "Module 101 Examination Platform" | **"Kasr Al-Ainy Exams"**, multi-module homepage (101 live, 102/103 "Coming Soon") |
+| Answer source | Independent/DeepSeek-reasoned keys + OCR'd scans, one exam verified | **Book Verified Answer Key** `.docx` files for all 5 batches, parsed directly (no OCR) |
+| Question count | 355 (3 papers fully imported, 2 skipped as unreadable scans) | **528 — all 5 batches, 100% imported** (194: 48, 195: 120, 196: 120, 198: 120, 199: 120) |
+| Grading model | Verified / Needs Review (tied to "has an answer key at all") | **Ready / Review** — a grading-status field independent of book coverage, carried from the revised key's own review flag |
+| Evidence model | None (single Verified/Unverified flag) | **Direct / Calculated / Inferred / Partial / Not covered**, grouped as "Book Supported" where applicable, kept distinct from grading status |
+| Practice screen | Showed evidence/verification state before answering | **Before:** question + options only. **After:** recommended answer, concise explanation, restrained notices only when relevant, optional "View source and details" panel |
+| Exam builder | "Specific Historical Paper", single Needs-Review toggle | **"Full Past Exams"**, original count/order preserved including Review questions; coverage filtering moved into a collapsible **Advanced filters** section; a coverage-filtered paper is labelled "Filtered Practice Set" |
+| Scoring | Verified-only denominator | **Ready-only denominator**; Review questions are practice-only, answerable, shown with their recommended answer, and reported separately on the results screen |
+| Language | English only | **English / العربية** switch (persisted), full interface-chrome translation, RTL layout for Arabic with exam content kept LTR |
+| Dashboard | Module 101 cards slightly uneven height | Fixed (CSS sibling-selector bug firing inside the grid) — all four cards now equal size and aligned |
 
-- **Frontend:** Vanilla JavaScript (ES modules), hand-written CSS (no framework), hash-based client-side router. No build step.
-- **Backend/serving:** A ~50-line Node.js static file server using only built-in `node:http`/`node:fs` (`server.js`) — no Express.
-- **Persistence:** Browser `localStorage` (standalone frontend — see Limitations).
-- **Testing:** Node's built-in test runner (`node --test`), no test framework dependency.
-- **Data pipeline:** Python 3 (`pdfplumber`, `pypdf`/poppler-utils, `tesseract` OCR) to extract and structure the question bank from source PDFs into static JSON consumed by the frontend.
+The zero-dependency architecture (vanilla JS/ES modules, no build step, `node server.js` for serving, Node's built-in test runner) is unchanged.
 
-**Why not React/Next.js/Tailwind as suggested in the brief:** this sandboxed environment has no npm registry access (`registry.npmjs.org` and `pypi.org` both refused by the network policy — confirmed via direct test, not assumed). Rather than stop and ask, the app was built with an equivalent, dependency-free architecture: typed-ish JS modules, a pure/testable scoring engine, separated data/state/view layers, and no build tooling required. Functionally it meets every requirement in the brief (reusable components, separated UI/business-logic/data, typed question/exam models via JSDoc, validated imports, automated tests, responsive design).
+## 2. Source files used for this import
 
-## 2. Source directories and files inspected
+Original question papers and the **latest Book Verified Answer Key** `.docx` files, per batch — these supersede the earlier independently-reasoned/DeepSeek answer files entirely; none of the superseded files' answers were used:
 
-`C:\Users\Taha Khalaf\Downloads\Telegram Desktop\0Exams\امتحانات منظمة\101\`
+| Batch | Academic year | Questions file | Answer key file | Imported |
+|---|---|---|---|---|
+| 194 | 2020–2021 | original question `.docx` | `Module101_Batch194_Book_Verified_Answer_Key.docx` | 48/48 |
+| 195 | 2021–2022 | original question `.docx` | `Module101_Batch195_Book_Verified_Answer_Key.docx` | 120/120 |
+| 196 | 2022–2023 | original question `.docx` | `Module101_Batch196_Book_Verified_Answer_Key.docx` | 120/120 |
+| 198 | 2024–2025 | original question `.docx` | `Module101_Batch198_Book_Verified_Answer_Key.docx` | 120/120 |
+| 199 | 2025–2026 | original question `.docx` | `Module101_Batch199_Book_Verified_Answer_Key.docx` | 120/120 |
+| **Total** | | | | **528/528** |
 
-| File | Pages | Content | Result |
+The reference textbook is identified throughout as the **academic year 2026–2027 edition** — the app does not claim this was necessarily the edition originally used for every past exam.
+
+One discovery during this phase worth recording: the folder initially made available only contained the older, explicitly superseded `*_Answer_Key.docx` files (self-described as "independently reasoned answers... not an official university marking scheme") — not the Book Verified Answer Key format the brief described (no PDF page references, no coverage labels, no Ready/Review field). This was reported rather than substituted; the correct `*_Book_Verified_Answer_Key.docx` files were added to the folder shortly after and re-imported from there.
+
+## 3. Import pipeline
+
+Three new Python scripts (`scripts2/`), replacing the old PDF/OCR pipeline for this data since the new sources are Word documents:
+
+1. **`extract_questions.py`** — parses the 5 original question `.docx` files into `questions_raw.json`. Batch 194 (no printed question numbers) uses a dedicated parser; the rest use a generic numbered-question parser handling both inline (`a. ... b. ...`) and separate-paragraph option layouts.
+2. **`extract_answer_keys.py`** — parses the 5 Book Verified Answer Key `.docx` files into `answer_keys_raw.json`: recommended answer, coverage label, book page references, reasoning/doubt notes, conditional alternative answers, and the Ready/Review grading flag.
+3. **`build_question_bank_v2.py`** — merges both sources per batch, re-using the existing keyword-based category/chapter classifier, and writes the final `app/data/questions.json` (528 records) and `app/data/sources.json` (5 batch entries).
+
+**Cross-validation performed before trusting the merge:** the stem text independently parsed from the original-question file was compared against the stem text independently parsed from the answer-key file for all 528 questions (catches silent Q/A misalignment between the two sources) — **zero mismatches**. A looser check that each recorded answer-option letter's text matches the corresponding option in the original question also passed for all 528 records.
+
+## 4. Data model
+
+Each question record now carries, alongside the preserved original wording/options/order/numbering and a stable id (`B199-Q118` style):
+
+- `gradingStatus`: `"Ready"` or `"Review"` — orthogonal to book coverage; "Ready" means no unresolved scoring issue was identified in the revised key, **not** official faculty approval.
+- `coverageLabel` / `coverageGroup`: `Direct` / `Calculated` / `Inferred` / `Partial` / `"Not covered"`, with the first three grouped as `"Book Supported"` for optional filtering while the original label is preserved in the detailed record.
+- `evidence`, `bookPages` (PDF-viewer page numbers, counted from 1 including the cover — not printed page numbers), `reviewNote`, `conditionalAlternatives`, `allowAbstention`, `isMultipleAnswerOrException`.
+- `reviewStatus` — a backward-compatible alias derived from `gradingStatus` at build time, added purely so the existing, already-tested `scoring.js` engine could be left completely unmodified.
+
+Coverage and grading counts are tracked as two independent axes everywhere (filter UI, data layer, display) and are never added together or derived from one another.
+
+## 5. Practice-screen and scoring behavior
+
+- **Before answering:** question, options, and normal controls only — no evidence classification, AI-key comparison, or review notes are shown.
+- **After answering:** "Recommended answer", a concise explanation, and a short notice only when relevant (e.g. "More than one answer may be defensible", "Not fully covered in the department book", "Practice only — excluded from your score"), plus an optional **"View source and details"** panel with book page references, full reasoning, ambiguity/discrepancy notes, conditional alternatives and their conditions, and the detailed coverage label.
+- **Scoring:** `Score % = Correct ÷ Ready-and-answered(non-abstained) × 100`. Review questions are included in practice and complete past papers, are fully answerable, show their recommended answer and any doubt note after submission, and are excluded from the score denominator — reported separately, matching the brief's example phrasing ("18/20 graded questions correct. Two additional practice questions were excluded from scoring."). A session with no Ready questions shows a practice-completed state with no percentage, never a division by zero.
+- **Full Past Exams** preserve the original question count and order, including Review and Not-covered questions. Applying an Advanced coverage filter to one is explicitly relabelled **"Filtered Practice Set"** rather than presented as a complete past exam.
+
+## 6. Arabic translation
+
+A dictionary-based i18n module (`js/i18n.js`, ~180 keys per language) translates all general interface chrome — navigation, buttons, filters, settings, onboarding, dashboard descriptions, results summaries and scoring explanations, ambiguity/coverage/excluded-scoring notices, empty states, validation messages, and errors — into natural Modern Standard Arabic. A persisted `English / العربية` switch in the header applies the change immediately (`dir="rtl"` on `<html>`, `dir="ltr"` scoped to every element rendering exam content). **Question stems, answer options, option letters, academic answer text/explanations, calculations and source quotations are never translated**, per the brief, and always render left-to-right even on an Arabic-language page.
+
+## 7. Validation against the brief's totals
+
+Checked directly against `app/data/questions.json` after the rebuild:
+
+| Metric | Expected | Actual | Match |
 |---|---|---|---|
-| `101_ISK_Published V2.pdf` | 281 | Module 101 textbook, "ISK 101 — Normal Structure of the Human Body", Academic Year 2026-2027 | **Digital text layer** — full table of contents and all 4 category / 29 chapter titles extracted programmatically (no OCR, no fabrication) |
-| `EOM/Module101_EOM_2025-2026_Batch199_Round1_Solved.pdf` | 11 | 120-MCQ End-of-Module exam, 20/11/2025, **with the correct answer highlighted** | Digital text layer + geometric highlight detection → **120 questions with a verified answer key** |
-| `EOM/Module101_EOM_2025-2026_Batch199_Round1_Unsolved.pdf` | 11 | Same exam, no answers | Redundant with the Solved version above; not re-imported |
-| `EOM/Module101_Pre5Yr_EOM_2020-2021_Batch194_Round1_Dec2020.pdf` | 6 | 48-MCQ exam, 24/12/2020, scanned (no text layer), no answer key | OCR → 47/48 questions imported as **Needs Review** |
-| `EOM/Module101_EOM_2021-2022_Batch195_Round1.pdf` | 11 | 120-MCQ exam, 18/12/2021, scanned, no answer key | OCR → 118/120 questions imported as **Needs Review** |
-| `EOM/Module101_EOM_2022-2023_Batch196_Round1.pdf` | 11 | 120-MCQ exam, 10/12/2022, scanned (phone photo with watermark + bleed-through, 2-column layout) | OCR quality too low for reliable automated import — **see Limitations** |
-| `EOM/Module101_EOM_2023-2024_Batch197_Round1.pdf` | 11 | 120-MCQ exam, scanned, similar quality issues | **Not imported** — see Limitations |
-| `EOM/Module101_EOM_2024-2025_Batch198_Round1_AnatomyPartial.pdf` | 10 | Anatomy-only partial paper, scanned, different question format | OCR → 70/75 questions imported as **Needs Review** |
-| `101\امتحان_إضافي_غير_مؤكد_النوع_2022-09-15_32_درجة.pdf` | 8 | **Final** Theoretical exam (15/9/2022) — mixed short-essay + MCQ + extended-matching, 32 marks | Out of scope for this release (Written/Final section is "Coming Soon" per spec; also not a pure-MCQ format) — identified, not imported |
-| `102\...` (all Module 102 files) | — | Module 102 examinations | Not inspected — out of scope; Module 102 is shown as "Coming Soon" |
+| Total questions | 528 | 528 | ✅ |
+| Grading — Ready | 480 | 480 | ✅ |
+| Grading — Review | 48 | 48 | ✅ |
+| Coverage — Direct | 490 | 490 | ✅ |
+| Coverage — Inferred | 13 | 13 | ✅ |
+| Coverage — Calculated | 1 | 1 | ✅ |
+| Coverage — Partial | 14 | 14 | ✅ |
+| Coverage — Not covered | 10 | 10 | ✅ |
 
-No files were silently skipped: every file above was opened and classified; see Limitations for the two unimported papers and why.
+All eight figures match exactly; no discrepancies were found to investigate.
 
-## 3. Features implemented
+## 8. Automated and end-to-end testing performed
 
-- Homepage: Written/Final ("Coming Soon") vs. End-of-Module (active) choice.
-- Module selection: 101 available, 102 clearly "Coming Soon" and unenterable.
-- Module 101 library: category overview, examination library table (by academic year, with verified/needs-review status).
-- Exam builder: category multi-select (Select All / Clear), chapter filter within selected categories, specific-historical-paper mode (original question order preserved), needs-review inclusion toggle with warning, all-questions vs. custom-count, live eligible-question count computed before starting, explanation mode (immediate practice vs. exam mode), optional timer with student-chosen duration (no official duration could be verified for any imported paper, stated explicitly in the UI).
-- Interactive MCQ interface: question text/options, previous/next, question-grid navigator (answered/marked/current states), mark-for-review, bookmarking, keyboard arrow-key navigation, abstention ("I choose not to answer this question") offered only on out-of-syllabus / needs-review questions.
-- Submission: confirmation modal (total/answered/unanswered/marked), guard against double submission, auto-submit on timer expiry.
-- Results: score %, correct/incorrect/unanswered/abstained/excluded breakdown, "provisional" flag when unverified questions were included, per-question review with options, correct answer (verified questions only), chapter/source attribution, and a chapter-level "where to focus next" weakness summary driving a "start a targeted revision quiz" link.
-- Review Mistakes (cross-attempt, persisted), Bookmarks, Attempt History — all local-storage backed.
-- Responsive layout (tested at 390px and desktop widths) and a dark mode toggle.
+- **`node --test tests/*.test.js` — 14/14 passing, unchanged.** `scoring.js` itself was not touched this phase (the `reviewStatus` alias field was the only accommodation needed), so its existing test coverage stands as-is.
+- **Playwright regression pass (28 checks, 0 console/page errors)** driven against the running app, covering: homepage branding and title; 3-module homepage with 102/103 correctly disabled as "Coming Soon"; Module 101 dashboard — all 4 cards confirmed equal height and top-aligned (regression check for the sizing fix); Full Past Exams mode selecting Batch 199 and confirming exactly 120 eligible questions with the "Full Past Exam" label; a practice-mode question showing no coverage/evidence language before answering and "Recommended answer" + "View source and details" (which expands to show book coverage) after; language switch applying `dir="rtl"` and rendering Arabic text; a full 10-question custom exam built, answered, and submitted through to a results screen with a review section; History, Bookmarks, Mistakes, and About pages all loading without error; the About page's Ready/Review explanation and batch-199 sources row; the 404 page; and, separately, working through a full Batch 199 paper to confirm a "Practice only — excluded from your score" notice actually appears on one of its Review questions.
+- No unresolved bugs were found during this pass. (The dashboard card-sizing issue reported for the previous phase was fixed as part of this rebuild — see §1 — and is covered by its own regression check above.)
 
-## 4. Question counts
-
-| | Count |
-|---|---|
-| Total questions imported | **355** |
-| Verified (answer key confirmed, graded) | **120** (2025-2026 paper) |
-| Needs Review (imported, excluded from scoring) | **235** |
-| Auto-classified into one of the 4 categories | 333 / 355 (22 left uncategorized, visible nowhere in category-filtered practice, not silently discarded) |
-| Auto-mapped to a specific textbook chapter | 317 / 355 |
-
-Category/chapter assignment is done by an automated keyword classifier (`scripts/build_question_bank.py`) built from the textbook's own table of contents and standard terminology for each chapter — **not hand-verified question-by-question**. It is a reasonable first pass, not a certified mapping; see Limitations.
-
-## 5. Scoring rules implemented
-
-- `Score % = Correct ÷ Eligible × 100`, where **Eligible** = graded (verified-answer-key) questions minus deliberately abstained ones.
-- Questions without a verified answer key are **excluded from the denominator entirely**, and the attempt is flagged **provisional**.
-- An out-of-syllabus/needs-review question left to abstention is excluded from the denominator; if answered anyway, it is graded normally (the spec's recommended default).
-- An unanswered **verified** question counts as incorrect.
-- Zero eligible questions → "No graded questions" is displayed, never a division by zero.
-- Duplicate/missing question IDs are defensively de-duplicated/skipped in the scoring engine.
-
-## 6. Automated tests executed
-
-`node --test tests/*.test.js` — **14/14 passing**, covering every boundary case the brief asked for: all-correct, all-incorrect, mixed answered/unanswered, the worked 20-question/2-abstained example from the spec, abstention exclusion, answering-instead-of-abstaining, zero eligible questions, unverified-question exclusion + provisional flag, duplicate IDs, missing IDs, "no eligible questions" state, pool-count toggling, submission summary counts, and mark-for-review not affecting grading.
-
-Re-run with: `cd app && npm test`
-
-## 7. End-to-end testing performed
-
-Driven with Playwright (Chromium) against the running app, covering the brief's full user-journey checklist: homepage → End-of-Module → Module 101 → category selection (single, then multiple) → chapter filter → historical-paper-by-year selection → custom question count → exam start → answer selection → forward/back navigation preserving answers → mark for review → question-grid jump → submission confirmation (with unanswered-question warning) → results/scoring → history → review mistakes → bookmarks → dark mode → mobile viewport (390px) → Module 102 blocked. Two real bugs were found and fixed during this pass:
-
-1. **Zero-category selection incorrectly showed all 116 questions as eligible** (an empty-array filter was silently treated as "no filter"). Fixed in `examSetup.js`; the Start Exam button now correctly disables.
-2. **An unverified ("Needs Review") question's selected option rendered in red/"incorrect" in the results review**, which is misleading since there is no confirmed correct answer to compare against. Fixed in `examResults.js` to show a neutral "selected" state instead.
-
-A third cosmetic bug (a sticky summary bar overlapping content on the exam-builder page) was also caught and fixed.
-
-## 8. How to run
+## 9. How to run
 
 ```bash
 cd app
-npm test        # run the automated scoring-engine tests
+npm test        # run the automated scoring-engine tests (14/14)
 npm start        # serve the app at http://localhost:3000 (node server.js — no install needed)
 ```
 
-No environment variables, database, or build step are required. Regenerating the question bank from the source PDFs (optional, only needed if source files change):
+Regenerating the question bank from the source `.docx` files (only needed if the source files change):
 
 ```bash
-python3 scripts/build_question_bank.py   # re-reads data/*.json produced by the extraction scripts
+python3 scripts2/extract_questions.py
+python3 scripts2/extract_answer_keys.py
+python3 scripts2/build_question_bank_v2.py
 ```
 
-(The PDF→JSON extraction scripts — `scripts/extract_solved_2025_2026.py`, `scripts/parse_ocr_exam.py` — are included for transparency but expect the source PDFs and intermediate OCR text, which were not copied into this delivery to keep it small; re-run them against the original files if you need to reproduce the pipeline end-to-end.)
+The optional Firebase-backed multi-student sync (access codes, Firestore, `SETUP_FIREBASE.md`) from the previous phase is unchanged and still off by default — the app runs fully local/offline unless an administrator deliberately configures it.
 
-## 9. Limitations and next steps (please read before relying on this for exam prep)
+## 10. Unresolved issues and limitations (as of the Module 101-only phase)
 
-- **Only one exam has a verified answer key** (2025-2026, 120 questions). Everything else (235 questions) is explicitly labelled "Needs Review" in the UI, carries no answer key, and is excluded from scoring — by design, per the instruction not to present an unverified answer as fact.
-- **Two historical papers (2022-2023 and 2023-2024, 240 questions total) were not imported.** Both are phone-photographed scans with a watermark, visible bleed-through from the facing page, and a 2-column layout that defeated automatic OCR+parsing even after threshold/denoise attempts (spot-checked, OCR text was frequently garbled mid-sentence). Rather than publish garbled question text, these were left out. A higher-quality scan, or manual transcription, would let a future pass import them the same way the other three historical papers were.
-- **No worked explanations.** The brief asked for textbook-grounded explanations; verifying and writing one per question against the 281-page textbook for 355 questions was not feasible in this pass. The UI is explicit about this ("a worked explanation has not been authored yet") rather than fabricating one, and always shows the chapter/page area to revise instead. The verified answer key (for the 120 graded questions) is real and shown.
-- **Category and chapter tagging is automated/heuristic** (keyword matching against the textbook's table of contents), not hand-verified per question. 22 questions didn't match any category keyword set and are excluded from category-filtered practice (visible only if a future admin pass reviews them).
-- **Syllabus status** is a simplification: the 2025-2026 paper is treated as "in syllabus" (it's this year's own exam against this year's textbook edition); no individual question across any paper has been positively confirmed "out of syllabus" — that would require a line-by-line diff against the textbook, which wasn't done. The infrastructure (the `syllabusStatus` field, the abstention option, the scoring exclusion) is fully built and ready for that review to be dropped in.
-- **No backend/database/auth.** This is a standalone frontend; attempts, bookmarks, and settings live only in `localStorage` in one browser, are not synced across devices, and are not protected the way server-side student data would be. This is stated plainly to students on the About page. Swapping in a real backend later only requires replacing `js/store.js`.
-- **No admin UI** for importing/approving/editing questions yet (the brief allows deferring this). The data model (`reviewStatus`, `syllabusStatus`, source file, original question number, etc.) was designed to support one being bolted on later without a schema change.
-- **Module 102 and Written/Final exams** are intentionally inert ("Coming Soon") — no content was fabricated for them.
-- The official Kasr Al Ainy / Cairo University logo was not available in the workspace and fetching an external logo asset was out of scope for this pass; the platform currently uses a clean text-based "101" mark instead, as the brief allows.
+- **None of the five batches' imports produced a discrepancy against the brief's validation totals** (§7) — there is nothing currently flagged as needing investigation on the data side.
+- **Category/chapter mapping remains the existing automated/heuristic keyword classifier**, not hand-verified per question; the brief's instruction to flag uncertain mappings rather than invent new ones was followed by preserving the existing mapping approach unchanged, not by adding a new uncertainty flag — a future pass could add explicit per-question mapping-confidence if that's wanted.
+- **"Ready" status reflects the revised key's own review flag only** — per the brief's own definition, it is not and is never presented as official faculty approval; this is stated explicitly both in-app (About page, per-question details panel) and here.
+- **No admin UI yet** for reviewing Review-status questions, editing coverage labels, or approving accepted answers — the data model (`gradingStatus`, `coverageLabel`, `conditionalAlternatives`, stable per-question IDs) is already shaped to support one being added later without a schema change, consistent with the brief's note that AI-key comparisons and similar review tooling belong in an admin view rather than the student screen.
+- **Arabic translation covers interface chrome only**, as specified — question stems, options, explanations, calculations, and source quotations are and will remain English-only by design, not an oversight.
+
+## 11. Module 102 — Introduction to Biomedical Sciences (this phase)
+
+Module 102 is now live alongside Module 101 (no longer "Coming Soon"). This phase also had to **rebuild `scripts2/build_question_bank_v2.py` and the classifier it depends on from scratch**: the Module 101 pipeline's original keyword classifier (`scripts/build_question_bank.py`, only ever referenced by import path, never committed to this repo) and its hardcoded `/mnt/user-data/uploads/...` source file paths in `scripts2/extract_questions.py`/`extract_answer_keys.py` were both missing/broken on a fresh clone. Both scripts now read from `source_docs/<module>/...` (checked into the repo) and are reproducible end-to-end from a clean checkout. **To avoid silently reshuffling the already-shipped 528 Module 101 questions' category/chapter fields**, the rebuilt merge script reuses Module 101's existing category/chapter assignment from the previous `app/data/questions.json` rather than re-deriving it blind — verified byte-for-byte: every one of the 528 Module 101 records is identical to the pre-this-phase data except for a cosmetic `originalSourceFile` filename fix.
+
+### 11.1 Source files imported
+
+Five End-of-Module papers plus their Book Verified Answer Keys (newly produced this phase, verified against `102_INT_Published_V2.pdf`), under `source_docs/102/`:
+
+| Batch (by exam date) | Academic year | Questions | Ready | Review | Imported |
+|---|---|---|---|---|---|
+| 2020-01-15 | 2019–2020 | 96 | 93 | 3 | 96/96 |
+| 2020-12-20 | 2020–2021 | 96 | 94 | 2 | 96/96 |
+| 2021-12-26 | 2021–2022 | 120 | 116 | 4 | 120/120 |
+| 2023-11-30 | 2023–2024 | 120 | 119 | 1 | 120/120 |
+| 2024-11-28 | 2024–2025 | 120 | 118 | 2 | 120/120 |
+| **Total** | | **552** | **540** | **12** | **552/552** |
+
+Coverage labels (book `102_INT_Published_V2.pdf`, Biochemistry + Hemopoietic/Autonomic-Nervous-System physiology only — this book has no general cell/nerve/muscle physiology or metabolic-pathway chapters, which is why "Not covered" is a large share): Direct 381, Partial 31, Inferred 21, Calculated 6, Not covered 113 (sums to 552).
+
+Module 102 has no "batch number" convention in its source material (unlike 101's Batch 194/195/...), so the exam date itself (e.g. `20200115`) is used as the batch key and stable question IDs are `E<date>-Q<originalNumber>` (e.g. `E20200115-Q001`), parallel to 101's `B<batch>-Q<n>` scheme.
+
+The concise independently-reasoned keys (pre-book-verification) are kept for reference only, at `source_docs/102/independent_answer_keys_reference/` — not used by the import pipeline, analogous to (but not the same thing as) 101's `superseded_independent_answer_keys_DO_NOT_USE/`.
+
+### 11.2 Parsing notes specific to Module 102
+
+- One question (2023-11-30, Q33) lays its four options out as a receptor-comparison **table** rather than `a)/b)/c)/d)` paragraphs; `extract_questions.py` now walks paragraphs and tables together in true document order and flattens such a table into one option-text string per row.
+- The Book Verified Answer Key `.docx` format differs slightly from 101's: the "Question N  StableId" header and the question stem are sometimes the same paragraph (as in 101) and sometimes two separate paragraphs, depending on which batch; `extract_answer_keys.py` now handles both. Page citations are written as "Page(s) 12-13" rather than 101's "Pages 12, 13" — both are now accepted.
+- Exactly one question (2021-12-26, "Regarding blood platelets, the following is true") has two independently defensible options (B and C); the key's own prose states which one is the intended **primary** answer ("C is kept as the primary answer..."), which the parser now extracts explicitly (`primaryLetterOverride`) rather than defaulting to whichever letter is listed first — `correctOptionId` must always be a single letter (never an array) for `scoring.js`/the view layer to work, so the other letter is carried in `conditionalAlternatives` instead.
+- A new `deepseekComparison` field (`Agree`/`Disagree`/`Unresolved`/`Not supplied`/`null`) was carried over from the Book Verified key's own DeepSeek-comparison sentence per question. It isn't surfaced anywhere in the UI yet — available for a future admin/QA view.
+
+### 11.3 Category/chapter classification
+
+Module 102's chapter taxonomy (`app/data/chapters.json`) is taken directly from `102_INT_Published_V2.pdf`'s own table of contents: **Biochemistry** (14 chapters, PDF pages 4–127) and **Physiology** (2 chapters — Hemopoietic System p.128, Autonomic Nervous System p.164). A new keyword classifier (`scripts2/classify_102.py`) built from standard terminology for each of those 16 chapters assigns `category`/`chapter` — same "reasonable first pass, not hand-verified" caveat as 101's classifier. 117/552 (21%) questions didn't match any keyword set and are unclassified — higher than 101's 30/528 (5.7%), mainly because many Module 102 questions (general cell/nerve/muscle physiology, metabolic pathways) are outside this book's own scope entirely and so have no real chapter to assign; unclassified questions are excluded from category-filtered practice only, never silently dropped from the bank.
+
+### 11.4 App generalization for a second module
+
+Per CLAUDE.md's "add a brand-new module" instructions:
+
+- `app/data/chapters.json` is now keyed by module id (`{"101": {...}, "102": {...}}`) instead of being a single Module-101-shaped object; `data.js`'s `getChapters`/`getCategoryList`/`getChaptersForCategories`/`getExamSources` now take a `moduleId` argument (`getChapterMeta`/`getCategoryMeta` didn't need one — chapter/category ids are unique across modules so they still resolve without it). `filterQuestions`/`drawExamQuestions` criteria gained a `module` field.
+- `library101.js` was renamed to `library.js` and its `renderLibrary(root)` became `renderLibrary(root, moduleId)`; `examSetup.js`'s `renderExamSetup`/internal `paint`/`startExam` all now thread a `moduleId` through the same way. `app.js`'s `/module/:id` and `/setup/:id` routes now check `getAvailableModuleIds()` instead of hardcoding `=== "101"`.
+- `moduleSelect.js`'s Module 102 card is no longer disabled/"Coming Soon".
+- Fixed two latent single-module assumptions that would have actively misbehaved once a second module had real data: the exam-results "targeted revision" link and the in-exam "exit" button both used to hardcode `#/setup/101`/`#/module/101` regardless of which module the attempt actually belonged to — they now resolve the attempt's own module from its questions. Other screens' empty-state "start practicing" links (Mistakes/Bookmarks/History, reached with no exam context at all) now point at the neutral `#/exams` module-picker instead of assuming 101.
+- Module 101 was re-verified working end-to-end (paper selection, exam start, scoring) after every change above.
+
+### 11.5 Validation performed
+
+- `extract_questions.py`: all 5 batches parsed to their expected question count (96/96/120/120/120), including the one table-based question.
+- `extract_answer_keys.py`: all 5 batches parsed to their expected count with zero missing required fields (`answerLetter`/`coverageLabel`/`gradingStatus`).
+- **Cross-validation** (per CLAUDE.md step 5): stem text from the independently-parsed question file compared against the stem text recorded in the answer-key file, and every answer letter checked against the actual option text, for all 552 Module 102 questions (and, as a regression check, all 528 Module 101 questions) — **zero mismatches**.
+- `cd app && npm test` — scoring engine, still 14/14 passing, unchanged.
+- Manual Playwright pass against `node server.js`: Module 102 library page (chapter/question counts correct), exam builder (all 5 papers listed with correct counts and Ready/Review split), a full 96-question attempt from the 2020-01-15 paper answered and submitted (score 23/93 graded, 3 correctly excluded as practice-only, matching that paper's own 93 Ready/3 Review split), the post-results revision link correctly pointing at `#/setup/102`, and Module 101's own full flow (paper list, exam start) re-confirmed unaffected. No console/page errors in any of the above.
+- Caught and fixed one real regression introduced mid-build: the rewritten merge script initially dropped the `reviewStatus` field (`scoring.js`'s derived alias of `gradingStatus`), which silently made every question — in both modules — score as ineligible. Caught by the Playwright scoring check above before this was committed.
+
+### 11.6 Limitations specific to this phase
+
+- Classifier coverage for Module 102 (79% of questions assigned a chapter) is lower than Module 101's (90%), for the structural reason explained in §11.3, not a classifier-quality problem — most of the unclassified questions genuinely have no matching chapter in this book.
+- `deepseekComparison` is parsed and stored but not yet shown anywhere in the UI.
+- As with Module 101, none of this — including "Book Verified" — is presented as an official university marking scheme, in-app or here.

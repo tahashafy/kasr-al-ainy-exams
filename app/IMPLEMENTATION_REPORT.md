@@ -109,11 +109,69 @@ python3 scripts2/build_question_bank_v2.py
 
 The optional Firebase-backed multi-student sync (access codes, Firestore, `SETUP_FIREBASE.md`) from the previous phase is unchanged and still off by default — the app runs fully local/offline unless an administrator deliberately configures it.
 
-## 10. Unresolved issues and limitations
+## 10. Unresolved issues and limitations (as of the Module 101-only phase)
 
 - **None of the five batches' imports produced a discrepancy against the brief's validation totals** (§7) — there is nothing currently flagged as needing investigation on the data side.
 - **Category/chapter mapping remains the existing automated/heuristic keyword classifier**, not hand-verified per question; the brief's instruction to flag uncertain mappings rather than invent new ones was followed by preserving the existing mapping approach unchanged, not by adding a new uncertainty flag — a future pass could add explicit per-question mapping-confidence if that's wanted.
 - **"Ready" status reflects the revised key's own review flag only** — per the brief's own definition, it is not and is never presented as official faculty approval; this is stated explicitly both in-app (About page, per-question details panel) and here.
 - **No admin UI yet** for reviewing Review-status questions, editing coverage labels, or approving accepted answers — the data model (`gradingStatus`, `coverageLabel`, `conditionalAlternatives`, stable per-question IDs) is already shaped to support one being added later without a schema change, consistent with the brief's note that AI-key comparisons and similar review tooling belong in an admin view rather than the student screen.
-- **Module 102 and 103** remain intentionally inert ("Coming Soon") — the homepage and router support adding a module without further restructuring, but no content has been imported for either.
 - **Arabic translation covers interface chrome only**, as specified — question stems, options, explanations, calculations, and source quotations are and will remain English-only by design, not an oversight.
+
+## 11. Module 102 — Introduction to Biomedical Sciences (this phase)
+
+Module 102 is now live alongside Module 101 (no longer "Coming Soon"). This phase also had to **rebuild `scripts2/build_question_bank_v2.py` and the classifier it depends on from scratch**: the Module 101 pipeline's original keyword classifier (`scripts/build_question_bank.py`, only ever referenced by import path, never committed to this repo) and its hardcoded `/mnt/user-data/uploads/...` source file paths in `scripts2/extract_questions.py`/`extract_answer_keys.py` were both missing/broken on a fresh clone. Both scripts now read from `source_docs/<module>/...` (checked into the repo) and are reproducible end-to-end from a clean checkout. **To avoid silently reshuffling the already-shipped 528 Module 101 questions' category/chapter fields**, the rebuilt merge script reuses Module 101's existing category/chapter assignment from the previous `app/data/questions.json` rather than re-deriving it blind — verified byte-for-byte: every one of the 528 Module 101 records is identical to the pre-this-phase data except for a cosmetic `originalSourceFile` filename fix.
+
+### 11.1 Source files imported
+
+Five End-of-Module papers plus their Book Verified Answer Keys (newly produced this phase, verified against `102_INT_Published_V2.pdf`), under `source_docs/102/`:
+
+| Batch (by exam date) | Academic year | Questions | Ready | Review | Imported |
+|---|---|---|---|---|---|
+| 2020-01-15 | 2019–2020 | 96 | 93 | 3 | 96/96 |
+| 2020-12-20 | 2020–2021 | 96 | 94 | 2 | 96/96 |
+| 2021-12-26 | 2021–2022 | 120 | 116 | 4 | 120/120 |
+| 2023-11-30 | 2023–2024 | 120 | 119 | 1 | 120/120 |
+| 2024-11-28 | 2024–2025 | 120 | 118 | 2 | 120/120 |
+| **Total** | | **552** | **540** | **12** | **552/552** |
+
+Coverage labels (book `102_INT_Published_V2.pdf`, Biochemistry + Hemopoietic/Autonomic-Nervous-System physiology only — this book has no general cell/nerve/muscle physiology or metabolic-pathway chapters, which is why "Not covered" is a large share): Direct 381, Partial 31, Inferred 21, Calculated 6, Not covered 113 (sums to 552).
+
+Module 102 has no "batch number" convention in its source material (unlike 101's Batch 194/195/...), so the exam date itself (e.g. `20200115`) is used as the batch key and stable question IDs are `E<date>-Q<originalNumber>` (e.g. `E20200115-Q001`), parallel to 101's `B<batch>-Q<n>` scheme.
+
+The concise independently-reasoned keys (pre-book-verification) are kept for reference only, at `source_docs/102/independent_answer_keys_reference/` — not used by the import pipeline, analogous to (but not the same thing as) 101's `superseded_independent_answer_keys_DO_NOT_USE/`.
+
+### 11.2 Parsing notes specific to Module 102
+
+- One question (2023-11-30, Q33) lays its four options out as a receptor-comparison **table** rather than `a)/b)/c)/d)` paragraphs; `extract_questions.py` now walks paragraphs and tables together in true document order and flattens such a table into one option-text string per row.
+- The Book Verified Answer Key `.docx` format differs slightly from 101's: the "Question N  StableId" header and the question stem are sometimes the same paragraph (as in 101) and sometimes two separate paragraphs, depending on which batch; `extract_answer_keys.py` now handles both. Page citations are written as "Page(s) 12-13" rather than 101's "Pages 12, 13" — both are now accepted.
+- Exactly one question (2021-12-26, "Regarding blood platelets, the following is true") has two independently defensible options (B and C); the key's own prose states which one is the intended **primary** answer ("C is kept as the primary answer..."), which the parser now extracts explicitly (`primaryLetterOverride`) rather than defaulting to whichever letter is listed first — `correctOptionId` must always be a single letter (never an array) for `scoring.js`/the view layer to work, so the other letter is carried in `conditionalAlternatives` instead.
+- A new `deepseekComparison` field (`Agree`/`Disagree`/`Unresolved`/`Not supplied`/`null`) was carried over from the Book Verified key's own DeepSeek-comparison sentence per question. It isn't surfaced anywhere in the UI yet — available for a future admin/QA view.
+
+### 11.3 Category/chapter classification
+
+Module 102's chapter taxonomy (`app/data/chapters.json`) is taken directly from `102_INT_Published_V2.pdf`'s own table of contents: **Biochemistry** (14 chapters, PDF pages 4–127) and **Physiology** (2 chapters — Hemopoietic System p.128, Autonomic Nervous System p.164). A new keyword classifier (`scripts2/classify_102.py`) built from standard terminology for each of those 16 chapters assigns `category`/`chapter` — same "reasonable first pass, not hand-verified" caveat as 101's classifier. 117/552 (21%) questions didn't match any keyword set and are unclassified — higher than 101's 30/528 (5.7%), mainly because many Module 102 questions (general cell/nerve/muscle physiology, metabolic pathways) are outside this book's own scope entirely and so have no real chapter to assign; unclassified questions are excluded from category-filtered practice only, never silently dropped from the bank.
+
+### 11.4 App generalization for a second module
+
+Per CLAUDE.md's "add a brand-new module" instructions:
+
+- `app/data/chapters.json` is now keyed by module id (`{"101": {...}, "102": {...}}`) instead of being a single Module-101-shaped object; `data.js`'s `getChapters`/`getCategoryList`/`getChaptersForCategories`/`getExamSources` now take a `moduleId` argument (`getChapterMeta`/`getCategoryMeta` didn't need one — chapter/category ids are unique across modules so they still resolve without it). `filterQuestions`/`drawExamQuestions` criteria gained a `module` field.
+- `library101.js` was renamed to `library.js` and its `renderLibrary(root)` became `renderLibrary(root, moduleId)`; `examSetup.js`'s `renderExamSetup`/internal `paint`/`startExam` all now thread a `moduleId` through the same way. `app.js`'s `/module/:id` and `/setup/:id` routes now check `getAvailableModuleIds()` instead of hardcoding `=== "101"`.
+- `moduleSelect.js`'s Module 102 card is no longer disabled/"Coming Soon".
+- Fixed two latent single-module assumptions that would have actively misbehaved once a second module had real data: the exam-results "targeted revision" link and the in-exam "exit" button both used to hardcode `#/setup/101`/`#/module/101` regardless of which module the attempt actually belonged to — they now resolve the attempt's own module from its questions. Other screens' empty-state "start practicing" links (Mistakes/Bookmarks/History, reached with no exam context at all) now point at the neutral `#/exams` module-picker instead of assuming 101.
+- Module 101 was re-verified working end-to-end (paper selection, exam start, scoring) after every change above.
+
+### 11.5 Validation performed
+
+- `extract_questions.py`: all 5 batches parsed to their expected question count (96/96/120/120/120), including the one table-based question.
+- `extract_answer_keys.py`: all 5 batches parsed to their expected count with zero missing required fields (`answerLetter`/`coverageLabel`/`gradingStatus`).
+- **Cross-validation** (per CLAUDE.md step 5): stem text from the independently-parsed question file compared against the stem text recorded in the answer-key file, and every answer letter checked against the actual option text, for all 552 Module 102 questions (and, as a regression check, all 528 Module 101 questions) — **zero mismatches**.
+- `cd app && npm test` — scoring engine, still 14/14 passing, unchanged.
+- Manual Playwright pass against `node server.js`: Module 102 library page (chapter/question counts correct), exam builder (all 5 papers listed with correct counts and Ready/Review split), a full 96-question attempt from the 2020-01-15 paper answered and submitted (score 23/93 graded, 3 correctly excluded as practice-only, matching that paper's own 93 Ready/3 Review split), the post-results revision link correctly pointing at `#/setup/102`, and Module 101's own full flow (paper list, exam start) re-confirmed unaffected. No console/page errors in any of the above.
+- Caught and fixed one real regression introduced mid-build: the rewritten merge script initially dropped the `reviewStatus` field (`scoring.js`'s derived alias of `gradingStatus`), which silently made every question — in both modules — score as ineligible. Caught by the Playwright scoring check above before this was committed.
+
+### 11.6 Limitations specific to this phase
+
+- Classifier coverage for Module 102 (79% of questions assigned a chapter) is lower than Module 101's (90%), for the structural reason explained in §11.3, not a classifier-quality problem — most of the unclassified questions genuinely have no matching chapter in this book.
+- `deepseekComparison` is parsed and stored but not yet shown anywhere in the UI.
+- As with Module 101, none of this — including "Book Verified" — is presented as an official university marking scheme, in-app or here.

@@ -43,37 +43,38 @@ function fullPaperCount(sources, sourceExam) {
   return s ? s.count : 0;
 }
 
-function eligibleQuestions() {
+function eligibleQuestions(moduleId) {
   if (state.mode === "paper") {
     if (!state.sourceExam) return [];
-    return filterQuestions({ sourceExam: state.sourceExam, coverageGroup: state.coverageGroup });
+    return filterQuestions({ module: moduleId, sourceExam: state.sourceExam, coverageGroup: state.coverageGroup });
   }
   if (state.selectedCategories.length === 0) return []; // spec: at least one category required
   return filterQuestions({
+    module: moduleId,
     categories: state.selectedCategories,
     chapters: state.selectedChapters.length ? state.selectedChapters : undefined,
     coverageGroup: state.coverageGroup,
   });
 }
 
-export function renderExamSetup(root) {
-  const chapters = getChapters();
-  const sources = getExamSources();
+export function renderExamSetup(root, moduleId) {
+  const chapters = getChapters(moduleId);
+  const sources = getExamSources(moduleId);
   resetState(chapters);
   clearInProgress();
-  paint(root, chapters, sources);
+  paint(root, moduleId, chapters, sources);
 }
 
-function paint(root, chapters, sources) {
-  const pool = eligibleQuestions();
+function paint(root, moduleId, chapters, sources) {
+  const pool = eligibleQuestions(moduleId);
   const readyInPool = pool.filter((q) => q.gradingStatus === "Ready").length;
-  const chapterOptions = getChaptersForCategories(state.selectedCategories);
+  const chapterOptions = getChaptersForCategories(moduleId, state.selectedCategories);
   const isFullPaper = state.mode === "paper" && state.sourceExam && !state.coverageGroup && pool.length === fullPaperCount(sources, state.sourceExam);
   const paperLabel = state.mode === "paper" ? (state.sourceExam ? (isFullPaper ? t("setup.fullPastExamLabel") : t("setup.filteredPracticeSetLabel")) : null) : null;
 
   root.innerHTML = `
     <div class="container-narrow">
-      <div class="breadcrumb"><a href="#/" data-nav-link>${t("nav.home")}</a> / <a href="#/module/101" data-nav-link>${t("module.label", { n: "101" })}</a> / ${t("setup.breadcrumb")}</div>
+      <div class="breadcrumb"><a href="#/" data-nav-link>${t("nav.home")}</a> / <a href="#/module/${moduleId}" data-nav-link>${t("module.label", { n: moduleId })}</a> / ${t("setup.breadcrumb")}</div>
       <h1>${t("setup.title")}</h1>
       <p class="section-sub">${t("setup.subtitle")}</p>
 
@@ -194,7 +195,7 @@ function paint(root, chapters, sources) {
   root.querySelectorAll("[data-mode]").forEach((btn) =>
     btn.addEventListener("click", () => {
       state.mode = btn.dataset.mode;
-      paint(root, chapters, sources);
+      paint(root, moduleId, chapters, sources);
     })
   );
   root.querySelectorAll("[data-cat]").forEach((btn) =>
@@ -204,17 +205,17 @@ function paint(root, chapters, sources) {
       if (idx >= 0) state.selectedCategories.splice(idx, 1);
       else state.selectedCategories.push(id);
       state.selectedChapters = state.selectedChapters.filter((chId) =>
-        getChaptersForCategories(state.selectedCategories).some((c) => c.id === chId)
+        getChaptersForCategories(moduleId, state.selectedCategories).some((c) => c.id === chId)
       );
-      paint(root, chapters, sources);
+      paint(root, moduleId, chapters, sources);
     })
   );
   const selectAllBtn = root.querySelector("#select-all-cats");
-  if (selectAllBtn) selectAllBtn.addEventListener("click", () => { state.selectedCategories = chapters.categories.map((c) => c.id); paint(root, chapters, sources); });
+  if (selectAllBtn) selectAllBtn.addEventListener("click", () => { state.selectedCategories = chapters.categories.map((c) => c.id); paint(root, moduleId, chapters, sources); });
   const clearCatsBtn = root.querySelector("#clear-cats");
-  if (clearCatsBtn) clearCatsBtn.addEventListener("click", () => { state.selectedCategories = []; state.selectedChapters = []; paint(root, chapters, sources); });
+  if (clearCatsBtn) clearCatsBtn.addEventListener("click", () => { state.selectedCategories = []; state.selectedChapters = []; paint(root, moduleId, chapters, sources); });
   const clearChaptersBtn = root.querySelector("#clear-chapters");
-  if (clearChaptersBtn) clearChaptersBtn.addEventListener("click", () => { state.selectedChapters = []; paint(root, chapters, sources); });
+  if (clearChaptersBtn) clearChaptersBtn.addEventListener("click", () => { state.selectedChapters = []; paint(root, moduleId, chapters, sources); });
 
   root.querySelectorAll("[data-chapter]").forEach((btn) =>
     btn.addEventListener("click", () => {
@@ -222,24 +223,24 @@ function paint(root, chapters, sources) {
       const idx = state.selectedChapters.indexOf(id);
       if (idx >= 0) state.selectedChapters.splice(idx, 1);
       else state.selectedChapters.push(id);
-      paint(root, chapters, sources);
+      paint(root, moduleId, chapters, sources);
     })
   );
 
   const paperSelect = root.querySelector("#paper-select");
-  if (paperSelect) paperSelect.addEventListener("change", (e) => { state.sourceExam = e.target.value || null; paint(root, chapters, sources); });
+  if (paperSelect) paperSelect.addEventListener("change", (e) => { state.sourceExam = e.target.value || null; paint(root, moduleId, chapters, sources); });
 
   const toggleAdvanced = root.querySelector("#toggle-advanced");
-  if (toggleAdvanced) toggleAdvanced.addEventListener("click", () => { state.showAdvanced = !state.showAdvanced; paint(root, chapters, sources); });
+  if (toggleAdvanced) toggleAdvanced.addEventListener("click", () => { state.showAdvanced = !state.showAdvanced; paint(root, moduleId, chapters, sources); });
   root.querySelectorAll("[data-coverage]").forEach((btn) =>
     btn.addEventListener("click", () => {
       state.coverageGroup = btn.dataset.coverage || null;
-      paint(root, chapters, sources);
+      paint(root, moduleId, chapters, sources);
     })
   );
 
   root.querySelectorAll("[data-count-mode]").forEach((btn) =>
-    btn.addEventListener("click", () => { state.countMode = btn.dataset.countMode; paint(root, chapters, sources); })
+    btn.addEventListener("click", () => { state.countMode = btn.dataset.countMode; paint(root, moduleId, chapters, sources); })
   );
   const fixedCountInput = root.querySelector("#fixed-count-input");
   if (fixedCountInput) fixedCountInput.addEventListener("input", (e) => { state.fixedCount = parseInt(e.target.value, 10) || 1; });
@@ -247,16 +248,17 @@ function paint(root, chapters, sources) {
   const explanationSelect = root.querySelector("#explanation-mode");
   if (explanationSelect) explanationSelect.addEventListener("change", (e) => { state.explanationMode = e.target.value; });
   const timerModeSelect = root.querySelector("#timer-mode");
-  if (timerModeSelect) timerModeSelect.addEventListener("change", (e) => { state.timerMode = e.target.value; paint(root, chapters, sources); });
+  if (timerModeSelect) timerModeSelect.addEventListener("change", (e) => { state.timerMode = e.target.value; paint(root, moduleId, chapters, sources); });
   const timerMinutesInput = root.querySelector("#timer-minutes-input");
   if (timerMinutesInput) timerMinutesInput.addEventListener("input", (e) => { state.timerMinutes = parseInt(e.target.value, 10) || 60; });
 
   const startBtn = root.querySelector("#start-exam-btn");
-  if (startBtn) startBtn.addEventListener("click", () => startExam(chapters, sources));
+  if (startBtn) startBtn.addEventListener("click", () => startExam(moduleId, chapters, sources));
 }
 
-function startExam(chapters, sources) {
+function startExam(moduleId, chapters, sources) {
   const criteria = {
+    module: moduleId,
     categories: state.mode === "custom" ? state.selectedCategories : undefined,
     chapters: state.mode === "custom" && state.selectedChapters.length ? state.selectedChapters : undefined,
     sourceExam: state.mode === "paper" ? state.sourceExam : undefined,

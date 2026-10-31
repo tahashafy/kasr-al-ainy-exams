@@ -39,7 +39,7 @@ const DICT = {
     "modules.title": "Choose a module",
     "modules.subtitle": "Module 101 is fully available for practice. Other modules will appear here as their content is reviewed and added.",
     "modules.m101desc": "Normal Structure of the Human Body — Histology, Embryology, Basics, Upper Limb Anatomy.",
-    "modules.m102desc": "Content not yet imported into the platform.",
+    "modules.m102desc": "Introduction to Biomedical Sciences — Biochemistry, plus the Hemopoietic and Autonomic Nervous Systems in Physiology.",
     "modules.m103desc": "Content not yet imported into the platform.",
 
     "lib.breadcrumbEom": "End-of-Module",
@@ -228,6 +228,7 @@ const DICT = {
 
     "module.label": "Module {n}",
     "module101.fullTitle": "Module 101 — Normal Structure of the Human Body",
+    "module102.fullTitle": "Module 102 — Introduction to Biomedical Sciences",
     "common.uncategorized": "Uncategorized",
     "take.answerOptionsAria": "Answer options",
     "take.confirmSubmissionAria": "Confirm submission",
@@ -291,7 +292,7 @@ const DICT = {
     "modules.title": "اختر وحدة",
     "modules.subtitle": "الوحدة 101 متاحة بالكامل للتدريب. ستظهر الوحدات الأخرى هنا عند مراجعة محتواها وإضافته.",
     "modules.m101desc": "البنية الطبيعية لجسم الإنسان — الهستولوجي، الأجنة، الأساسيات، تشريح الطرف العلوي.",
-    "modules.m102desc": "لم يتم استيراد المحتوى إلى المنصة بعد.",
+    "modules.m102desc": "مقدمة في العلوم الطبية الأساسية — الكيمياء الحيوية، بالإضافة إلى الجهاز المكوّن للدم والجهاز العصبي اللاودي في وظائف الأعضاء.",
     "modules.m103desc": "لم يتم استيراد المحتوى إلى المنصة بعد.",
 
     "lib.breadcrumbEom": "نهاية الوحدة",
@@ -480,6 +481,7 @@ const DICT = {
 
     "module.label": "الوحدة {n}",
     "module101.fullTitle": "الوحدة 101 — التركيب الطبيعي لجسم الإنسان",
+    "module102.fullTitle": "الوحدة 102 — مقدمة في العلوم الطبية الأساسية",
     "common.uncategorized": "غير مصنّف",
     "take.answerOptionsAria": "خيارات الإجابة",
     "take.confirmSubmissionAria": "تأكيد التسليم",

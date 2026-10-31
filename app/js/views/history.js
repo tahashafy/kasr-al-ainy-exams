@@ -5,7 +5,7 @@ import { t } from "../i18n.js";
 export function renderHistory(root) {
   const attempts = getAttempts();
   if (!attempts.length) {
-    root.innerHTML = `<div class="container-narrow"><div class="empty-state card"><div class="icon">🗂️</div><h2>${t("history.emptyTitle")}</h2><p>${t("history.emptyDesc")}</p><a class="btn btn-primary" href="#/setup/101" data-nav-link>${t("mistakes.startPracticing")}</a></div></div>`;
+    root.innerHTML = `<div class="container-narrow"><div class="empty-state card"><div class="icon">🗂️</div><h2>${t("history.emptyTitle")}</h2><p>${t("history.emptyDesc")}</p><a class="btn btn-primary" href="#/exams" data-nav-link>${t("mistakes.startPracticing")}</a></div></div>`;
     return;
   }
 
