@@ -92,6 +92,7 @@ export async function initStore() {
   initPromise = (async () => {
     if (remote.isRemoteEnabled()) {
       const code = getAccessCode();
+      remote.touchPresence(code); // fire-and-forget — records this app-open for the admin view
       const bundle = await remote.fetchRemoteBundle(code);
       if (bundle) {
         if (bundle.attempts && bundle.attempts.length) {
@@ -230,3 +231,9 @@ export function clearAllData() {
   }
   remote.deleteAllRemote(getAccessCode());
 }
+
+// ---------- Admin (see js/views/admin.js) ----------
+export const adminSignIn = remote.adminSignIn;
+export const adminSignOut = remote.adminSignOut;
+export const onAdminAuthChanged = remote.onAdminAuthChanged;
+export const fetchAllStudentsSummary = remote.fetchAllStudentsSummary;

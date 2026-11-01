@@ -5,19 +5,32 @@ rules_version = '2';
 // knows a code can read/write that code's data — there is no password check
 // here beyond "do you know the code" — which matches this platform's
 // no-signup design. What this still protects against:
-//   - The top-level `students` collection cannot be listed (no `list`
-//     permission granted), so codes cannot be discovered by enumeration.
+//   - The top-level `students` collection cannot be LISTED (i.e. queried/
+//     enumerated across every code at once) by anyone except the one signed-
+//     in admin account below — so codes still cannot be discovered by
+//     enumeration, and a student still can't browse other students' codes.
 //   - A request for one student's path can never read or write another's.
-//   - Nothing outside `students/{code}/**` is reachable at all.
+//   - Nothing outside `students/{code}/**` is reachable at all (the admin
+//     account can only LIST the top-level students/{code} summary docs —
+//     createdAt/lastOpenedAt/attemptsCount/lastAttemptAt — never the
+//     attempts/bookmarks/meta subcollections of a code it doesn't hold).
 // This is appropriate for low-stakes practice-exam data (not an official
 // grade record); it is explicitly NOT equivalent to password-protected
-// accounts. See the "Real accounts with password" option in the
+// student accounts. See the "Real accounts with password" option in the
 // implementation report if stronger protection is ever needed.
+//
+// isAdmin(): true only for the one Firebase Auth account created by hand
+// in the console for the repo owner (see SETUP_FIREBASE.md "Admin usage
+// stats" section) — update the email below if that account ever changes.
 service cloud.firestore {
+  function isAdmin() {
+    return request.auth != null && request.auth.token.email == "taha_shafy@yahoo.com";
+  }
+
   match /databases/{database}/documents {
     match /students/{code} {
       allow get: if true;
-      allow list: if false;
+      allow list: if isAdmin();
       allow create, update, delete: if true;
 
       match /attempts/{attemptId} {

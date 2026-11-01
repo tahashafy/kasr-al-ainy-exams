@@ -168,6 +168,36 @@ Authentication (real accounts with a password or magic link) — a larger
 change than this guide covers, but the Firestore data model here would not
 need to change, only how a code is issued.
 
+## Admin usage stats (who's using the app)
+
+There's a hidden page at `https://kasr-aliny-exams.web.app/#/admin` (not
+linked anywhere in the app's own menus — you just type or bookmark that
+address) that shows a table of every access code issued, when it was first
+seen, when it was last opened, and how many practice exams that code has
+actually completed. That last column is the useful one: a code that was
+generated but never completed an exam is a student who opened the app and
+closed it, not someone actively using it.
+
+This page is protected by a real login (Firebase Authentication), not just
+by the URL being obscure — so you need to create that one login account,
+once, by hand:
+
+1. In the Firebase console for this project, go to **Build → Authentication**.
+2. Click **Get started** if you haven't used Authentication before.
+3. Under **Sign-in method**, click **Email/Password**, toggle it **Enabled**, and save.
+4. Go to the **Users** tab, click **Add user**.
+5. Enter the email `taha_shafy@yahoo.com` and choose a password (this is
+   the password you'll type into the app's admin sign-in page — it has
+   nothing to do with your Google account password, it's a separate
+   Firebase login created just for this). Click **Add user**.
+6. That's it — go to `https://kasr-aliny-exams.web.app/#/admin`, sign in
+   with that email and the password you just set, and the table loads.
+
+If you ever want to change which email can see this page, two places need
+to agree: the user you create here in Authentication, and the email string
+inside the `isAdmin()` check near the top of `firestore.rules` — ask me to
+update the second one if you change the first.
+
 ## Future: handwritten written-exam grading (not built yet)
 
 You mentioned wanting students to eventually handwrite answers for written

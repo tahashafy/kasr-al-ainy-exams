@@ -13,6 +13,7 @@ import { renderMistakes } from "./views/mistakes.js";
 import { renderBookmarks } from "./views/bookmarks.js";
 import { renderHistory } from "./views/history.js";
 import { renderAbout } from "./views/about.js";
+import { renderAdmin } from "./views/admin.js";
 
 const root = document.getElementById("main-content");
 
@@ -122,6 +123,7 @@ async function main() {
   registerRoute("/bookmarks", (r) => renderBookmarks(r));
   registerRoute("/history", (r) => renderHistory(r));
   registerRoute("/about", (r) => renderAbout(r));
+  registerRoute("/admin", (r) => renderAdmin(r));
   registerNotFound((r) => {
     r.innerHTML = `<div class="container-narrow"><div class="empty-state card"><div class="icon">❓</div><h2>${t("notFound.title")}</h2><a class="btn btn-primary" href="#/" data-nav-link>${t("notFound.goHome")}</a></div></div>`;
   });
