@@ -24,7 +24,7 @@ rules_version = '2';
 // stats" section) — update the email below if that account ever changes.
 service cloud.firestore {
   function isAdmin() {
-    return request.auth != null && request.auth.token.email == "taha_shafy@yahoo.com";
+    return request.auth != null && request.auth.token.email == "tahashafy3@gmail.com";
   }
 
   match /databases/{database}/documents {

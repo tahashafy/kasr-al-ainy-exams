@@ -8,6 +8,9 @@ export function renderHome(root) {
     : "";
   root.innerHTML = `
     <div class="container">
+      <div style="text-align:center;margin-bottom:18px;">
+        <a href="https://wa.me/201119095843" target="_blank" rel="noopener" class="badge badge-green" style="text-decoration:none;" dir="ltr">${t("home.contactAdmin")}</a>
+      </div>
       <div style="max-width:720px;margin:0 auto 32px;text-align:center;">
         <span class="badge badge-teal" style="margin-bottom:12px;">${t("home.badge")}</span>
         <h1 style="margin-top:10px;">${t("home.title")}</h1>

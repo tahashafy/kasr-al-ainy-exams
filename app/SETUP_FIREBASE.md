@@ -186,7 +186,7 @@ once, by hand:
 2. Click **Get started** if you haven't used Authentication before.
 3. Under **Sign-in method**, click **Email/Password**, toggle it **Enabled**, and save.
 4. Go to the **Users** tab, click **Add user**.
-5. Enter the email `taha_shafy@yahoo.com` and choose a password (this is
+5. Enter the email `tahashafy3@gmail.com` and choose a password (this is
    the password you'll type into the app's admin sign-in page — it has
    nothing to do with your Google account password, it's a separate
    Firebase login created just for this). Click **Add user**.
