@@ -28,9 +28,10 @@
  *    current textbook.
  *  - Among gradable (verified) questions:
  *      - selecting "I choose not to answer this question" (abstain) removes
- *        the question from the denominator (it is never offered on ordinary
- *        in-syllabus verified questions in this build, only on unverified /
- *        out-of-syllabus ones, so in practice this only affects those).
+ *        the question from the denominator. Every question offers this
+ *        choice (examTake.js renders it unconditionally) — a student who
+ *        isn't confident, including on a question the book doesn't cover,
+ *        can abstain rather than guess, with no effect on their score.
  *      - an unanswered verified question counts as incorrect in the
  *        eligible denominator (explicit default scoring policy).
  *      - answered verified questions are graded correct/incorrect normally.

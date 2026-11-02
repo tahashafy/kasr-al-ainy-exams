@@ -62,6 +62,7 @@ function paint(root, attempt) {
                 ${isBookmarked(q.id) ? t("take.bookmarked") : t("take.bookmark")}
               </button>
             </div>
+            ${q.coverageLabel === "Not covered" ? `<p class="alert alert-amber" style="font-size:12.5px;font-weight:600;margin:10px 0;" dir="ltr">⚠️ ${t("take.noticeNotCovered")}</p>` : ""}
             <p class="question-text" dir="ltr">${escapeHtml(q.text)}</p>
             <div class="options" role="radiogroup" aria-label="${t("take.answerOptionsAria")}" dir="ltr">
               ${q.options
@@ -80,12 +81,10 @@ function paint(root, attempt) {
                   </div>`;
                 })
                 .join("")}
-              ${q.allowAbstention
-                ? `<div class="option abstain${response.selected === "abstain" ? " selected" : ""}" data-option="abstain" role="radio" aria-checked="${response.selected === "abstain"}" tabindex="0">
-                    <span class="option-letter">—</span>
-                    <span>${t("take.abstainOption")}</span>
-                  </div>`
-                : ""}
+              <div class="option abstain${response.selected === "abstain" ? " selected" : ""}" data-option="abstain" role="radio" aria-checked="${response.selected === "abstain"}" tabindex="0">
+                <span class="option-letter">—</span>
+                <span>${t("take.abstainOption")}</span>
+              </div>
             </div>
             ${
               response.selected != null && (attempt.explanationMode === "immediate" || response.revealed)
