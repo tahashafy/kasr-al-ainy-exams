@@ -26,11 +26,12 @@ export function renderAbout(root) {
         <h2 class="section-title">${t("about.sourcesTitle")}</h2>
         <div style="overflow-x:auto;">
           <table class="data-table">
-            <thead><tr><th>${t("about.colPaper")}</th><th>${t("about.colYear")}</th><th>${t("about.colImported")}</th><th>${t("about.colGradingStatus")}</th></tr></thead>
+            <thead><tr><th>${t("about.colModule")}</th><th>${t("about.colPaper")}</th><th>${t("about.colYear")}</th><th>${t("about.colImported")}</th><th>${t("about.colGradingStatus")}</th></tr></thead>
             <tbody>
               ${sources
                 .map(
                   (s) => `<tr>
+                  <td>${t("module.label", { n: s.module })}</td>
                   <td dir="ltr">${escapeHtml(s.label)}</td>
                   <td>${escapeHtml(s.academicYear || "—")}</td>
                   <td>${s.count}</td>

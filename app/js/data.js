@@ -67,6 +67,7 @@ export function getExamSources(moduleId) {
     if (!map.has(q.sourceExam)) {
       map.set(q.sourceExam, {
         label: q.sourceExam,
+        module: q.module,
         academicYear: q.academicYear,
         examDate: q.examDate,
         originalSourceFile: q.originalSourceFile,
@@ -80,7 +81,9 @@ export function getExamSources(moduleId) {
     if (q.gradingStatus === "Ready") entry.readyCount++;
     else entry.reviewCount++;
   }
-  return Array.from(map.values()).sort((a, b) => (a.academicYear || "").localeCompare(b.academicYear || ""));
+  return Array.from(map.values()).sort(
+    (a, b) => a.module.localeCompare(b.module) || (a.academicYear || "").localeCompare(b.academicYear || "")
+  );
 }
 
 /**
