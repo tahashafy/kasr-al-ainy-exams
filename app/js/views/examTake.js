@@ -58,7 +58,7 @@ function paint(root, attempt) {
               <div class="qnum">QUESTION ${idx + 1}
                 ${q.category ? `<span class="badge badge-gray" style="margin-left:8px;">${escapeHtml(chapterMeta ? chapterMeta.categoryName : q.category)}</span>` : ""}
               </div>
-              <button class="btn btn-ghost btn-sm" id="bookmark-btn" type="button" aria-pressed="${isBookmarked(q.id)}">
+              <button class="btn btn-ghost btn-sm" id="bookmark-btn" type="button" aria-pressed="${isBookmarked(q.id)}" title="${t("take.bookmarkHint")}">
                 ${isBookmarked(q.id) ? t("take.bookmarked") : t("take.bookmark")}
               </button>
             </div>
@@ -96,7 +96,7 @@ function paint(root, attempt) {
 
           <div class="exam-footer-nav">
             <button class="btn btn-secondary" id="prev-btn" type="button" ${idx === 0 ? "disabled" : ""}>${t("take.prev")}</button>
-            <button class="btn btn-secondary" id="mark-review-btn" type="button">${response.markedForReview ? t("take.unmarkReview") : t("take.markReview")}</button>
+            <button class="btn btn-secondary" id="mark-review-btn" type="button" title="${t("take.markReviewHint")}">${response.markedForReview ? t("take.unmarkReview") : t("take.markReview")}</button>
             ${idx < total - 1
               ? `<button class="btn btn-primary" id="next-btn" type="button">${t("take.next")}</button>`
               : `<button class="btn btn-primary" id="submit-btn" type="button">${t("take.submit")}</button>`}
@@ -119,6 +119,7 @@ function paint(root, attempt) {
             <span><span class="legend-dot" style="background:var(--amber-500)"></span>${t("take.legendMarked")}</span>
             <span><span class="legend-dot" style="background:var(--surface);border:1.5px solid var(--navy-800)"></span>${t("take.legendCurrent")}</span>
           </div>
+          <p style="font-size:11.5px;color:var(--text-faint);margin-top:8px;">${t("take.markReviewScopeNote")}</p>
           <button class="btn btn-primary btn-block" id="submit-sidebar-btn" type="button" style="margin-top:18px;">${t("take.submit")}</button>
         </aside>
       </div>
