@@ -10,53 +10,198 @@
     "id": "histology",
     "name": "Histology",
     "chapters": [
-     { "id": "hist-1", "number": "I", "title": "Microscopes & Basic Tissue Types", "startPage": 1 },
-     { "id": "hist-2", "number": "II", "title": "Cytology", "startPage": 5 },
-     { "id": "hist-3", "number": "III", "title": "Blood", "startPage": 29 },
-     { "id": "hist-4", "number": "IV", "title": "Connective Tissue", "startPage": 48 },
-     { "id": "hist-5", "number": "V", "title": "Epithelial Tissue", "startPage": 62 }
+     {
+      "id": "hist-1",
+      "number": "I",
+      "title": "Microscopes & Basic Tissue Types",
+      "startPage": 1
+     },
+     {
+      "id": "hist-2",
+      "number": "II",
+      "title": "Cytology",
+      "startPage": 5
+     },
+     {
+      "id": "hist-3",
+      "number": "III",
+      "title": "Blood",
+      "startPage": 29
+     },
+     {
+      "id": "hist-4",
+      "number": "IV",
+      "title": "Connective Tissue",
+      "startPage": 48
+     },
+     {
+      "id": "hist-5",
+      "number": "V",
+      "title": "Epithelial Tissue",
+      "startPage": 62
+     }
     ]
    },
    {
     "id": "embryology",
     "name": "Embryology",
     "chapters": [
-     { "id": "emb-1", "number": "1", "title": "First Week of Development", "startPage": 76 },
-     { "id": "emb-2", "number": "2", "title": "Second Week of Development", "startPage": 78 },
-     { "id": "emb-3", "number": "3", "title": "Third Week of Development", "startPage": 85 },
-     { "id": "emb-4", "number": "4", "title": "Embryonic Period", "startPage": 91 },
-     { "id": "emb-5", "number": "5", "title": "Fetal Membranes", "startPage": 98 },
-     { "id": "emb-6", "number": "6", "title": "Fetal Period", "startPage": 111 }
+     {
+      "id": "emb-1",
+      "number": "1",
+      "title": "First Week of Development",
+      "startPage": 76
+     },
+     {
+      "id": "emb-2",
+      "number": "2",
+      "title": "Second Week of Development",
+      "startPage": 78
+     },
+     {
+      "id": "emb-3",
+      "number": "3",
+      "title": "Third Week of Development",
+      "startPage": 85
+     },
+     {
+      "id": "emb-4",
+      "number": "4",
+      "title": "Embryonic Period",
+      "startPage": 91
+     },
+     {
+      "id": "emb-5",
+      "number": "5",
+      "title": "Fetal Membranes",
+      "startPage": 98
+     },
+     {
+      "id": "emb-6",
+      "number": "6",
+      "title": "Fetal Period",
+      "startPage": 111
+     }
     ]
    },
    {
     "id": "basics",
     "name": "Basics",
     "chapters": [
-     { "id": "bas-1", "number": "1", "title": "Introduction", "startPage": 113 },
-     { "id": "bas-2", "number": "2", "title": "Fascia", "startPage": 115 },
-     { "id": "bas-3", "number": "3", "title": "Skeletal System", "startPage": 117 },
-     { "id": "bas-4", "number": "4", "title": "Articular System", "startPage": 122 },
-     { "id": "bas-5", "number": "5", "title": "Muscular System", "startPage": 129 },
-     { "id": "bas-6", "number": "6", "title": "Nervous System", "startPage": 133 },
-     { "id": "bas-7", "number": "7", "title": "Cardiovascular System", "startPage": 135 },
-     { "id": "bas-8", "number": "8", "title": "Lymphatic System", "startPage": 140 }
+     {
+      "id": "bas-1",
+      "number": "1",
+      "title": "Introduction",
+      "startPage": 113
+     },
+     {
+      "id": "bas-2",
+      "number": "2",
+      "title": "Fascia",
+      "startPage": 115
+     },
+     {
+      "id": "bas-3",
+      "number": "3",
+      "title": "Skeletal System",
+      "startPage": 117
+     },
+     {
+      "id": "bas-4",
+      "number": "4",
+      "title": "Articular System",
+      "startPage": 122
+     },
+     {
+      "id": "bas-5",
+      "number": "5",
+      "title": "Muscular System",
+      "startPage": 129
+     },
+     {
+      "id": "bas-6",
+      "number": "6",
+      "title": "Nervous System",
+      "startPage": 133
+     },
+     {
+      "id": "bas-7",
+      "number": "7",
+      "title": "Cardiovascular System",
+      "startPage": 135
+     },
+     {
+      "id": "bas-8",
+      "number": "8",
+      "title": "Lymphatic System",
+      "startPage": 140
+     }
     ]
    },
    {
     "id": "upper-limb",
     "name": "Upper Limb Anatomy",
     "chapters": [
-     { "id": "ul-1", "number": "1", "title": "Pectoral Region", "startPage": 144 },
-     { "id": "ul-2", "number": "2", "title": "Muscles of the Back", "startPage": 154 },
-     { "id": "ul-3", "number": "3", "title": "Shoulder Region", "startPage": 160 },
-     { "id": "ul-4", "number": "4", "title": "Axilla", "startPage": 168 },
-     { "id": "ul-5", "number": "5", "title": "Arm", "startPage": 182 },
-     { "id": "ul-6", "number": "6", "title": "Forearm", "startPage": 193 },
-     { "id": "ul-7", "number": "7", "title": "Hand", "startPage": 225 },
-     { "id": "ul-8", "number": "8", "title": "Veins of the Upper Limb", "startPage": 243 },
-     { "id": "ul-9", "number": "9", "title": "Nerve Supply of the Upper Limb & Nerve Injuries", "startPage": 247 },
-     { "id": "ul-10", "number": "10", "title": "Joints of the Upper Limb", "startPage": 259 }
+     {
+      "id": "ul-1",
+      "number": "1",
+      "title": "Pectoral Region",
+      "startPage": 144
+     },
+     {
+      "id": "ul-2",
+      "number": "2",
+      "title": "Muscles of the Back",
+      "startPage": 154
+     },
+     {
+      "id": "ul-3",
+      "number": "3",
+      "title": "Shoulder Region",
+      "startPage": 160
+     },
+     {
+      "id": "ul-4",
+      "number": "4",
+      "title": "Axilla",
+      "startPage": 168
+     },
+     {
+      "id": "ul-5",
+      "number": "5",
+      "title": "Arm",
+      "startPage": 182
+     },
+     {
+      "id": "ul-6",
+      "number": "6",
+      "title": "Forearm",
+      "startPage": 193
+     },
+     {
+      "id": "ul-7",
+      "number": "7",
+      "title": "Hand",
+      "startPage": 225
+     },
+     {
+      "id": "ul-8",
+      "number": "8",
+      "title": "Veins of the Upper Limb",
+      "startPage": 243
+     },
+     {
+      "id": "ul-9",
+      "number": "9",
+      "title": "Nerve Supply of the Upper Limb & Nerve Injuries",
+      "startPage": 247
+     },
+     {
+      "id": "ul-10",
+      "number": "10",
+      "title": "Joints of the Upper Limb",
+      "startPage": 259
+     }
     ]
    }
   ]
@@ -72,28 +217,197 @@
     "id": "biochemistry",
     "name": "Biochemistry",
     "chapters": [
-     { "id": "bio-1", "number": "1", "title": "Introduction to Biochemistry", "startPage": 4 },
-     { "id": "bio-2", "number": "2", "title": "Amino Acids of Biological Importance", "startPage": 7 },
-     { "id": "bio-3", "number": "3", "title": "Proteins of Biological Importance", "startPage": 13 },
-     { "id": "bio-4", "number": "4", "title": "Enzymes", "startPage": 18 },
-     { "id": "bio-5", "number": "5", "title": "Chemistry and Metabolism of Heme", "startPage": 28 },
-     { "id": "bio-6", "number": "6", "title": "Proteins of Extracellular Matrix", "startPage": 47 },
-     { "id": "bio-7", "number": "7", "title": "Carbohydrates of Biological Importance", "startPage": 52 },
-     { "id": "bio-8", "number": "8", "title": "Lipids of Biological Importance", "startPage": 61 },
-     { "id": "bio-9", "number": "9", "title": "Chemistry and Metabolism of Nucleotides", "startPage": 72 },
-     { "id": "bio-10", "number": "10", "title": "Nucleic Acids and Genetic Structure", "startPage": 84 },
-     { "id": "bio-11", "number": "11", "title": "Eukaryotic DNA Synthesis (Replication)", "startPage": 92 },
-     { "id": "bio-12", "number": "12", "title": "Gene Expression", "startPage": 99 },
-     { "id": "bio-13", "number": "13", "title": "Regulation of Gene Expression", "startPage": 116 },
-     { "id": "bio-14", "number": "14", "title": "Cell Cycle, Apoptosis & Tumor Suppressor Genes", "startPage": 121 }
+     {
+      "id": "bio-1",
+      "number": "1",
+      "title": "Introduction to Biochemistry",
+      "startPage": 4
+     },
+     {
+      "id": "bio-2",
+      "number": "2",
+      "title": "Amino Acids of Biological Importance",
+      "startPage": 7
+     },
+     {
+      "id": "bio-3",
+      "number": "3",
+      "title": "Proteins of Biological Importance",
+      "startPage": 13
+     },
+     {
+      "id": "bio-4",
+      "number": "4",
+      "title": "Enzymes",
+      "startPage": 18
+     },
+     {
+      "id": "bio-5",
+      "number": "5",
+      "title": "Chemistry and Metabolism of Heme",
+      "startPage": 28
+     },
+     {
+      "id": "bio-6",
+      "number": "6",
+      "title": "Proteins of Extracellular Matrix",
+      "startPage": 47
+     },
+     {
+      "id": "bio-7",
+      "number": "7",
+      "title": "Carbohydrates of Biological Importance",
+      "startPage": 52
+     },
+     {
+      "id": "bio-8",
+      "number": "8",
+      "title": "Lipids of Biological Importance",
+      "startPage": 61
+     },
+     {
+      "id": "bio-9",
+      "number": "9",
+      "title": "Chemistry and Metabolism of Nucleotides",
+      "startPage": 72
+     },
+     {
+      "id": "bio-10",
+      "number": "10",
+      "title": "Nucleic Acids and Genetic Structure",
+      "startPage": 84
+     },
+     {
+      "id": "bio-11",
+      "number": "11",
+      "title": "Eukaryotic DNA Synthesis (Replication)",
+      "startPage": 92
+     },
+     {
+      "id": "bio-12",
+      "number": "12",
+      "title": "Gene Expression",
+      "startPage": 99
+     },
+     {
+      "id": "bio-13",
+      "number": "13",
+      "title": "Regulation of Gene Expression",
+      "startPage": 116
+     },
+     {
+      "id": "bio-14",
+      "number": "14",
+      "title": "Cell Cycle, Apoptosis & Tumor Suppressor Genes",
+      "startPage": 121
+     }
     ]
    },
    {
     "id": "physiology",
     "name": "Physiology",
     "chapters": [
-     { "id": "phys-1", "number": "1", "title": "Hemopoietic System", "startPage": 128 },
-     { "id": "phys-2", "number": "2", "title": "Autonomic Nervous System", "startPage": 164 }
+     {
+      "id": "phys-1",
+      "number": "1",
+      "title": "Hemopoietic System",
+      "startPage": 128
+     },
+     {
+      "id": "phys-2",
+      "number": "2",
+      "title": "Autonomic Nervous System",
+      "startPage": 164
+     }
+    ]
+   }
+  ]
+ },
+ "205": {
+  "module": "205",
+  "moduleTitle": "Neuroscience",
+  "moduleCode": "205",
+  "textbookEdition": "Module 205 Neuroscience MCQ Bank (compiled question bank + answer key, 236-page PDF)",
+  "textbookSourceFile": "module205_new-3.pdf",
+  "contentKind": "mcq",
+  "showWrittenTab": true,
+  "categories": [
+   {
+    "id": "m205-an",
+    "name": "Anatomy",
+    "chapters": [
+     {
+      "id": "m205-an-1",
+      "number": "1",
+      "title": "Neuro",
+      "startPage": 4
+     },
+     {
+      "id": "m205-an-2",
+      "number": "2",
+      "title": "Head",
+      "startPage": 34
+     },
+     {
+      "id": "m205-an-3",
+      "number": "3",
+      "title": "Neck",
+      "startPage": 46
+     }
+    ]
+   },
+   {
+    "id": "m205-ph",
+    "name": "Physiology",
+    "chapters": [
+     {
+      "id": "m205-ph-1",
+      "number": "1",
+      "title": "Sensory",
+      "startPage": 66
+     },
+     {
+      "id": "m205-ph-2",
+      "number": "2",
+      "title": "Motor",
+      "startPage": 104
+     },
+     {
+      "id": "m205-ph-3",
+      "number": "3",
+      "title": "Special senses",
+      "startPage": 138
+     }
+    ]
+   },
+   {
+    "id": "m205-hi",
+    "name": "Histology",
+    "chapters": [
+     {
+      "id": "m205-hi-1",
+      "number": "1",
+      "title": "Nervous system",
+      "startPage": 153
+     },
+     {
+      "id": "m205-hi-2",
+      "number": "2",
+      "title": "CNS",
+      "startPage": 171
+     },
+     {
+      "id": "m205-hi-3",
+      "number": "3",
+      "title": "Eye",
+      "startPage": 181
+     },
+     {
+      "id": "m205-hi-4",
+      "number": "4",
+      "title": "Ear",
+      "startPage": 189
+     }
     ]
    }
   ]

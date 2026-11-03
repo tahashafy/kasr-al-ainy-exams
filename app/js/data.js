@@ -30,6 +30,21 @@ export function getChapters(moduleId) {
   return _chapters[moduleId];
 }
 
+/** 'eom' (default, End-of-Module papers — 101/102) or 'mcq' (a standalone MCQ
+ * question bank, no End-of-Module framing — 205). Drives wording only;
+ * filtering/scoring/import mechanics are identical either way. */
+export function getModuleContentKind(moduleId) {
+  return (_chapters[moduleId] && _chapters[moduleId].contentKind) || "eom";
+}
+
+/** Whether to show the (always-inactive-for-now) Written/Final section on
+ * this module's library page. Defaults to true — every module reserves a
+ * Written slot, per the app's existing homepage convention. */
+export function getModuleShowWrittenTab(moduleId) {
+  const ch = _chapters[moduleId];
+  return ch && typeof ch.showWrittenTab === "boolean" ? ch.showWrittenTab : true;
+}
+
 export function getSources() {
   return _sources;
 }
@@ -64,6 +79,7 @@ export function getExamSources(moduleId) {
   const map = new Map();
   for (const q of _questions) {
     if (moduleId && q.module !== moduleId) continue;
+    if (!q.sourceExam) continue; // e.g. Module 205's MCQ bank questions aren't tied to one paper
     if (!map.has(q.sourceExam)) {
       map.set(q.sourceExam, {
         label: q.sourceExam,

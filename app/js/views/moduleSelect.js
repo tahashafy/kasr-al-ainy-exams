@@ -1,31 +1,46 @@
 import { t } from "../i18n.js";
+import { getAvailableModuleIds } from "../data.js";
+
+// Declarative module roster for this picker screen — add a new module here
+// (and to chapters.json/questions.json via its own import script) rather
+// than hardcoding another card. `available: false` renders a disabled
+// "Coming Soon" card exactly like the others, with no functional route yet.
+const MODULE_CARDS = [
+  { id: "101", descKey: "modules.m101desc", available: true },
+  { id: "102", descKey: "modules.m102desc", available: true },
+  { id: "205", descKey: "modules.m205desc", available: true },
+  { id: "103", descKey: "modules.m103desc", available: false },
+];
 
 export function renderModuleSelect(root) {
+  const availableModuleIds = getAvailableModuleIds();
+  const cards = MODULE_CARDS.map((m) => {
+    const isAvailable = m.available && availableModuleIds.includes(m.id);
+    const icon = m.id;
+    if (!isAvailable) {
+      return `
+        <div class="choice-card disabled" aria-disabled="true">
+          <div class="choice-icon">${icon}</div>
+          <h3>${t("module.label", { n: m.id })}</h3>
+          <p>${t(m.descKey)}</p>
+          <span class="badge badge-amber" style="margin-top:14px;">${t("home.comingSoon")}</span>
+        </div>`;
+    }
+    return `
+      <a class="choice-card" href="#/module/${m.id}" data-nav-link>
+        <div class="choice-icon">${icon}</div>
+        <h3>${t("module.label", { n: m.id })}</h3>
+        <p>${t(m.descKey)}</p>
+        <span class="badge badge-green" style="margin-top:14px;">${t("home.available")}</span>
+      </a>`;
+  }).join("");
+
   root.innerHTML = `
     <div class="container">
-      <div class="breadcrumb"><a href="#/" data-nav-link>${t("nav.home")}</a> / ${t("home.eomTitle")}</div>
+      <div class="breadcrumb"><a href="#/" data-nav-link>${t("nav.home")}</a> / ${t("modules.breadcrumb")}</div>
       <h1>${t("modules.title")}</h1>
       <p class="section-sub">${t("modules.subtitle")}</p>
-      <div class="grid grid-3">
-        <a class="choice-card" href="#/module/101" data-nav-link>
-          <div class="choice-icon">101</div>
-          <h3>${t("module.label", { n: "101" })}</h3>
-          <p>${t("modules.m101desc")}</p>
-          <span class="badge badge-green" style="margin-top:14px;">${t("home.available")}</span>
-        </a>
-        <a class="choice-card" href="#/module/102" data-nav-link>
-          <div class="choice-icon">102</div>
-          <h3>${t("module.label", { n: "102" })}</h3>
-          <p>${t("modules.m102desc")}</p>
-          <span class="badge badge-green" style="margin-top:14px;">${t("home.available")}</span>
-        </a>
-        <div class="choice-card disabled" aria-disabled="true">
-          <div class="choice-icon">103</div>
-          <h3>${t("module.label", { n: "103" })}</h3>
-          <p>${t("modules.m103desc")}</p>
-          <span class="badge badge-amber" style="margin-top:14px;">${t("home.comingSoon")}</span>
-        </div>
-      </div>
+      <div class="grid grid-3">${cards}</div>
     </div>
   `;
 }

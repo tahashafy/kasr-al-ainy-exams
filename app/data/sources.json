@@ -98,5 +98,55 @@
   "importedCount": 120,
   "questionsFile": "20241128_questions.docx",
   "answerKeyFile": "Module102_20241128_Book_Verified_Answer_Key.docx"
+ },
+ {
+  "module": "205",
+  "batch": "192",
+  "label": "Module 205 — Previous Exam — Batch 192",
+  "academicYear": null,
+  "examDate": null,
+  "importedCount": 61,
+  "questionsFile": "module205_new-3.pdf",
+  "answerKeyFile": "module205_new-3.pdf (embedded answer key)"
+ },
+ {
+  "module": "205",
+  "batch": "193",
+  "label": "Module 205 — Previous Exam — Batch 193",
+  "academicYear": null,
+  "examDate": null,
+  "importedCount": 90,
+  "questionsFile": "module205_new-3.pdf",
+  "answerKeyFile": "module205_new-3.pdf (embedded answer key)"
+ },
+ {
+  "module": "205",
+  "batch": "194",
+  "label": "Module 205 — Previous Exam — Batch 194",
+  "academicYear": null,
+  "examDate": null,
+  "importedCount": 89,
+  "questionsFile": "module205_new-3.pdf",
+  "answerKeyFile": "module205_new-3.pdf (embedded answer key)"
+ },
+ {
+  "module": "205",
+  "batch": "196",
+  "label": "Module 205 — Previous Exam — Batch 196",
+  "academicYear": null,
+  "examDate": null,
+  "importedCount": 115,
+  "questionsFile": "module205_new-3.pdf",
+  "answerKeyFile": "module205_new-3.pdf (embedded answer key)"
+ },
+ {
+  "module": "205",
+  "batch": "197",
+  "label": "Module 205 — Previous Exam — Batch 197",
+  "academicYear": null,
+  "examDate": null,
+  "importedCount": 112,
+  "questionsFile": "module205_new-3.pdf",
+  "answerKeyFile": "module205_new-3.pdf (embedded answer key)"
  }
 ]

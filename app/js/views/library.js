@@ -1,10 +1,12 @@
-import { getChapters, getExamSources, filterQuestions } from "../data.js";
+import { getChapters, getExamSources, filterQuestions, getModuleContentKind, getModuleShowWrittenTab } from "../data.js";
 import { escapeHtml } from "../router.js";
 import { t } from "../i18n.js";
 
 export function renderLibrary(root, moduleId) {
   const chapters = getChapters(moduleId);
   const sources = getExamSources(moduleId);
+  const contentKind = getModuleContentKind(moduleId); // 'eom' | 'mcq'
+  const showWrittenTab = getModuleShowWrittenTab(moduleId);
 
   const categoryCards = chapters.categories
     .map((cat) => {
@@ -31,9 +33,22 @@ export function renderLibrary(root, moduleId) {
     )
     .join("");
 
+  const breadcrumbLabel = contentKind === "mcq" ? t("lib.breadcrumbMcq") : t("lib.breadcrumbEom");
+  const libraryTitle = contentKind === "mcq" ? t("lib.libraryTitleMcq") : t("lib.libraryTitle");
+  const libraryDesc = contentKind === "mcq" ? t("lib.libraryDescMcq") : t("lib.libraryDesc");
+
+  const writtenCard = showWrittenTab
+    ? `
+      <div class="card disabled" aria-disabled="true" style="margin-bottom:16px;">
+        <h2 class="section-title">${t("home.writtenTitle")}</h2>
+        <p class="section-sub">${t("home.writtenDesc")}</p>
+        <span class="badge badge-amber" style="margin-top:6px;">${t("home.comingSoon")}</span>
+      </div>`
+    : "";
+
   root.innerHTML = `
     <div class="container">
-      <div class="breadcrumb"><a href="#/" data-nav-link>${t("nav.home")}</a> / <a href="#/exams" data-nav-link>${t("lib.breadcrumbEom")}</a> / ${t("module.label", { n: moduleId })}</div>
+      <div class="breadcrumb"><a href="#/" data-nav-link>${t("nav.home")}</a> / <a href="#/exams" data-nav-link>${breadcrumbLabel}</a> / ${t("module.label", { n: moduleId })}</div>
       <h1>${t(`module${moduleId}.fullTitle`)}</h1>
       <p class="section-sub">${escapeHtml(chapters.textbookEdition)}</p>
 
@@ -45,9 +60,11 @@ export function renderLibrary(root, moduleId) {
         <a class="btn btn-primary" href="#/setup/${moduleId}" data-nav-link>${t("lib.startBtn")}</a>
       </div>
 
+      ${writtenCard}
+
       <div class="card">
-        <h2 class="section-title">${t("lib.libraryTitle")}</h2>
-        <p class="section-sub">${t("lib.libraryDesc")}</p>
+        <h2 class="section-title">${libraryTitle}</h2>
+        <p class="section-sub">${libraryDesc}</p>
         <div style="overflow-x:auto;">
           <table class="data-table">
             <thead><tr><th>${t("lib.colPaper")}</th><th>${t("lib.colYear")}</th><th>${t("lib.colDate")}</th><th>${t("lib.colImported")}</th><th>${t("lib.colStatus")}</th></tr></thead>

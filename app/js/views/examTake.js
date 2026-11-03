@@ -64,6 +64,7 @@ function paint(root, attempt) {
             </div>
             ${q.coverageLabel === "Not covered" ? `<p class="alert alert-amber" style="font-size:12.5px;font-weight:600;margin:10px 0;" dir="ltr">⚠️ ${t("take.noticeNotCovered")}</p>` : ""}
             <p class="question-text" dir="ltr">${escapeHtml(q.text)}</p>
+            ${q.hasFigure && q.figures && q.figures.length ? q.figures.map((src) => `<img src="${escapeHtml(src)}" alt="${t("take.figureAlt")}" style="max-width:100%;border:1px solid var(--border);border-radius:8px;margin:10px 0;" />`).join("") : ""}
             <div class="options" role="radiogroup" aria-label="${t("take.answerOptionsAria")}" dir="ltr">
               ${q.options
                 .map((opt) => {
@@ -248,7 +249,7 @@ function renderExplanation(q, chapterMeta) {
       <strong>${t("take.recommendedAnswer")}: <span dir="ltr">${letter}${answerOpt ? `. ${escapeHtml(answerOpt.text)}` : ""}</span></strong>
       <p style="margin:8px 0 0;color:inherit;" dir="ltr">${escapeHtml(q.evidence || "No book evidence recorded.")}</p>
       ${notices.length ? `<p style="margin:8px 0 0;font-size:12.5px;font-weight:600;">${notices.map(escapeHtml).join(" · ")}</p>` : ""}
-      <p style="margin:8px 0 0;font-size:12.5px;opacity:0.85;">${chapterLine} · Source: ${escapeHtml(q.sourceExam)}</p>
+      <p style="margin:8px 0 0;font-size:12.5px;opacity:0.85;">${chapterLine}${q.sourceExam ? ` · Source: ${escapeHtml(q.sourceExam)}` : ""}</p>
       <details style="margin-top:10px;">
         <summary style="cursor:pointer;font-weight:600;font-size:13px;">${t("take.viewSourceDetails")}</summary>
         <div style="margin-top:8px;font-size:13px;line-height:1.5;">

@@ -33,12 +33,15 @@ app/                          the actual deployed application — THIS is what g
   server.js                   ~50-line dependency-free static file server (local dev only)
   tests/scoring.test.js       Node's built-in test runner, 14 tests — keep these passing
 
-scripts2/                     the CURRENT import pipeline (Word-doc sources). Use this, not
-                              any older `scripts/` you might find referenced in history —
-                              that one parsed PDFs/OCR and is fully superseded.
+scripts2/                     the CURRENT import pipeline. For 101/102 (Word-doc sources):
   extract_questions.py        parses original question .docx files → questions_raw.json
   extract_answer_keys.py      parses "Book Verified Answer Key" .docx files → answer_keys_raw.json
   build_question_bank_v2.py   merges both + classifies category/chapter → app/data/questions.json
+  build_module205_question_bank.py   Module 205's own importer — see "Module 205" section below.
+                              Does NOT re-parse the original PDF; it reshapes the already-validated
+                              source_docs/205/*.json into this app's data model. Re-run it any time
+                              source_docs/205/*.json changes; it only replaces the "205" slice of
+                              chapters.json/questions.json/sources.json, leaving 101/102 untouched.
 
 source_docs/101/
   questions/                            original question papers (.docx), one per batch
@@ -91,6 +94,23 @@ The homepage (`app/js/views/moduleSelect.js`) and router (`app/js/app.js`) alrea
 2. In `app/js/app.js`, change the relevant `registerRoute("/module/:id", ...)` / `/setup/:id` branches to route the new module id to its own library/setup views instead of `renderComingSoon` (you'll likely want to genericize `library101.js`/parts of `examSetup.js` to take a module id rather than hardcoding "101" — they are currently 101-specific and were deliberately not generalized prematurely since only one module existed).
 3. Add the new module's card data (title, description, chapter/category taxonomy) and i18n keys (see below) following the same pattern as the 101 cards.
 4. Keep Module 101 fully working throughout — this app explicitly promises "allow future modules to be added without major restructuring," so prefer extending the existing data/view shape over a parallel one-off path for the new module.
+
+## Module 205 — a different kind of module, and the config mechanism it introduced
+
+Module 205 (Neuroscience) is the first module that is **not** a set of End-of-Module exam papers — it's a standalone MCQ question bank (2,208 questions, organized by subject/chapter/section, extracted and validated from a 236-page PDF) plus a separate set of 467 previous-exam reprints. This surfaced two real differences from 101/102 that are now handled through **per-module config flags in `app/data/chapters.json`**, not hardcoded `if (moduleId === "205")` checks scattered through the views:
+
+- `chapters.json["205"].contentKind: "mcq"` (101/102 omit this field, defaulting to `"eom"` via `data.js`'s `getModuleContentKind()`). `library.js` reads this to show "MCQ Questions" instead of "End-of-Module" in the breadcrumb and to swap the "Examination library" section's title/description to "Previous exams" wording — nothing else changes. `moduleSelect.js`'s own breadcrumb was also made generic ("Modules" instead of the hardcoded "End-of-Module Examinations") since it's now the entry point to more than one content kind.
+- `chapters.json["205"].showWrittenTab: true` (via `data.js`'s `getModuleShowWrittenTab()`, defaults to `true` if omitted). `library.js` renders an inactive "Written / Final Examinations" card (same disabled-card convention as the homepage) on every module's page now that modules have their own landing page — this is additive and doesn't change 101/102's existing interactive functionality.
+
+To add a future non-EOM module, set these two flags in its `chapters.json` entry rather than adding new branches to the view files.
+
+**Data-model reuse, not a parallel schema.** Module 205's bank questions map onto the *existing* `category`/`chapter` fields (subject → category, PDF chapter → chapter) exactly like 101/102's taxonomy, so `library.js`/`examSetup.js`/`filterQuestions()` needed zero changes to support custom-mix practice by subject/chapter. Its previous-exam reprints map onto the existing `sourceExam`/`batch` fields exactly like 101/102's historical papers, so "Full Past Exams" mode works unchanged. The one real schema wrinkle: 205's bank questions are *not* tied to any single exam paper, so they get `sourceExam: null` — `data.js`'s `getExamSources()` now skips records with no `sourceExam` (a no-op for 101/102, where every record already has one) so they don't collapse into a bogus "null" row in the papers table. Exam-reprint records are deliberately given `category: null, chapter: null` (kept distinguishable from the bank's own subject classification, per the integration brief) — `filterQuestions()`'s existing category-match logic already excludes anything with no category from category-filtered practice, so no new filtering code was needed either.
+
+Fields with no 101/102 equivalent (`coverageLabel`/`coverageGroup`) are left `null` for every 205 record rather than invented — this source was never cross-referenced against a textbook, so there is honestly nothing to report there, and `null` already resolves to the existing "undetermined" bucket the Advanced-filters coverage control handles. New 205-only fields (`questionCode`, `topicCode`, `section`, `tags`, `historicalBatches`, `sourcePdfPage`, `answerVerificationStatus`, `hasFigure`/`figures`, and on exam entries `batch`/`refCode`/`cancelled`/`figureReproductionNote`) extend each record without touching the shared fields other modules rely on. A handful of questions (2 of 2,675) whose original "options" are labelled points on a diagram rather than selectable text are force-set to `gradingStatus: "Review"` with `correctOptionId: null`, since they can't be fairly scored through a text UI — see `scripts2/build_module205_question_bank.py`'s `figure_label_only` handling.
+
+**Figures**: the 4 extracted diagram/photo files live at `app/data/figures/*.png`; `examTake.js` renders `<img>` tags for any question with `hasFigure`/`figures` set (new — 101/102 never had this).
+
+**Source material**: `source_docs/205/` holds the already-extracted-and-validated `questions_final.json`/`exam_entries_final.json`/`chapter_banners.json` (produced by a separate PDF-extraction pipeline, not committed here — see `MODULE205_DATABASE_REPORT.md` in that folder for its own methodology/validation/manual-review notes) plus `review_answers.json` (4 exam-entry questions whose printed answer-key mark was a literal "?" in the source — correctly carried through as `answerVerificationStatus: "unverified_in_source"` / `gradingStatus: "Review"`, never guessed).
 
 ## i18n conventions (`app/js/i18n.js`)
 

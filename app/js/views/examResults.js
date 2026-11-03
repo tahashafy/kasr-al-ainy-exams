@@ -137,7 +137,7 @@ function renderReviewItem(q, response, i) {
         ${notices.length ? `<p style="margin:8px 0 0;font-size:12.5px;font-weight:600;">${notices.map(escapeHtml).join(" · ")}</p>` : ""}
         <div style="margin-top:6px;font-size:12px;opacity:0.85;">
           ${chapterMeta ? `${escapeHtml(chapterMeta.categoryName)} — Ch. ${escapeHtml(chapterMeta.number)}: ${escapeHtml(chapterMeta.title)} · ` : ""}
-          Source: ${escapeHtml(q.sourceExam)}
+          ${q.sourceExam ? `Source: ${escapeHtml(q.sourceExam)}` : ""}
         </div>
         <details style="margin-top:10px;">
           <summary style="cursor:pointer;font-weight:600;font-size:13px;">${t("take.viewSourceDetails")}</summary>
