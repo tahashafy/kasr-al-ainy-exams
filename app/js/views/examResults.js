@@ -1,7 +1,7 @@
-import { getAttemptById } from "../store.js";
+import { getAttemptById, getSettings } from "../store.js";
 import { getQuestionById, getChapterMeta, getCategoryMeta } from "../data.js";
 import { escapeHtml } from "../router.js";
-import { buildNotices, coverageLabelText } from "./examTake.js";
+import { buildNotices, coverageLabelText, hasQuestionMeta, renderQuestionMetaRow } from "./examTake.js";
 import { t } from "../i18n.js";
 
 export function renderExamResults(root, params) {
@@ -113,6 +113,7 @@ function renderReviewItem(q, response, i) {
   const answerOpt = q.options.find((o) => o.id === q.correctOptionId);
   const notices = buildNotices(q);
   const pages = (q.bookPages || []).join(", ");
+  const showMeta = !!getSettings().showQuestionMeta;
 
   return `
     <div class="review-item">
@@ -120,6 +121,7 @@ function renderReviewItem(q, response, i) {
         <strong style="font-size:13px;color:var(--text-faint);">Q${i + 1}</strong>
         <div>${statusBadge}</div>
       </div>
+      ${showMeta && hasQuestionMeta(q) ? renderQuestionMetaRow(q) : ""}
       <p style="font-weight:600;color:var(--text);margin-bottom:10px;" dir="ltr">${escapeHtml(q.text)}</p>
       <div class="options" dir="ltr">
         ${q.options

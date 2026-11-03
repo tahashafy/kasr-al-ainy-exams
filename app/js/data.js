@@ -45,6 +45,15 @@ export function getModuleShowWrittenTab(moduleId) {
   return ch && typeof ch.showWrittenTab === "boolean" ? ch.showWrittenTab : true;
 }
 
+/** Whether any question in this module carries a program/source tag (IPKA,
+ * COMMON, DEPT BOOK, ...). Derived from the data itself rather than a config
+ * flag, so the IPKA filter row only ever appears where it means something —
+ * currently Module 205 — and never needs updating when a future module does
+ * or doesn't carry these tags. */
+export function moduleHasProgramTags(moduleId) {
+  return _questions.some((q) => q.module === moduleId && q.tags && q.tags.length);
+}
+
 export function getSources() {
   return _sources;
 }
@@ -57,6 +66,21 @@ export function getChaptersForCategories(moduleId, categoryIds) {
   return _chapters[moduleId].categories
     .filter((c) => categoryIds.includes(c.id))
     .flatMap((c) => c.chapters.map((ch) => ({ ...ch, categoryId: c.id, categoryName: c.name })));
+}
+
+/** Sections (sub-topics) belonging to the given chapters, in their source
+ * order, each carrying its own question count. Returns [] for a module/
+ * chapter that has no section-level taxonomy (e.g. 101/102 today) — this is
+ * an optional third filtering level, not something every module must have. */
+export function getSectionsForChapters(moduleId, chapterIds) {
+  const mod = _chapters[moduleId];
+  if (!mod) return [];
+  return mod.categories
+    .flatMap((c) => c.chapters.map((ch) => ({ ...ch, categoryName: c.name })))
+    .filter((ch) => chapterIds.includes(ch.id))
+    .flatMap((ch) =>
+      (ch.sections || []).map((s) => ({ ...s, chapterId: ch.id, chapterTitle: ch.title, categoryName: ch.categoryName }))
+    );
 }
 
 export function getAllQuestions() {
@@ -120,18 +144,23 @@ export function coverageGroupOf(q) {
  * time (see scoring.js). coverageGroup is the opt-in "Advanced filters"
  * control for narrowing by book coverage.
  * @param {{
- *   module?: string, categories?: string[], chapters?: string[], sourceExam?: string|null,
- *   coverageGroup?: ('book-supported'|'partial'|'not-covered'|'undetermined')|null
+ *   module?: string, categories?: string[], chapters?: string[], sections?: string[],
+ *   sourceExam?: string|null,
+ *   coverageGroup?: ('book-supported'|'partial'|'not-covered'|'undetermined')|null,
+ *   ipka?: ('only'|'exclude')|null
  * }} criteria
  */
 export function filterQuestions(criteria = {}) {
-  const { module, categories, chapters, sourceExam, coverageGroup } = criteria;
+  const { module, categories, chapters, sections, sourceExam, coverageGroup, ipka } = criteria;
   return _questions.filter((q) => {
     if (module && q.module !== module) return false;
     if (categories && categories.length && !categories.includes(q.category)) return false;
     if (chapters && chapters.length && !chapters.includes(q.chapter)) return false;
+    if (sections && sections.length && !sections.includes(q.sectionId)) return false;
     if (sourceExam && q.sourceExam !== sourceExam) return false;
     if (coverageGroup && coverageGroupOf(q) !== coverageGroup) return false;
+    if (ipka === "only" && !(q.tags || []).includes("IPKA")) return false;
+    if (ipka === "exclude" && (q.tags || []).includes("IPKA")) return false;
     return true;
   });
 }

@@ -1,4 +1,4 @@
-import { getChapters, getChaptersForCategories, getExamSources, filterQuestions, drawExamQuestions } from "../data.js";
+import { getChapters, getChaptersForCategories, getSectionsForChapters, getExamSources, filterQuestions, drawExamQuestions, moduleHasProgramTags } from "../data.js";
 import { escapeHtml, navigate } from "../router.js";
 import { saveInProgress, clearInProgress } from "../store.js";
 import { t } from "../i18n.js";
@@ -10,12 +10,20 @@ const COVERAGE_OPTIONS = [
   { id: "not-covered", labelKey: "setup.coverageNotCovered" },
 ];
 
+const IPKA_OPTIONS = [
+  { id: null, labelKey: "setup.ipkaAll" },
+  { id: "only", labelKey: "setup.ipkaOnly" },
+  { id: "exclude", labelKey: "setup.ipkaExclude" },
+];
+
 const state = {
   mode: "custom", // 'custom' | 'paper'
   selectedCategories: [],
   selectedChapters: [],
+  selectedSections: [],
   sourceExam: null,
   coverageGroup: null, // null = All Questions (default); otherwise one of COVERAGE_OPTIONS ids
+  ipka: null, // null = All; 'only' | 'exclude' — see IPKA_OPTIONS
   showAdvanced: false,
   countMode: "all", // 'all' | 'fixed'
   fixedCount: 40,
@@ -28,8 +36,10 @@ function resetState(chapters) {
   state.mode = "custom";
   state.selectedCategories = chapters.categories.map((c) => c.id);
   state.selectedChapters = [];
+  state.selectedSections = [];
   state.sourceExam = null;
   state.coverageGroup = null;
+  state.ipka = null;
   state.showAdvanced = false;
   state.countMode = "all";
   state.fixedCount = 40;
@@ -46,14 +56,16 @@ function fullPaperCount(sources, sourceExam) {
 function eligibleQuestions(moduleId) {
   if (state.mode === "paper") {
     if (!state.sourceExam) return [];
-    return filterQuestions({ module: moduleId, sourceExam: state.sourceExam, coverageGroup: state.coverageGroup });
+    return filterQuestions({ module: moduleId, sourceExam: state.sourceExam, coverageGroup: state.coverageGroup, ipka: state.ipka });
   }
   if (state.selectedCategories.length === 0) return []; // spec: at least one category required
   return filterQuestions({
     module: moduleId,
     categories: state.selectedCategories,
     chapters: state.selectedChapters.length ? state.selectedChapters : undefined,
+    sections: state.selectedSections.length ? state.selectedSections : undefined,
     coverageGroup: state.coverageGroup,
+    ipka: state.ipka,
   });
 }
 
@@ -69,6 +81,7 @@ function paint(root, moduleId, chapters, sources) {
   const pool = eligibleQuestions(moduleId);
   const readyInPool = pool.filter((q) => q.gradingStatus === "Ready").length;
   const chapterOptions = getChaptersForCategories(moduleId, state.selectedCategories);
+  const sectionOptions = state.selectedChapters.length ? getSectionsForChapters(moduleId, state.selectedChapters) : [];
   const isFullPaper = state.mode === "paper" && state.sourceExam && !state.coverageGroup && pool.length === fullPaperCount(sources, state.sourceExam);
   const paperLabel = state.mode === "paper" ? (state.sourceExam ? (isFullPaper ? t("setup.fullPastExamLabel") : t("setup.filteredPracticeSetLabel")) : null) : null;
 
@@ -110,6 +123,19 @@ function paint(root, moduleId, chapters, sources) {
               .join("") || `<span style="color:var(--text-faint);font-size:13px;">${t("setup.noCategories")}</span>`}
           </div>
           ${chapterOptions.length ? `<div style="margin-bottom:8px;"><button class="btn btn-ghost btn-sm" id="clear-chapters" type="button">${t("setup.clearChapters")}</button></div>` : ""}
+
+          ${sectionOptions.length ? `
+          <label>${t("setup.sectionsLabel")}</label>
+          <div class="chip-group" id="section-chips" style="margin-bottom:8px;">
+            ${sectionOptions
+              .map(
+                (s) =>
+                  `<button class="chip ${state.selectedSections.includes(s.id) ? "selected" : ""}" data-section="${s.id}" type="button" title="${escapeHtml(s.chapterTitle)}">${escapeHtml(s.title)} (${s.count})</button>`
+              )
+              .join("")}
+          </div>
+          <div style="margin-bottom:8px;"><button class="btn btn-ghost btn-sm" id="clear-sections" type="button">${t("setup.clearSelection")}</button></div>
+          ` : ""}
         </div>
 
         <div id="mode-paper" style="${state.mode !== "paper" ? "display:none" : ""}">
@@ -139,6 +165,17 @@ function paint(root, moduleId, chapters, sources) {
             ).join("")}
           </div>
           <p style="font-size:12.5px;color:var(--text-muted);margin-top:8px;">${t("setup.coverageNote")}</p>
+
+          ${moduleHasProgramTags(moduleId) ? `
+          <label style="margin-top:16px;display:block;">${t("setup.ipkaLabel")}</label>
+          <div class="chip-group">
+            ${IPKA_OPTIONS.map(
+              (o) =>
+                `<button class="chip ${state.ipka === o.id ? "selected" : ""}" data-ipka="${o.id ?? ""}" type="button">${escapeHtml(t(o.labelKey))}</button>`
+            ).join("")}
+          </div>
+          <p style="font-size:12.5px;color:var(--text-muted);margin-top:8px;">${t("setup.ipkaNote")}</p>
+          ` : ""}
         </div>
       </div>
 
@@ -215,7 +252,7 @@ function paint(root, moduleId, chapters, sources) {
   const clearCatsBtn = root.querySelector("#clear-cats");
   if (clearCatsBtn) clearCatsBtn.addEventListener("click", () => { state.selectedCategories = []; state.selectedChapters = []; paint(root, moduleId, chapters, sources); });
   const clearChaptersBtn = root.querySelector("#clear-chapters");
-  if (clearChaptersBtn) clearChaptersBtn.addEventListener("click", () => { state.selectedChapters = []; paint(root, moduleId, chapters, sources); });
+  if (clearChaptersBtn) clearChaptersBtn.addEventListener("click", () => { state.selectedChapters = []; state.selectedSections = []; paint(root, moduleId, chapters, sources); });
 
   root.querySelectorAll("[data-chapter]").forEach((btn) =>
     btn.addEventListener("click", () => {
@@ -223,9 +260,24 @@ function paint(root, moduleId, chapters, sources) {
       const idx = state.selectedChapters.indexOf(id);
       if (idx >= 0) state.selectedChapters.splice(idx, 1);
       else state.selectedChapters.push(id);
+      state.selectedSections = state.selectedSections.filter((secId) =>
+        getSectionsForChapters(moduleId, state.selectedChapters).some((s) => s.id === secId)
+      );
       paint(root, moduleId, chapters, sources);
     })
   );
+
+  root.querySelectorAll("[data-section]").forEach((btn) =>
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.section;
+      const idx = state.selectedSections.indexOf(id);
+      if (idx >= 0) state.selectedSections.splice(idx, 1);
+      else state.selectedSections.push(id);
+      paint(root, moduleId, chapters, sources);
+    })
+  );
+  const clearSectionsBtn = root.querySelector("#clear-sections");
+  if (clearSectionsBtn) clearSectionsBtn.addEventListener("click", () => { state.selectedSections = []; paint(root, moduleId, chapters, sources); });
 
   const paperSelect = root.querySelector("#paper-select");
   if (paperSelect) paperSelect.addEventListener("change", (e) => { state.sourceExam = e.target.value || null; paint(root, moduleId, chapters, sources); });
@@ -235,6 +287,12 @@ function paint(root, moduleId, chapters, sources) {
   root.querySelectorAll("[data-coverage]").forEach((btn) =>
     btn.addEventListener("click", () => {
       state.coverageGroup = btn.dataset.coverage || null;
+      paint(root, moduleId, chapters, sources);
+    })
+  );
+  root.querySelectorAll("[data-ipka]").forEach((btn) =>
+    btn.addEventListener("click", () => {
+      state.ipka = btn.dataset.ipka || null;
       paint(root, moduleId, chapters, sources);
     })
   );
@@ -261,8 +319,10 @@ function startExam(moduleId, chapters, sources) {
     module: moduleId,
     categories: state.mode === "custom" ? state.selectedCategories : undefined,
     chapters: state.mode === "custom" && state.selectedChapters.length ? state.selectedChapters : undefined,
+    sections: state.mode === "custom" && state.selectedSections.length ? state.selectedSections : undefined,
     sourceExam: state.mode === "paper" ? state.sourceExam : undefined,
     coverageGroup: state.coverageGroup,
+    ipka: state.ipka,
     mode: state.countMode === "fixed" ? "count" : "all",
     count: state.fixedCount,
     shuffle: state.mode !== "paper",
@@ -287,8 +347,10 @@ function startExam(moduleId, chapters, sources) {
       label: state.mode === "paper" ? (isFullPaper ? "Full Past Exam" : "Filtered Practice Set") : "Custom mix",
       categories: state.selectedCategories.slice(),
       chapters: state.selectedChapters.slice(),
+      sections: state.selectedSections.slice(),
       sourceExam: state.sourceExam,
       coverageGroup: state.coverageGroup,
+      ipka: state.ipka,
     },
   };
   saveInProgress(attemptInProgress);

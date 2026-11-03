@@ -20,6 +20,7 @@ module's data byte-for-byte as it was.
 """
 import json
 import os
+import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "source_docs", "205")
@@ -44,17 +45,52 @@ def chapter_id(subject, chapter_num):
     return f"m205-{SUBJECT_ABBR[subject]}-{chapter_num}"
 
 
-def build_chapters_entry(banners):
+def slugify(text):
+    s = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+    return s[:40] or "section"
+
+
+def section_id(chap_id, section_title):
+    return f"{chap_id}--{slugify(section_title)}"
+
+
+def build_sections_by_chapter(questions_raw):
+    """Authoritative section list per chapter, in first-seen (= printed) order,
+    with question counts — derived directly from the validated question
+    records rather than hand-transcribed from the PDF's table of contents, so
+    it can never drift out of sync with the actual data."""
+    order = {}
+    counts = {}
+    for q in sorted(questions_raw, key=lambda x: x["printed_number"]):
+        chap = chapter_id(q["subject"], q["chapter_num"])
+        title = q.get("section") or "General"
+        key = (chap, title)
+        if key not in order:
+            order[key] = len(order)
+        counts[key] = counts.get(key, 0) + 1
+
+    by_chapter = {}
+    for (chap, title), _ in sorted(order.items(), key=lambda kv: kv[1]):
+        by_chapter.setdefault(chap, []).append(
+            {"id": section_id(chap, title), "title": title, "count": counts[(chap, title)]}
+        )
+    return by_chapter
+
+
+def build_chapters_entry(banners, questions_raw):
+    sections_by_chapter = build_sections_by_chapter(questions_raw)
     cats = {}
     for b in banners:
         cid = cat_id(b["subject"])
         cats.setdefault(cid, {"id": cid, "name": b["subject"], "chapters": []})
+        chap_id = chapter_id(b["subject"], b["chapter_num"])
         cats[cid]["chapters"].append(
             {
-                "id": chapter_id(b["subject"], b["chapter_num"]),
+                "id": chap_id,
                 "number": str(b["chapter_num"]),
                 "title": b["title"],
                 "startPage": b["page"],
+                "sections": sections_by_chapter.get(chap_id, []),
             }
         )
     # stable order: Anatomy, Physiology, Histology, each by chapter number
@@ -118,6 +154,7 @@ def bank_record(q):
         "correctOptionId": None if figure_label_only else (q["answer_letter"].lower() if q.get("answer_letter") else None),
         "category": cat_id(subject),
         "chapter": chapter_id(subject, q["chapter_num"]),
+        "sectionId": section_id(chapter_id(subject, q["chapter_num"]), q.get("section") or "General"),
         "sourceExam": None,  # this is the question bank itself, not tied to one historical paper
         "academicYear": None,
         "examDate": None,
@@ -179,6 +216,7 @@ def exam_record(x):
         # guessed from subject_in_exam free text.
         "category": None,
         "chapter": None,
+        "sectionId": None,
         "sourceExam": source_exam_label,
         "academicYear": None,
         "examDate": None,
@@ -251,7 +289,7 @@ def main():
         sources = json.load(f)
 
     # Replace only the "205" slice in each file; leave 101/102 untouched.
-    chapters[MODULE_ID] = build_chapters_entry(banners)
+    chapters[MODULE_ID] = build_chapters_entry(banners, questions_raw)
 
     questions = [q for q in questions if q.get("module") != MODULE_ID]
     new_bank = [bank_record(q) for q in questions_raw]

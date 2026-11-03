@@ -1,6 +1,6 @@
 import { getQuestionById, getChapterMeta } from "../data.js";
 import { escapeHtml, navigate } from "../router.js";
-import { getInProgress, saveInProgress, clearInProgress, saveAttempt, toggleBookmark, isBookmarked } from "../store.js";
+import { getInProgress, saveInProgress, clearInProgress, saveAttempt, toggleBookmark, isBookmarked, getSettings, saveSettings } from "../store.js";
 import { scoreAttempt, submissionSummary } from "../scoring.js";
 import { t } from "../i18n.js";
 
@@ -35,6 +35,7 @@ function paint(root, attempt) {
   const q = questions[idx];
   const response = attempt.responses[q.id] || { selected: null, markedForReview: false };
   const chapterMeta = q.chapter ? getChapterMeta(q.chapter) : null;
+  const showMeta = !!getSettings().showQuestionMeta;
 
   const answeredCount = Object.values(attempt.responses).filter((r) => r.selected != null).length;
 
@@ -58,10 +59,14 @@ function paint(root, attempt) {
               <div class="qnum">QUESTION ${idx + 1}
                 ${q.category ? `<span class="badge badge-gray" style="margin-left:8px;">${escapeHtml(chapterMeta ? chapterMeta.categoryName : q.category)}</span>` : ""}
               </div>
-              <button class="btn btn-ghost btn-sm" id="bookmark-btn" type="button" aria-pressed="${isBookmarked(q.id)}" title="${t("take.bookmarkHint")}">
-                ${isBookmarked(q.id) ? t("take.bookmarked") : t("take.bookmark")}
-              </button>
+              <div style="display:flex;gap:8px;">
+                ${hasQuestionMeta(q) ? `<button class="btn btn-ghost btn-sm" id="toggle-meta-btn" type="button" aria-pressed="${showMeta}" title="${t("take.showMetaHint")}">${showMeta ? t("take.hideMeta") : t("take.showMeta")}</button>` : ""}
+                <button class="btn btn-ghost btn-sm" id="bookmark-btn" type="button" aria-pressed="${isBookmarked(q.id)}" title="${t("take.bookmarkHint")}">
+                  ${isBookmarked(q.id) ? t("take.bookmarked") : t("take.bookmark")}
+                </button>
+              </div>
             </div>
+            ${showMeta && hasQuestionMeta(q) ? renderQuestionMetaRow(q) : ""}
             ${q.coverageLabel === "Not covered" ? `<p class="alert alert-amber" style="font-size:12.5px;font-weight:600;margin:10px 0;" dir="ltr">⚠️ ${t("take.noticeNotCovered")}</p>` : ""}
             <p class="question-text" dir="ltr">${escapeHtml(q.text)}</p>
             ${q.hasFigure && q.figures && q.figures.length ? q.figures.map((src) => `<img src="${escapeHtml(src)}" alt="${t("take.figureAlt")}" style="max-width:100%;border:1px solid var(--border);border-radius:8px;margin:10px 0;" />`).join("") : ""}
@@ -147,6 +152,11 @@ function paint(root, attempt) {
     toggleBookmark(q.id);
     paint(root, attempt);
   });
+  const toggleMetaBtn = root.querySelector("#toggle-meta-btn");
+  if (toggleMetaBtn) toggleMetaBtn.addEventListener("click", () => {
+    saveSettings({ showQuestionMeta: !getSettings().showQuestionMeta });
+    paint(root, attempt);
+  });
   const markBtn = root.querySelector("#mark-review-btn");
   markBtn.addEventListener("click", () => {
     const r = attempt.responses[q.id] || { selected: null };
@@ -204,6 +214,29 @@ function paint(root, attempt) {
     tick();
     timerInterval = setInterval(tick, 1000);
   }
+}
+
+/** Whether this question carries any source-identifier metadata (question
+ * code, program/source tags, historical batch mentions) worth a toggle —
+ * modules without this data (101/102) simply never show the control. */
+export function hasQuestionMeta(q) {
+  return !!(q.questionCode || (q.tags && q.tags.length) || (q.historicalBatches && q.historicalBatches.length));
+}
+
+/** Renders the identifiers printed beside this question in its original
+ * source (code, program/source tags like IPKA/COMMON/DEPT BOOK, and which
+ * exam batches it's on record as having appeared in) — shown only when the
+ * student has switched the "Show question info" toggle on. */
+export function renderQuestionMetaRow(q) {
+  const parts = [];
+  if (q.questionCode) parts.push(`<span class="badge badge-gray" dir="ltr">${escapeHtml(q.questionCode)}</span>`);
+  for (const tag of q.tags || []) parts.push(`<span class="badge badge-teal" dir="ltr">${escapeHtml(tag)}</span>`);
+  if (q.historicalBatches && q.historicalBatches.length) {
+    parts.push(
+      `<span class="badge badge-gray" dir="ltr">${t("take.metaBatches")} ${q.historicalBatches.map(escapeHtml).join(" · ")}</span>`
+    );
+  }
+  return `<div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0;">${parts.join("")}</div>`;
 }
 
 export function coverageLabelText(label) {
