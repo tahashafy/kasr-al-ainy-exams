@@ -252,3 +252,37 @@ The repo owner noticed the PDF prints additional identifiers beside each questio
 - Playwright pass against `node server.js`: selecting the "Neuro" chapter in Module 205's custom-mix builder revealed all 15 section chips; selecting "Spinal Cord" narrowed the eligible pool to exactly 63 questions, matching the TOC-validated count above. The IPKA filter chip row rendered with 3 options and narrowed the pool correctly. Starting a practice exam showed the "Show Info" toggle next to a question carrying real metadata (code `AN-NEU-02-61`, `Batches: 192`); clicking it flipped the button text ("Show Info" → "Hide Info"), set `aria-pressed`, and revealed the badge row with those identifiers pulled straight from the question record.
 - Regression check: Module 101's exam builder shows **zero** section chips (no chapter there has a `sections` array) and **zero** IPKA chips (no 101 question carries `tags`) — both features are fully invisible for 101/102, with no module-id branching anywhere in the view code.
 - `cd app && npm test` — scoring engine, still **14/14 passing, unchanged**.
+
+## 15. Module 205 filter cleanup, default-on metadata, module source lines, and home-page wording (this phase)
+
+Follow-up feedback after §14 shipped: the "Book coverage" filter is noise on Module 205 (it has none), the section drill-down needed confirming across *all* chapters (not just the Neuro example), the metadata toggle should default to showing rather than hiding, each module card needs a plain-language "Source" line, and the homepage's "End-of-Module Examinations" heading no longer fits a world with a non-EOM module.
+
+### 15.1 "Book coverage" filter, gated off for Module 205
+
+New `data.js` helper `moduleHasBookCoverage(moduleId)` (`_questions.some(q => q.module === moduleId && q.coverageLabel != null)`) — same data-driven pattern as `moduleHasProgramTags`. `examSetup.js`'s Advanced-filters coverage row is now wrapped in this check; the whole "Advanced filters" card is hidden if a module has *neither* book coverage nor program tags, so there's never an empty, pointless toggle. Verified: Module 101/102 still show their 4 coverage chips unchanged; Module 205 shows 0 coverage chips and its 3 IPKA chips (unaffected by this change, which was explicitly scoped to the coverage row only).
+
+### 15.2 Section filter verified across every chapter, not just one example
+
+Direct data check against `app/data/questions.json`/`chapters.json`: all 10 of Module 205's chapters (3 Anatomy, 3 Physiology, 4 Histology) have a non-empty `sections` array, every one of the 2,208 bank questions has a `sectionId` set (zero missing), and every chapter's section-count sum matches its actual question count exactly (e.g. `m205-an-1` "Neuro": 359 = 359; `m205-hi-4` "Ear": 71 = 71 — all 10 chapters checked, all exact). A Playwright pass clicking through every one of the 10 chapter chips in turn confirmed the UI renders the correct section-chip count for each (15/9/16/9/11/9/7/5/5/3, matching the data exactly) — this was already a generic, data-driven mechanism from §14, so no code changes were needed here, only verification.
+
+### 15.3 Question-metadata toggle now defaults to on
+
+`store.js`'s `DEFAULT_SETTINGS.showQuestionMeta` flipped from `false` to `true`. Since the button's label and the badge row's visibility were already both driven live off `getSettings().showQuestionMeta` (not a hardcoded label), this one-line change was sufficient — no other code needed updating. Verified with a brand-new browser context (no prior localStorage, simulating a student who's never touched the setting): the metadata toggle shows "Hide Info" and the badge row (question code + tags, e.g. `AN-NEU-01-15` / `DEPT BOOK`) is visible immediately on the very first question, with no action needed from the student. This is a global default change, so it applies to every student automatically, not just new installs.
+
+### 15.4 Per-module "Source" line on the Modules page
+
+`moduleSelect.js`'s `MODULE_CARDS` entries gained an optional `sourceKey`, rendered as a `Source: ...` line under each card's existing description (only for modules that have one — currently 101, 102, 205; the still-unavailable 103 placeholder has none). Copy added to `i18n.js` in both languages, naming the actual batch/exam-date lists pulled from `app/data/sources.json`:
+- **101**: "Past-years End-of-Module exams — Batches 194, 195, 196, 198, 199 (academic years 2020–2021 through 2025–2026)."
+- **102**: "Past-years End-of-Module exams — 2020-01-15, 2020-12-20, 2021-12-26, 2023-11-30, 2024-11-28 (academic years 2019–2020 through 2024–2025)."
+- **205**: "A large MCQ question bank extracted from the Neuroscience course material (Anatomy, Physiology, Histology), plus reprints from past-years exam batches 192, 193, 194, 196, 197."
+
+This is plain descriptive copy, not derived automatically from `sources.json` — it needs a manual update (both languages) whenever a new batch is imported for any module. Verified in both English and Arabic (RTL) with Playwright — all three cards render their Source line correctly; the disabled Module 103 card correctly has none.
+
+### 15.5 Home-page wording no longer EOM-specific
+
+`home.eomTitle` renamed from "End-of-Module Examinations" to "Practice with MCQ Questions" (and the Arabic equivalent updated the same way), since that homepage card now leads to a module picker spanning both EOM-exam modules (101/102) and a non-EOM MCQ-bank module (205). `home.eomDesc` and `home.subtitle` were also reworded to drop their now-stale "Module 101 is live now" phrasing (102 and 205 have been live for a while). Verified with Playwright in both languages; Module 101's full flow (library → setup → exam-take) re-confirmed unaffected by any of this phase's changes, with no console/page errors.
+
+### 15.6 Validation performed
+
+- `cd app && npm test` — scoring engine, still **14/14 passing, unchanged**.
+- All checks above run via Playwright against `node server.js`, in a single consolidated pass plus targeted follow-ups; zero console/page errors throughout.

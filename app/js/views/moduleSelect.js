@@ -6,9 +6,9 @@ import { getAvailableModuleIds } from "../data.js";
 // than hardcoding another card. `available: false` renders a disabled
 // "Coming Soon" card exactly like the others, with no functional route yet.
 const MODULE_CARDS = [
-  { id: "101", descKey: "modules.m101desc", available: true },
-  { id: "102", descKey: "modules.m102desc", available: true },
-  { id: "205", descKey: "modules.m205desc", available: true },
+  { id: "101", descKey: "modules.m101desc", sourceKey: "modules.m101source", available: true },
+  { id: "102", descKey: "modules.m102desc", sourceKey: "modules.m102source", available: true },
+  { id: "205", descKey: "modules.m205desc", sourceKey: "modules.m205source", available: true },
   { id: "103", descKey: "modules.m103desc", available: false },
 ];
 
@@ -31,6 +31,7 @@ export function renderModuleSelect(root) {
         <div class="choice-icon">${icon}</div>
         <h3>${t("module.label", { n: m.id })}</h3>
         <p>${t(m.descKey)}</p>
+        ${m.sourceKey ? `<p style="font-size:12.5px;color:var(--text-muted);margin-top:6px;"><strong>${t("modules.sourceLabel")}:</strong> ${t(m.sourceKey)}</p>` : ""}
         <span class="badge badge-green" style="margin-top:14px;">${t("home.available")}</span>
       </a>`;
   }).join("");

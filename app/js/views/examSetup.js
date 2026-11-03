@@ -1,4 +1,4 @@
-import { getChapters, getChaptersForCategories, getSectionsForChapters, getExamSources, filterQuestions, drawExamQuestions, moduleHasProgramTags } from "../data.js";
+import { getChapters, getChaptersForCategories, getSectionsForChapters, getExamSources, filterQuestions, drawExamQuestions, moduleHasProgramTags, moduleHasBookCoverage } from "../data.js";
 import { escapeHtml, navigate } from "../router.js";
 import { saveInProgress, clearInProgress } from "../store.js";
 import { t } from "../i18n.js";
@@ -154,9 +154,11 @@ function paint(root, moduleId, chapters, sources) {
         </div>
       </div>
 
+      ${moduleHasBookCoverage(moduleId) || moduleHasProgramTags(moduleId) ? `
       <div class="card">
         <button class="btn btn-ghost btn-sm" id="toggle-advanced" type="button">${state.showAdvanced ? "▾" : "▸"} ${t("setup.advanced")}</button>
         <div id="advanced-filters" style="${state.showAdvanced ? "" : "display:none"}margin-top:12px;">
+          ${moduleHasBookCoverage(moduleId) ? `
           <label>${t("setup.coverageLabel")}</label>
           <div class="chip-group">
             ${COVERAGE_OPTIONS.map(
@@ -165,9 +167,10 @@ function paint(root, moduleId, chapters, sources) {
             ).join("")}
           </div>
           <p style="font-size:12.5px;color:var(--text-muted);margin-top:8px;">${t("setup.coverageNote")}</p>
+          ` : ""}
 
           ${moduleHasProgramTags(moduleId) ? `
-          <label style="margin-top:16px;display:block;">${t("setup.ipkaLabel")}</label>
+          <label style="${moduleHasBookCoverage(moduleId) ? "margin-top:16px;" : ""}display:block;">${t("setup.ipkaLabel")}</label>
           <div class="chip-group">
             ${IPKA_OPTIONS.map(
               (o) =>
@@ -178,6 +181,7 @@ function paint(root, moduleId, chapters, sources) {
           ` : ""}
         </div>
       </div>
+      ` : ""}
 
       <div class="card" id="count-card" style="${state.mode === "paper" ? "display:none" : ""}">
         <h2 class="section-title">${t("setup.countTitle")}</h2>

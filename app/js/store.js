@@ -25,7 +25,7 @@ const DEFAULT_SETTINGS = {
   theme: "light", // 'light' | 'dark'
   explanationMode: "after-submit", // 'immediate' | 'after-submit'
   lang: "en", // 'en' | 'ar' — interface language; exam content always stays English
-  showQuestionMeta: false, // show/hide each question's source metadata (code, tags, batches) — off by default
+  showQuestionMeta: true, // show/hide each question's source metadata (code, tags, batches) — on by default
 };
 
 function safeGet(key, fallback) {

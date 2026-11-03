@@ -54,6 +54,16 @@ export function moduleHasProgramTags(moduleId) {
   return _questions.some((q) => q.module === moduleId && q.tags && q.tags.length);
 }
 
+/** Whether any question in this module has a book-coverage assessment at
+ * all (`coverageLabel` set, rather than null). Derived from the data, not a
+ * config flag, so the "Book coverage" Advanced-filters row only renders for
+ * a module that was actually cross-referenced against a textbook — true for
+ * 101/102, never true for Module 205 (never cross-referenced against any
+ * book, so every record there has `coverageLabel: null`). */
+export function moduleHasBookCoverage(moduleId) {
+  return _questions.some((q) => q.module === moduleId && q.coverageLabel != null);
+}
+
 export function getSources() {
   return _sources;
 }
