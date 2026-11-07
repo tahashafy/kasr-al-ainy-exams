@@ -876,5 +876,212 @@
     ]
    }
   ]
+ },
+ "103": {
+  "module": "103",
+  "moduleTitle": "Biomedical Sciences & Musculoskeletal Sciences",
+  "moduleCode": "BMS 103",
+  "textbookEdition": "BMS 103 — Biomedical Sciences & Musculoskeletal Sciences, Academic Year 2026-2027 (Faculty of Medicine, Cairo University). Biochemistry questions are additionally cross-checked against Dr. Hisham Esmat's Biochemistry book, prepared for Batch 199, academic year 2025–2026, where the department book has no usable text for this academic year.",
+  "textbookSourceFile": "103_BMS_Published.pdf",
+  "categories": [
+   {
+    "id": "m103-anat",
+    "name": "Anatomy",
+    "chapters": [
+     {
+      "id": "m103-anat-1",
+      "number": "1",
+      "title": "The Thigh",
+      "startPage": 4
+     },
+     {
+      "id": "m103-anat-2",
+      "number": "2",
+      "title": "The Gluteal Region",
+      "startPage": 29
+     },
+     {
+      "id": "m103-anat-3",
+      "number": "3",
+      "title": "Muscles of the Back of Thigh / Hamstrings",
+      "startPage": 44
+     },
+     {
+      "id": "m103-anat-4",
+      "number": "4",
+      "title": "Popliteal Fossa",
+      "startPage": 47
+     },
+     {
+      "id": "m103-anat-5",
+      "number": "5",
+      "title": "The Leg",
+      "startPage": 54
+     },
+     {
+      "id": "m103-anat-6",
+      "number": "6",
+      "title": "The Foot",
+      "startPage": 73
+     },
+     {
+      "id": "m103-anat-7",
+      "number": "7",
+      "title": "Joints of the Lower Limb",
+      "startPage": 85
+     },
+     {
+      "id": "m103-anat-8",
+      "number": "8",
+      "title": "Dermatomal Cutaneous Supply",
+      "startPage": 106
+     },
+     {
+      "id": "m103-anat-9",
+      "number": "9",
+      "title": "Veins of the Lower Limb",
+      "startPage": 110
+     },
+     {
+      "id": "m103-anat-10",
+      "number": "10",
+      "title": "Development of Limbs",
+      "startPage": 114
+     }
+    ]
+   },
+   {
+    "id": "m103-phys",
+    "name": "Physiology — Nerve and Muscle",
+    "chapters": [
+     {
+      "id": "m103-phys-1",
+      "number": "1",
+      "title": "Transport through the Cell Membrane",
+      "startPage": 119
+     },
+     {
+      "id": "m103-phys-2",
+      "number": "2",
+      "title": "Physiology of the Nerve",
+      "startPage": 126
+     },
+     {
+      "id": "m103-phys-3",
+      "number": "3",
+      "title": "Neuromuscular Transmission",
+      "startPage": 145
+     },
+     {
+      "id": "m103-phys-4",
+      "number": "4",
+      "title": "Physiology of the Muscle",
+      "startPage": 148
+     },
+     {
+      "id": "m103-phys-5",
+      "number": "5",
+      "title": "Smooth Muscles",
+      "startPage": 166
+     }
+    ]
+   },
+   {
+    "id": "m103-hist",
+    "name": "Histology",
+    "chapters": [
+     {
+      "id": "m103-hist-1",
+      "number": "1",
+      "title": "Cartilage",
+      "startPage": 172
+     },
+     {
+      "id": "m103-hist-2",
+      "number": "2",
+      "title": "Bone",
+      "startPage": 178
+     },
+     {
+      "id": "m103-hist-3",
+      "number": "3",
+      "title": "Muscle Tissue",
+      "startPage": 190
+     },
+     {
+      "id": "m103-hist-4",
+      "number": "4",
+      "title": "Integumentary System",
+      "startPage": 204
+     }
+    ]
+   },
+   {
+    "id": "m103-bio",
+    "name": "Biochemistry",
+    "chapters": [
+     {
+      "id": "m103-bio-1",
+      "number": "1",
+      "title": "Bioenergetics",
+      "startPage": null
+     },
+     {
+      "id": "m103-bio-2",
+      "number": "2",
+      "title": "Citric Acid Cycle (TCA)",
+      "startPage": null
+     },
+     {
+      "id": "m103-bio-3",
+      "number": "3",
+      "title": "Carbohydrate Metabolism",
+      "startPage": null
+     },
+     {
+      "id": "m103-bio-4",
+      "number": "4",
+      "title": "Lipid Metabolism",
+      "startPage": null
+     },
+     {
+      "id": "m103-bio-5",
+      "number": "5",
+      "title": "Protein Metabolism",
+      "startPage": null
+     },
+     {
+      "id": "m103-bio-6",
+      "number": "6",
+      "title": "Amino Acid Metabolism",
+      "startPage": null
+     },
+     {
+      "id": "m103-bio-7",
+      "number": "7",
+      "title": "Metabolic Integration",
+      "startPage": null
+     },
+     {
+      "id": "m103-bio-8",
+      "number": "8",
+      "title": "Metabolism of Heme",
+      "startPage": null
+     },
+     {
+      "id": "m103-bio-9",
+      "number": "9",
+      "title": "Purines & Pyrimidines",
+      "startPage": null
+     },
+     {
+      "id": "m103-bio-10",
+      "number": "10",
+      "title": "Vitamins",
+      "startPage": null
+     }
+    ]
+   }
+  ]
  }
 }

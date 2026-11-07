@@ -99,12 +99,17 @@ npm test        # run the automated scoring-engine tests (14/14)
 npm start        # serve the app at http://localhost:3000 (node server.js — no install needed)
 ```
 
-Regenerating the question bank from the source `.docx` files (only needed if the source files change):
+Regenerating the question bank from the source files (only needed if the source files
+change). **Run in this exact order** — `build_question_bank_v2.py` (101/102/103) and
+`build_module205_question_bank.py` (205) each rewrite `app/data/questions.json` from
+scratch using only their own modules' data, so 205 must be rebuilt *after* the other three
+scripts or its 2,675 records are silently dropped until it's re-run (see §16.5):
 
 ```bash
 python3 scripts2/extract_questions.py
 python3 scripts2/extract_answer_keys.py
 python3 scripts2/build_question_bank_v2.py
+python3 scripts2/build_module205_question_bank.py
 ```
 
 The optional Firebase-backed multi-student sync (access codes, Firestore, `SETUP_FIREBASE.md`) from the previous phase is unchanged and still off by default — the app runs fully local/offline unless an administrator deliberately configures it.
@@ -286,3 +291,226 @@ This is plain descriptive copy, not derived automatically from `sources.json` �
 
 - `cd app && npm test` — scoring engine, still **14/14 passing, unchanged**.
 - All checks above run via Playwright against `node server.js`, in a single consolidated pass plus targeted follow-ups; zero console/page errors throughout.
+
+## 16. Module 103 — Biomedical Sciences & Musculoskeletal Sciences (this phase)
+
+Module 103 is now live alongside 101/102/205 (no longer "Coming Soon"). Structurally it is
+the same kind of module as 101/102 — five End-of-Module exam batches (195, 196, 197, 198,
+199, matching 101's batch numbers since both modules sit the same student cohorts in the
+same academic years), same Book Verified Answer Key pipeline, same Ready/Review and
+coverage-label data model. The one genuine new mechanism is described in §16.3 below.
+
+### 16.1 Source files imported
+
+| Batch | Academic year | Exam date | Ready | Review | Imported |
+|---|---|---|---|---|---|
+| 195 | 2021–2022 | 2022-03-19 | 119 | 1 | 120/120 |
+| 196 | 2022–2023 | 2023-03-09 | 119 | 1 | 120/120 |
+| 197 | 2023–2024 | *(cropped in original scan — stored as `examDate: null`, not invented)* | 119 | 1 | 120/120 |
+| 198 | 2024–2025 | 2025-02-13 | 118 | 2 | 120/120 |
+| 199 | 2025–2026 | 2026-01-10 | 120 | 0 | 120/120 |
+| **Total** | | | **595** | **5** | **600/600** |
+
+Coverage labels across the 600 new questions: Direct 535, Not covered 30, Inferred 19,
+Partial 15, Calculated 1 (sums to 600).
+
+### 16.2 The two-book situation: `bookSource` / `bookSourceLabel`
+
+The department textbook (`103_BMS_Published.pdf`, AY 2026–2027) has no usable text at all
+in its Biochemistry section this academic year. Roughly a third of each batch's questions
+(226 of 600 overall) are Biochemistry questions whose recommended answer was instead
+checked against **Dr. Hisham Esmat's Biochemistry book** (prepared for Batch 199, academic
+year 2025–2026). This is surfaced as a genuine new field on every question record, not a
+one-off UI hack:
+
+- `bookSource`: `"department"` (374 of 600 Module 103 records; also the implicit value —
+  `null`/omitted — for every 101/102/205 record, which were never checked against a second
+  book) or `"hisham_esmat"` (226 of 600).
+- `bookSourceLabel`: a human-readable citation string for the Hisham-sourced records
+  (`"Dr. Hisham Esmat's Biochemistry book (prepared for Batch 199, academic year
+  2025–2026)"`), `null` otherwise.
+- For a Hisham-sourced record, `coverageLabel` is classified from the Book/Review line's own
+  prose (`extract_answer_keys.py`'s `parse_103`/`finalize()`): "partial"/"partially" or
+  "inferred"/"inference" language downgrades it from the Direct default to `Partial`/
+  `Inferred` respectively. Spot-checked across all ~230 Hisham-sourced records before
+  trusting it for the full set — one real false positive was found and fixed during that
+  check (a question whose evidence quoted "partial or complete HGPRTase deficiency" as a
+  clinical term, not a coverage assessment; the regex now excludes that specific phrase).
+  All 17 resulting Partial/Inferred classifications were individually re-verified against
+  their source sentences afterward with zero remaining false positives/negatives.
+- A handful of "Not covered" entries (5–9 per batch) remain "Not covered" even after
+  Hisham's book was also checked — these keep `bookSource: "department"` (neither book
+  actually supports the answer), with the Book line's extra sentence about checking Hisham's
+  book too preserved verbatim in `evidence`/`reviewNote`.
+- **UI**: `examTake.js`'s new exported `bookSourceLine(q)` helper (reused as-is by
+  `examResults.js`) renders an extra line in the existing "View source and details" panel —
+  *"Source: Dr. Hisham Esmat's Biochemistry book (...) — not the department textbook"* —
+  whenever `q.bookSource === "hisham_esmat"`, and renders nothing at all otherwise. This is
+  data-driven (checks the field, not the module id), so it is a no-op for every 101/102/205
+  record exactly as before. Two new i18n keys (`take.bookSourceLabel`, `take.bookSourceNotDept`)
+  were added in both languages as interface chrome; the book name/citation itself stays
+  English, same rule as all other evidence text. `moduleSelect.js`'s Module 103 card and its
+  `modules.m103source` i18n entry (both languages) also name the two-book situation plainly,
+  per the repo owner's explicit instruction not to bury this in only one place.
+
+### 16.3 Parsing — what's actually different from 101/102, verified directly against the source files
+
+Several real format differences turned up that were not fully anticipated going in; each was
+confirmed by direct inspection of the `.docx` files before being special-cased, per this
+project's "investigate, never force a match" rule:
+
+- **Exam-instruction paragraphs before Q1** (Batches 195/196/197): a `"Transcription note."`
+  paragraph is present, verified, in all 5 question-paper files, always immediately before
+  the real Q1. `extract_questions.py`'s new `parse_103` slices to start right after it,
+  reusing the existing numbered/table-walking logic for everything after.
+- **`a-`/`b-`/`c-`/`d-` option dashes instead of `a.`/`b.`** (Batches 197 and 199, all 120
+  questions each — confirmed, not a one-off): the shared `OPT_RE` now also accepts `-` as an
+  option separator, alongside the existing `.`/`)` (checked against all of 101/102's data
+  first — no collisions).
+- **Batch 199's paragraphs are transcribed in a scrambled, non-sequential order**
+  (`...29, 30, 47, 48, ..., 54, 39, 40, ..., 46, 31, 32, ...`), even though every individual
+  paragraph carries its own correct printed question number. The shared sequential-numbering
+  parser (`expected_next`-based) would have silently produced only 38/120 questions here —
+  caught by an explicit "did we get exactly 1..N with no duplicates" check added to
+  `extract_questions.py`'s own validation printout, not just a bare count. Fixed with a new
+  order-agnostic variant (`_parse_numbered_items_any_order`) that matches each paragraph by
+  its own printed number instead of a running sequential counter; used for all 5 batches
+  (harmless for the four that are in plain sequential order).
+- **Batch 198 Q45: both the question number and the first letter of every option were
+  physically cropped off the scanned page**, leaving `"[45; number cropped] Regarding the
+  white muscle fibers..."` and options like `"[initial letter cropped]ore mitochondria"`
+  literally in the source `.docx` (the briefing this phase started from asserted this was
+  already cleanly reconstructed in the source file — direct inspection showed it was not).
+  Fixed in two parts: (1) a generic `CROPPED_NUM_RE` recognizes the `"[N; ...cropped...]"`
+  annotation and rewrites it to plain `"N. "` before the numbered parser ever sees it, so
+  Q46–120 don't silently desync; (2) the four option texts are corrected via a small, explicit
+  `KNOWN_OPTION_FIXES` dict, sourced verbatim from the Book Verified Answer Key's own Review
+  note for B198-Q045, which independently re-inspected the scan and states the reconstructed
+  wording ("More mitochondria", "Anaerobic pathway", "Few glycogens", "Abundant myoglobin").
+- **Batch 197 Q35, options B and D: a transcription typo reads "... of high" instead of
+  "... of thigh"** (dropping the leading "t") — confirmed as an isolated, one-question typo
+  (no other "of high" occurrence anywhere in any of the 5 batches), and confirmed as a typo
+  rather than the intended wording because the Book Verified Answer Key's own Answer and
+  Book-evidence lines both independently say "of thigh". Corrected via the same
+  `KNOWN_OPTION_FIXES` mechanism (partial per-letter override).
+- **Answer-key header format**: Batches 197/198 print `"Question N B197-Q001 <stem>"` all on
+  one line/paragraph (single spaces, no newline), unlike 195/196/199's `"Question N
+  B195-Q001\n<stem>"` (two spaces, then a newline) — matches the same kind of variation
+  101→102 already needed. `Q_RE_103` accepts either shape in one regex.
+- **Answer line can be `"None"`** (no option is correct as transcribed — a genuine printing
+  defect in the exam itself; 2 of 600) **or multi-letter** (`"A / D"`; 1 of 600, same
+  mechanism 102 already uses for its one B/C case). A `"None"` answer is forced to
+  `gradingStatus: "Review"` with `correctOptionId: null` regardless of what the source's own
+  Grading line says (both real cases happened to print "Grading: Ready.", which would have
+  silently mis-scored them) — the same precedent as Module 205's figure-label-only handling.
+- **One "Not covered" line is written `"Book Not covered | Page 58: ..."`** (citing a page
+  even though the label is "Not covered" — the book gives related-but-incomplete information)
+  instead of the plain `"Book Not covered: ..."` used everywhere else. `BOOK_NOTCOVERED_RE_103`
+  accepts an optional `| Page(s) N` clause without changing the Not-covered classification.
+- **Hisham-book page citations sometimes include a parenthetical aside before the colon**
+  (`"Page 3 (Dr. Hisham Esmat's Biochemistry book, prepared for Batch 199, ... 2025–2026):
+  ..."`) **and sometimes go straight to the colon** (`"Page 5: ..."`); the page-number group
+  stops at the first `(` or `:` either way so digits inside the parenthetical (e.g. "Batch
+  199", "2025–2026") never leak into the extracted page list. Verified against all ~230 real
+  Hisham-sourced lines with zero parse failures.
+
+### 16.4 Category/chapter classification
+
+`scripts2/classify_103.py` is a new keyword classifier — same "reasonable first pass, not
+hand-verified" caveat as 101/102/205's classifiers. Chapter structure comes from the two
+source books' own tables of contents, per the integration brief (not invented): **Anatomy**
+and **Physiology — Nerve and Muscle** and **Histology** (10 + 5 + 4 chapters, department
+textbook, PDF page = printed page + 2 throughout, stored as `startPage` in `chapters.json`)
+and **Biochemistry** (10 chapters, taken from Dr. Hisham Esmat's own chapter list instead,
+since that's the book actually used for this category — no page numbers available, so
+`startPage: null` rather than invented). Category/chapter ids are module-prefixed
+(`m103-anat-1`, `m103-phys-2`, `m103-hist-3`, `m103-bio-4`, ...) since plain ids like
+`"histology"`/`"biochemistry"`/`"physiology"` are already used by Module 101/102's own
+category ids and would otherwise collide in the global id lookups (`getChapterMeta`/
+`getCategoryMeta` resolve by id across every module without being told which one).
+
+Classifier coverage: 584/600 (97.3%) of questions matched a category, 570/600 (95.0%) also
+matched a specific chapter — slightly better than both 101 (90%) and 102 (79%)'s existing
+classifiers, reached after one iteration of adding keywords for terms the first pass missed
+(spot-checked against the actual unclassified stems, e.g. "ICF"/"ECF", "gluconeogenic",
+"porphyria", "adrenaline/noradrenaline", "niacin").
+
+### 16.5 Critical: question-id collision with Module 101, avoided
+
+Module 101 already uses stable ids `B194-Q001`..`B199-Q120` in `questions.json`, and Module
+103's batch numbers are the *same* numbers (195–199) — the stable id baked into the 103 Book
+Verified Answer Key text is *also* literally `B195-Q001` etc. Using that text verbatim as the
+`id` field would have silently collided with Module 101's existing records. Module 103
+records instead get a module-prefixed `id` (`M103-B195-Q001`), with the bare source-docx
+label kept only as a non-`id` `stableId` field for cross-reference. Verified directly: **zero
+duplicate ids across the full 4,355-record `questions.json`** (528 Module 101 + 552 Module
+102 + 2,675 Module 205 + 600 Module 103), checked by `build_module205_question_bank.py`'s own
+existing duplicate-id printout (see §16.6) after rebuilding everything.
+
+**Build-order note for future runs**: `build_question_bank_v2.py` writes 101/102/103 and
+knows nothing about Module 205 — running it alone overwrites `questions.json` with *only*
+101+102+103, discarding Module 205's 2,675 records until `build_module205_question_bank.py`
+is run again afterward (it re-merges its own "205" slice back in from `source_docs/205/`,
+leaving the other modules untouched, exactly as its own docstring describes). This was caught
+during this phase's own rebuild (not left as a surprise for next time) and should be added to
+the "How to run" command sequence in §9: `extract_questions.py` → `extract_answer_keys.py` →
+`build_question_bank_v2.py` → **`build_module205_question_bank.py`**, in that order, whenever
+any of the first three are re-run.
+
+### 16.6 Validation performed
+
+- `extract_questions.py`: all 5 new batches parse to exactly **120/120**, now checked against
+  the full expected number *set* (`{1..120}`, no duplicates) rather than just a count — this
+  is what caught Batch 199's scrambled transcription order (§16.3) before it could silently
+  under-import.
+- `extract_answer_keys.py`: all 5 new batches parse to **120/120** with zero missing
+  `answerLetter`/`coverageLabel`/`gradingStatus`.
+- **Cross-validation** (CLAUDE.md step 5): stem text from the independently-parsed question
+  file compared against the stem text recorded in the answer-key file, and every recorded
+  answer letter's text checked against the actual option text, for all 600 new questions (and,
+  as a regression check, all 528+552 existing Module 101/102 questions) — **zero real
+  mismatches** after accounting for curly-vs-straight-quote encoding differences between the
+  two `.docx` files (cosmetic, not content) and the answer key's own habit of abbreviating long
+  clinical-vignette stems with "..." in its header line for 14 Batch-198 questions (verified
+  each one's full un-abbreviated body text still matches the question file exactly; the
+  abbreviation is cosmetic to the key's own header, and the app always displays the question
+  file's full stem, never the key's shortened one). Two real content-affecting issues were
+  found and fixed this way, not just detected: the Batch 197 Q35 "of high"/"of thigh" typo and
+  the Batch 198 Q45 cropped options (§16.3) — both are typos/scan-damage in the *source*
+  `.docx`, not misalignment between the two independently-parsed files.
+- **Zero id collisions**: confirmed directly against the rebuilt `questions.json` — **4,355**
+  total records (3,755 existing + 600 new), matching exactly.
+- Final figures (computed from the rebuilt file, not estimated): Module 103 — **595 Ready /
+  5 Review**; coverage **Direct 535 / Not covered 30 / Inferred 19 / Partial 15 / Calculated
+  1**; **bookSource: department 374 / hisham_esmat 226**.
+- `cd app && npm test` — scoring engine, still **14/14 passing, unchanged**.
+- Playwright pass against `node server.js`: homepage → Modules picker (zero disabled
+  "Coming Soon" cards now; Module 103's card shows its description and two-book Source line)
+  → Module 103 library page (Anatomy/Physiology—Nerve and Muscle/Histology/Biochemistry
+  category cards with correct question counts) → exam builder (all 5 batches listed as Full
+  Past Exams, 120 questions each, per `sources.json`) → a Biochemistry question with
+  `bookSource: "hisham_esmat"` (`M103-B195-Q052`) showing the Hisham attribution line exactly
+  as designed in its "View source and details" panel → a Review-status question
+  (`M103-B195-Q098`) showing the "Practice only — excluded from your score" notice in its
+  explanation panel → Module 101's full flow re-confirmed unaffected (home → library → exam
+  setup → a 48-question custom attempt answered and submitted through to a results screen,
+  via its own confirm-submit dialog) → Module 102 and 205's library/setup pages also
+  re-confirmed loading without error → About page confirmed listing Module 103 and its
+  batches. Zero console/page errors throughout (the only network errors seen,
+  `ERR_TUNNEL_CONNECTION_FAILED` for the optional Firebase sync's `gstatic.com` scripts, are a
+  pre-existing sandbox network restriction unrelated to this phase — confirmed by reproducing
+  the identical error on Module 101 before any of this phase's changes).
+
+### 16.7 Limitations specific to this phase
+
+- `bookSource`/`bookSourceLabel` are new, Module-103-only fields; every 101/102/205 record has
+  `bookSource: null` (implicit "department"), which is the honest default since those modules
+  were never checked against a second book.
+- As with 101/102, "Ready" reflects the revised key's own review flag only, never presented as
+  official faculty approval; this phase's `"None"`-answer override (forced to Review
+  regardless of the source's own Grading line) is the one place this phase deliberately
+  overrides the source data, and is documented here precisely because it's a deviation worth
+  knowing about later.
+- Classifier coverage (97.3%/95.0%) is a first pass like 101/102/205's; the ~16 unclassified
+  and ~30 chapter-less questions are excluded from category-filtered practice only, never
+  silently dropped from the bank.

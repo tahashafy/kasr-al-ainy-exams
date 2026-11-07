@@ -37,11 +37,17 @@ scripts2/                     the CURRENT import pipeline. For 101/102 (Word-doc
   extract_questions.py        parses original question .docx files → questions_raw.json
   extract_answer_keys.py      parses "Book Verified Answer Key" .docx files → answer_keys_raw.json
   build_question_bank_v2.py   merges both + classifies category/chapter → app/data/questions.json
+                              (currently modules 101/102/103 — writes questions.json from ONLY
+                              these modules' own data, so Module 205's records are gone from the
+                              file until build_module205_question_bank.py is run again afterward)
   build_module205_question_bank.py   Module 205's own importer — see "Module 205" section below.
                               Does NOT re-parse the original PDF; it reshapes the already-validated
                               source_docs/205/*.json into this app's data model. Re-run it any time
                               source_docs/205/*.json changes; it only replaces the "205" slice of
-                              chapters.json/questions.json/sources.json, leaving 101/102 untouched.
+                              chapters.json/questions.json/sources.json, leaving 101/102/103 untouched.
+                              MUST be run AFTER build_question_bank_v2.py any time that script also
+                              ran, or Module 205 silently disappears from questions.json — see
+                              IMPLEMENTATION_REPORT.md §16.5 and the §9 "How to run" command order.
 
 source_docs/101/
   questions/                            original question papers (.docx), one per batch
@@ -73,7 +79,7 @@ Every question in `app/data/questions.json` carries two **independent** classifi
 
 **Never add grading-status and coverage counts together, and never derive one from the other.** The validation check for an import is always: total, Ready count, Review count, and the five coverage-label counts — reported as separate numbers, not combined.
 
-Other per-question fields worth knowing about: `bookPages` (PDF-viewer page numbers counted from 1 **including the cover** — not printed page numbers; preserve this convention exactly when importing new sources), `evidence` (the explanation text), `reviewNote` (reasoning/doubt note), `conditionalAlternatives` (alternate acceptable answers + their condition), `allowAbstention`, `isMultipleAnswerOrException`. Stable question IDs follow the pattern `B<batch>-Q<originalNumber>` (e.g. `B199-Q118`) — preserve this scheme for new batches.
+Other per-question fields worth knowing about: `bookPages` (PDF-viewer page numbers counted from 1 **including the cover** — not printed page numbers; preserve this convention exactly when importing new sources), `evidence` (the explanation text), `reviewNote` (reasoning/doubt note), `conditionalAlternatives` (alternate acceptable answers + their condition), `allowAbstention`, `isMultipleAnswerOrException`. Stable question IDs follow the pattern `B<batch>-Q<originalNumber>` (e.g. `B199-Q118`) — preserve this scheme for new batches, **except when a new module reuses another module's batch numbers** (Module 103 reuses 101's batch numbers 195-199 for the same student cohorts): then the bare `B<batch>-Q<n>` text would silently collide with the other module's existing ids, so prefix the actual `id` field with the module (`M103-B195-Q001`) and keep the bare label only as a non-`id` `stableId` field if you need it — always re-check the full file for zero duplicate ids after any import, not just within the new batch. Module 103 also introduced `bookSource` (`"department"`/`"hisham_esmat"`) and `bookSourceLabel`, `null`/omitted for every other module — see IMPLEMENTATION_REPORT.md §16.2 before extending this pattern to a future module that also needs a second reference source.
 
 ## How to import a new exam batch (same module)
 

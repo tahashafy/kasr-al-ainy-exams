@@ -19,6 +19,7 @@ from collections import Counter
 
 sys.path.insert(0, os.path.dirname(__file__))
 from classify_102 import classify_category as classify_category_102, classify_chapter as classify_chapter_102
+from classify_103 import classify_category as classify_category_103, classify_chapter as classify_chapter_103
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 APP_DATA = os.path.join(ROOT, "app", "data")
@@ -70,6 +71,28 @@ BATCH_META = {
                       "questionsFile": "20241128_questions.docx",
                       "keyFile": "Module102_20241128_Book_Verified_Answer_Key.docx"},
     },
+    # Module 103's exam date for Batch 197 was cropped off the original scan (the
+    # answer-key docx itself says so — "[date cropped in original scan]") — stored as
+    # None/null rather than invented; its academic year is still known from matching
+    # its batch number against Module 101's existing batch->year mapping (same student
+    # cohorts, same batch numbers, both confirmed consistent for 195/196/198/199).
+    "103": {
+        "195": {"academicYear": "2021-2022", "examDate": "2022-03-19",
+                "questionsFile": "Batch195_questions.docx",
+                "keyFile": "Module103_Batch195_Book_Verified_Answer_Key.docx"},
+        "196": {"academicYear": "2022-2023", "examDate": "2023-03-09",
+                "questionsFile": "Batch196_questions.docx",
+                "keyFile": "Module103_Batch196_Book_Verified_Answer_Key.docx"},
+        "197": {"academicYear": "2023-2024", "examDate": None,
+                "questionsFile": "Batch197_questions.docx",
+                "keyFile": "Module103_Batch197_Book_Verified_Answer_Key.docx"},
+        "198": {"academicYear": "2024-2025", "examDate": "2025-02-13",
+                "questionsFile": "Batch198_questions.docx",
+                "keyFile": "Module103_Batch198_Book_Verified_Answer_Key.docx"},
+        "199": {"academicYear": "2025-2026", "examDate": "2026-01-10",
+                "questionsFile": "Batch199_questions.docx",
+                "keyFile": "Module103_Batch199_Book_Verified_Answer_Key.docx"},
+    },
 }
 
 COVERAGE_GROUP = {
@@ -80,7 +103,14 @@ COVERAGE_GROUP = {
     "Not covered": "not-covered",
 }
 
-LABEL_PREFIX = {"101": "Module 101 — End-of-Module Examination", "102": "Module 102 — End-of-Module Examination"}
+LABEL_PREFIX = {
+    "101": "Module 101 — End-of-Module Examination",
+    "102": "Module 102 — End-of-Module Examination",
+    "103": "Module 103 — End-of-Module Examination",
+}
+# Batch-numbered modules (same sourceExam/id-labeling convention as 101); 102 uses exam
+# dates as its batch key instead and is handled separately below.
+BATCH_NUMBERED_MODULES = {"101", "103"}
 
 all_questions = []
 sources = []
@@ -103,6 +133,15 @@ for module, batches in BATCH_META.items():
                 chap = prev["chapter"] if prev else None
                 if not prev:
                     unclassified.append(a["stableId"])
+            elif module == "103":
+                cat, cat_score = classify_category_103(full_text)
+                chap, chap_score = (None, 0)
+                if cat:
+                    chap, chap_score = classify_chapter_103(full_text, cat)
+                    if chap_score < 1:
+                        chap = None
+                if not cat:
+                    unclassified.append(a["stableId"])
             else:
                 cat, cat_score = classify_category_102(full_text)
                 chap, chap_score = (None, 0)
@@ -114,9 +153,16 @@ for module, batches in BATCH_META.items():
                     unclassified.append(a["stableId"])
 
             options = [{"id": letter, "text": q["options"][letter]} for letter in ["a", "b", "c", "d"]]
-            letters = [x.strip().lower() for x in a["answerLetter"].split("/")]
-            override = (a.get("primaryLetterOverride") or "").lower() or None
-            correct = override if override else letters[0]
+            # "Answer None." (Module 103 only — a transcribed exam item whose options
+            # as printed have no literal correct answer; see the question's own
+            # reviewNote) means there is no letter to score against at all.
+            if a["answerLetter"] == "None":
+                letters = []
+                correct = None
+            else:
+                letters = [x.strip().lower() for x in a["answerLetter"].split("/")]
+                override = (a.get("primaryLetterOverride") or "").lower() or None
+                correct = override if override else letters[0]
             # any letter besides the chosen primary one is an equally-defensible
             # alternative; merge with whatever "Choices requiring consideration" already
             # produced, de-duplicated, preserving order.
@@ -128,16 +174,28 @@ for module, batches in BATCH_META.items():
                     conditional.append(xu)
             is_multi_or_exception = len(letters) > 1 or bool(re.search(r'\b(NOT|EXCEPT)\b', q["stem"]))
 
+            if module in BATCH_NUMBERED_MODULES:
+                source_exam = f"{LABEL_PREFIX[module]} — Batch {batch} — Academic Year {meta['academicYear']}"
+            else:
+                source_exam = f"Module 102 Examination — {meta['examDate']} — Academic Year {meta['academicYear']}"
+
+            # Module 103's batch numbers (195-199) are the SAME numbers Module 101 already
+            # uses, and the stable id baked into the 103 Book-Verified docx text is the
+            # bare "B195-Q001" scheme too — using that verbatim as `id` would silently
+            # collide with Module 101's existing records. Module-prefixed here so the two
+            # modules' ids are always distinct; the bare id is kept only as `stableId` for
+            # anyone cross-referencing the source docx.
+            record_id = f"M103-{a['stableId']}" if module == "103" else a["stableId"]
+
             record = {
-                "id": a["stableId"],
+                "id": record_id,
                 "module": module,
                 "text": q["stem"],
                 "options": options,
                 "correctOptionId": correct,
                 "category": cat,
                 "chapter": chap,
-                "sourceExam": f"{LABEL_PREFIX[module]} — Batch {batch} — Academic Year {meta['academicYear']}" if module == "101"
-                              else f"Module 102 Examination — {meta['examDate']} — Academic Year {meta['academicYear']}",
+                "sourceExam": source_exam,
                 "academicYear": meta["academicYear"],
                 "examDate": meta["examDate"],
                 "batch": batch,
@@ -154,17 +212,34 @@ for module, batches in BATCH_META.items():
                 "allowAbstention": a["gradingStatus"] == "Review",
                 "isMultipleAnswerOrException": is_multi_or_exception,
                 "deepseekComparison": a.get("deepseekComparison"),
+                # Module 103 only: which book this question's recommended answer is
+                # actually sourced from — "department" (default, omitted/None for every
+                # 101/102/205 record) or "hisham_esmat" for the Biochemistry questions
+                # answered from Dr. Hisham Esmat's book instead, since the department
+                # textbook's Biochemistry section has no usable text this academic
+                # year. See IMPLEMENTATION_REPORT.md.
+                "bookSource": a.get("bookSource"),
+                "bookSourceLabel": a.get("bookSourceLabel"),
+            }
+            if module == "103":
+                # Kept as metadata only (never as `id` — see above) so the source docx's
+                # own "B195-Q001" label can still be cross-referenced if ever needed.
+                record["stableId"] = a["stableId"]
+            record.update({
                 # Derived alias of gradingStatus, kept only so scoring.js (already fully
                 # tested) never had to change — see CLAUDE.md. Keep these two in sync.
                 "reviewStatus": "verified" if a["gradingStatus"] == "Ready" else "needs_review",
-            }
+            })
             all_questions.append(record)
             count += 1
+        if module in BATCH_NUMBERED_MODULES:
+            label = f"Batch {batch} — {meta['academicYear']} End-of-Module Exam"
+        else:
+            label = f"Module 102 — {meta['examDate']} End-of-Module Exam"
         sources.append({
             "module": module,
             "batch": batch,
-            "label": (f"Batch {batch} — {meta['academicYear']} End-of-Module Exam" if module == "101"
-                      else f"Module 102 — {meta['examDate']} End-of-Module Exam"),
+            "label": label,
             "academicYear": meta["academicYear"],
             "examDate": meta["examDate"],
             "importedCount": count,

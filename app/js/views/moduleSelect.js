@@ -9,7 +9,7 @@ const MODULE_CARDS = [
   { id: "101", descKey: "modules.m101desc", sourceKey: "modules.m101source", available: true },
   { id: "102", descKey: "modules.m102desc", sourceKey: "modules.m102source", available: true },
   { id: "205", descKey: "modules.m205desc", sourceKey: "modules.m205source", available: true },
-  { id: "103", descKey: "modules.m103desc", available: false },
+  { id: "103", descKey: "modules.m103desc", sourceKey: "modules.m103source", available: true },
 ];
 
 export function renderModuleSelect(root) {

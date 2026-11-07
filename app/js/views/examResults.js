@@ -1,7 +1,7 @@
 import { getAttemptById, getSettings } from "../store.js";
 import { getQuestionById, getChapterMeta, getCategoryMeta } from "../data.js";
 import { escapeHtml } from "../router.js";
-import { buildNotices, coverageLabelText, hasQuestionMeta, renderQuestionMetaRow } from "./examTake.js";
+import { buildNotices, coverageLabelText, hasQuestionMeta, renderQuestionMetaRow, bookSourceLine } from "./examTake.js";
 import { t } from "../i18n.js";
 
 export function renderExamResults(root, params) {
@@ -146,6 +146,7 @@ function renderReviewItem(q, response, i) {
           <div style="margin-top:8px;font-size:13px;line-height:1.5;">
             <p><strong>${t("take.bookCoverage")}:</strong> ${escapeHtml(coverageLabelText(q.coverageLabel))}</p>
             ${pages ? `<p><strong>${t("take.bookPages")}${q.bookPages.length > 1 ? "s" : ""}:</strong> <span dir="ltr">${escapeHtml(pages)}</span> ${t("take.pdfPageNote")}</p>` : ""}
+            ${bookSourceLine(q)}
             ${q.conditionalAlternatives && q.conditionalAlternatives.length ? `<p><strong>${t("take.conditionalAlt")}:</strong> <span dir="ltr">${q.conditionalAlternatives.map(escapeHtml).join(" / ")}</span></p>` : ""}
             ${q.reviewNote ? `<p><strong>${t("take.reasoningNote")}:</strong> <span dir="ltr">${escapeHtml(q.reviewNote)}</span></p>` : ""}
             <p><strong>${t("take.gradingStatus")}:</strong> ${isGraded ? t("take.gradingReady") : t("take.gradingReview")} ${t("take.notOfficial")}</p>

@@ -252,6 +252,21 @@ export function coverageLabelText(label) {
 // Kept for any external callers expecting the old export name/shape.
 export const COVERAGE_LABEL_TEXT = new Proxy({}, { get: (_, label) => coverageLabelText(label) });
 
+/**
+ * Module 103 only: a question whose Biochemistry answer was checked against Dr.
+ * Hisham Esmat's Biochemistry book instead of the department textbook (the
+ * department book's Biochemistry section has no usable text this academic year)
+ * gets an explicit attribution line here, instead of the usual "department
+ * textbook" framing, wherever the book-page citation is shown. Data-driven
+ * (`q.bookSource`), not a module-id check — absent/"department" for every
+ * 101/102/205 record and most 103 records renders nothing extra, unchanged from
+ * before this field existed.
+ */
+export function bookSourceLine(q) {
+  if (q.bookSource !== "hisham_esmat") return "";
+  return `<p dir="ltr"><strong>${t("take.bookSourceLabel")}:</strong> ${escapeHtml(q.bookSourceLabel || "")} — ${t("take.bookSourceNotDept")}</p>`;
+}
+
 export function buildNotices(q) {
   const notices = [];
   if (q.conditionalAlternatives && q.conditionalAlternatives.length) {
@@ -288,6 +303,7 @@ function renderExplanation(q, chapterMeta) {
         <div style="margin-top:8px;font-size:13px;line-height:1.5;">
           <p><strong>${t("take.bookCoverage")}:</strong> ${escapeHtml(coverageLabelText(q.coverageLabel))}</p>
           ${pages ? `<p><strong>${t("take.bookPages")}${q.bookPages.length > 1 ? "s" : ""}:</strong> <span dir="ltr">${escapeHtml(pages)}</span> ${t("take.pdfPageNote")}</p>` : ""}
+          ${bookSourceLine(q)}
           ${q.conditionalAlternatives && q.conditionalAlternatives.length ? `<p><strong>${t("take.conditionalAlt")}:</strong> <span dir="ltr">${q.conditionalAlternatives.map(escapeHtml).join(" / ")}</span></p>` : ""}
           ${q.reviewNote ? `<p><strong>${t("take.reasoningNote")}:</strong> <span dir="ltr">${escapeHtml(q.reviewNote)}</span></p>` : ""}
           <p><strong>${t("take.gradingStatus")}:</strong> ${q.gradingStatus === "Ready" ? t("take.gradingReady") : t("take.gradingReview")} ${t("take.notOfficial")}</p>
